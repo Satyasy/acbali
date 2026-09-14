@@ -23,6 +23,11 @@ const businessSchema = {
   "alternateName": siteConfig.name,
   "description": siteConfig.description,
   "url": "https://jawara-teknik.com",
+  "hasMap": siteConfig.mapsDirectUrl,
+  "sameAs": [
+    siteConfig.mapsDirectUrl,
+    siteConfig.mapsSearchUrl
+  ],
   "telephone": siteConfig.phone,
   "priceRange": "Rp 60.000 - Rp 375.000",
   "paymentAccepted": ["Cash", "QRIS", "Bank Transfer"],

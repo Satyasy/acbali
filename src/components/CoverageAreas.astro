@@ -1,5 +1,5 @@
 ---
-import { coverageAreas, createWhatsAppLink } from '../config/site';
+import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
 ---
 
 <section id="wilayah" class="py-16 sm:py-24 bg-white border-b border-slate-200/60">
@@ -82,26 +82,57 @@ import { coverageAreas, createWhatsAppLink } from '../config/site';
       ))}
     </div>
 
-    <!-- Area Note Banner (Zero Emojis, Clean Lucide Navigation Icon) -->
-    <div class="text-center bg-slatewhite rounded-2xl p-6 border border-slate-200/90 shadow-sm max-w-2xl mx-auto flex flex-col items-center">
-      <div class="flex items-center gap-2 text-navy-900 font-bold text-sm mb-1">
-        <!-- Lucide Navigation -->
-        <svg class="w-4 h-4 text-iceblue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-        </svg>
-        <span>Lokasi Anda Belum Tercantum di Atas?</span>
+    <!-- Area Note Banner & Google Maps Verified Profile -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+      <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-iceblue-50 text-iceblue-600 border border-iceblue-200/60 flex items-center justify-center shrink-0">
+            <!-- Lucide MapPin -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm text-navy-950">Terdaftar di Google Maps</h4>
+            <p class="text-xs text-slate-500">Service AC Panggilan Jawara Teknik</p>
+          </div>
+        </div>
+        <a
+          href={siteConfig.mapsDirectUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-xs font-bold text-iceblue-600 hover:text-iceblue-700 underline shrink-0"
+        >
+          <span>Buka Maps</span>
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
       </div>
-      <p class="text-xs sm:text-sm text-slate-600 max-w-xl">
-        Kami tetap melayani panggilan ke seluruh kawasan Bali sesuai konfirmasi jadwal ketersediaan teknisi.
-      </p>
-      <div class="mt-3">
+
+      <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center shrink-0">
+            <!-- Lucide Navigation -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm text-navy-950">Area Anda Belum Ada?</h4>
+            <p class="text-xs text-slate-500">Tetap melayani se-Bali sesuai jadwal</p>
+          </div>
+        </div>
         <a
           href={createWhatsAppLink({ service: "Cek Wilayah Khusus Bali" })}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-xs font-bold text-iceblue-600 hover:text-iceblue-700 underline underline-offset-4"
+          class="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 hover:text-emerald-700 underline shrink-0"
         >
-          <span>Konfirmasi Alamat Anda dengan Admin Jawara Teknik</span>
+          <span>Tanya Admin</span>
           <span>&rarr;</span>
         </a>
       </div>

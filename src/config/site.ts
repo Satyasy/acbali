@@ -23,6 +23,8 @@ export interface SiteConfig {
   };
   mapsEmbedUrl: string;
   mapsDirectUrl: string;
+  mapsSearchUrl: string;
+  googleKgmid: string;
   heroImage: string;
 }
 
@@ -50,8 +52,10 @@ export const siteConfig: SiteConfig = {
       longitude: 115.2078,
     },
   },
-  mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.3824141673857!2d115.2052445!3d-8.672815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2409b5585b73d%3A0x7d2ecbf6c5476a3!2sJl.%20Teuku%20Umar%2C%20Kota%20Denpasar%2C%20Bali!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
-  mapsDirectUrl: "https://maps.google.com/?q=-8.6728,115.2078",
+  mapsDirectUrl: "https://share.google/o71TdKbJKVI2qBnsW",
+  mapsSearchUrl: "https://www.google.com/search?kgmid=/g/11zfhw7q03&q=Service+AC+panggilan+Jawara+Teknik",
+  mapsEmbedUrl: "https://maps.google.com/maps?q=Service+AC+panggilan+Jawara+Teknik+Bali&t=&z=14&ie=UTF8&iwloc=&output=embed",
+  googleKgmid: "/g/11zfhw7q03",
 };
 
 export function createWhatsAppLink(params?: {
