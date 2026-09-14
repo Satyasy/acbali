@@ -56,11 +56,21 @@ const customAreaWaUrl = createWhatsAppLink({
       
       <!-- BENTO CARD 1: HERO SPOTLIGHT - Denpasar & Badung (lg:col-span-7) -->
       <article class="lg:col-span-7 bg-white/95 rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
-        <!-- Ambient Interior Gradient Accent -->
-        <div class="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-sky-100/40 via-transparent to-transparent pointer-events-none -mr-16 -mt-16 rounded-full blur-2xl"></div>
+        <!-- Prominent Official Lucide Building Watermark Logo (120px Corner) -->
+        <div class="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none text-navy-950/[0.08] group-hover:text-navy-950/[0.12] transition-colors" aria-hidden="true">
+          <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+            <path d="M10 6h4"></path>
+            <path d="M10 10h4"></path>
+            <path d="M10 14h4"></path>
+            <path d="M10 18h4"></path>
+          </svg>
+        </div>
 
         <div class="relative z-10">
-          <!-- Card Header & Live Status Badge -->
+          <!-- Card Header & Solid Operational Status Badge (Replaces Gimmicky Live Ping) -->
           <div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-5 border-b border-slate-200/70">
             <div class="flex items-center gap-3">
               <div class="w-12 h-12 rounded-2xl bg-iceblue-50 text-iceblue-600 border border-iceblue-200 flex items-center justify-center shadow-2xs shrink-0">
@@ -81,13 +91,14 @@ const customAreaWaUrl = createWhatsAppLink({
               </div>
             </div>
 
-            <!-- Live Status Indicator -->
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold shadow-2xs">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span>Siaga: Estimasi 30 – 45 Menit</span>
+            <!-- Solid Official Operational Badge -->
+            <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-navy-50 text-navy-900 border border-navy-300 text-xs font-bold shadow-2xs">
+              <!-- Lucide Clock -->
+              <svg class="w-3.5 h-3.5 text-navy-800 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Posko Siaga: 06.00 – 23.00 WITA</span>
             </div>
           </div>
 
@@ -163,7 +174,7 @@ const customAreaWaUrl = createWhatsAppLink({
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
-              <span>06.00 – 23.00 WITA Setiap Hari</span>
+              <span>Setiap Hari Termasuk Libur</span>
             </div>
           </div>
         </div>
@@ -183,7 +194,6 @@ const customAreaWaUrl = createWhatsAppLink({
               </svg>
               <span>Hubungi Teknisi Denpasar & Badung</span>
             </span>
-
             
             <svg class="w-4 h-4 shrink-0 transform group-hover/btn:translate-x-1.5 transition-transform duration-300 ease-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
@@ -195,6 +205,16 @@ const customAreaWaUrl = createWhatsAppLink({
 
       <!-- BENTO CARD 2: DARK LUXE - Layanan Khusus Villa & Komersial B2B (lg:col-span-5) -->
       <article class="lg:col-span-5 bg-navy-950 text-white rounded-3xl p-6 sm:p-8 border border-navy-800 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+        <!-- Prominent Official Lucide Palmtree Watermark Logo (120px Corner) -->
+        <div class="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none text-white/[0.12] group-hover:text-white/[0.18] transition-colors z-1" aria-hidden="true">
+          <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4"></path>
+            <path d="M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3"></path>
+            <path d="M5.89 13 4 14l1.5 3 2.5-.5L9 22h2l-.5-6.5L13 14l-1.5-3"></path>
+            <path d="M13 17.5a14.28 14.28 0 0 0 2.5 4.5h2l-.5-5.5 2-2.5-1.5-2.5"></path>
+          </svg>
+        </div>
+
         <!-- Ambient Luxury Villa Backdrop Image -->
         <div class="absolute inset-0 z-0">
           <img
@@ -311,8 +331,16 @@ const customAreaWaUrl = createWhatsAppLink({
       </article>
 
       <!-- BENTO CARD 3: JALUR WISATA & EKSPANSI - Gianyar & Tabanan (lg:col-span-6) -->
-      <article class="lg:col-span-6 bg-white/95 rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-        <div>
+      <article class="lg:col-span-6 bg-white/95 rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+        <!-- Prominent Official Lucide Compass Watermark Logo (120px Corner) -->
+        <div class="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none text-amber-950/[0.08] group-hover:text-amber-950/[0.12] transition-colors" aria-hidden="true">
+          <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+        </div>
+
+        <div class="relative z-10">
           <!-- Header -->
           <div class="flex items-start justify-between gap-3 mb-6 pb-5 border-b border-slate-200/70">
             <div class="flex items-center gap-3">
@@ -365,7 +393,7 @@ const customAreaWaUrl = createWhatsAppLink({
         </div>
 
         <!-- Button -->
-        <div class="pt-4 border-t border-slate-100">
+        <div class="pt-4 border-t border-slate-100 relative z-10">
           <a
             href={gianyarTabananWaUrl}
             target="_blank"
@@ -393,8 +421,16 @@ const customAreaWaUrl = createWhatsAppLink({
       </article>
 
       <!-- BENTO CARD 4: GOOGLE MAPS & LOKASI FLEKSIBEL (lg:col-span-6) -->
-      <article class="lg:col-span-6 bg-gradient-to-br from-white via-sky-50/20 to-sky-100/30 rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-        <div>
+      <article class="lg:col-span-6 bg-gradient-to-br from-white via-sky-50/20 to-sky-100/30 rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+        <!-- Prominent Official Lucide MapPin Watermark Logo (120px Corner) -->
+        <div class="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none text-sky-950/[0.08] group-hover:text-sky-950/[0.12] transition-colors" aria-hidden="true">
+          <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+
+        <div class="relative z-10">
           <!-- Header -->
           <div class="flex items-start justify-between gap-3 mb-6 pb-5 border-b border-slate-200/70">
             <div class="flex items-center gap-3">
@@ -440,8 +476,8 @@ const customAreaWaUrl = createWhatsAppLink({
           </div>
         </div>
 
-        <!-- Dual Action Buttons -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+        <!-- Dual Action Buttons with Full WCAG AAA Contrast -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-slate-100 relative z-10">
           <a
             href={siteConfig.mapsDirectUrl}
             target="_blank"
@@ -459,7 +495,7 @@ const customAreaWaUrl = createWhatsAppLink({
             href={customAreaWaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="group/btn inline-flex items-center justify-center gap-2 text-xs sm:text-[13px] font-bold py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white shadow-xs hover:shadow-md transition-all duration-300"
+            class="group/btn inline-flex items-center justify-center gap-2 text-xs sm:text-[13px] font-bold py-3 px-4 rounded-xl bg-navy-950 hover:bg-wagreen text-white hover:text-slate-950 shadow-xs hover:shadow-md transition-all duration-300"
           >
             <!-- Lucide MessageCircle -->
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
