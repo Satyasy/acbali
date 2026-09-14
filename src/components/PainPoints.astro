@@ -2,25 +2,25 @@
 import { painPoints, createWhatsAppLink } from '../config/site';
 ---
 
-<section id="masalah" class="py-16 sm:py-24 bg-slatewhite border-b border-slate-200/60">
+<section id="masalah" class="py-16 sm:py-24 bg-slatewhite border-b border-slate-200/70">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-100 text-navy-900 text-xs font-semibold mb-3 border border-navy-200/60">
-        <!-- Lucide Stethoscope / Activity -->
-        <svg class="w-3.5 h-3.5 text-navy-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-navy-100/80 text-navy-900 text-xs font-semibold mb-3">
+        <!-- Lucide Wrench -->
+        <svg class="w-3.5 h-3.5 text-navy-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
         </svg>
-        <span>Diagnosa & Penanganan Cepat</span>
+        <span>Diagnosa & Penanganan Ahli</span>
       </div>
       <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
         Solusi Cepat Masalah Pendingin Udara Anda
       </h2>
       <p class="mt-3.5 text-base text-slate-600">
-        Dokumentasi penanganan kendala AC di rumah, villa, dan kantor oleh teknisi berpengalaman Jawara Teknik.
+        Dokumentasi pengerjaan teknisi Jawara Teknik untuk mengatasi berbagai kendala AC di Bali.
       </p>
     </div>
 
-    <!-- Cards Grid with Rich Stock Photos -->
+    <!-- Cards Grid with Clean Photographic Showcase -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {painPoints.map((item) => {
         const waLink = createWhatsAppLink({
@@ -29,62 +29,65 @@ import { painPoints, createWhatsAppLink } from '../config/site';
         });
 
         return (
-          <article class="group relative bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm glass-bubble-hover flex flex-col justify-between">
+          <article class="group bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-xs card-clean-hover flex flex-col justify-between">
             <div>
-              <!-- Photo Thumbnail with Aspect Ratio -->
-              <div class="relative w-full h-44 overflow-hidden bg-slate-100">
+              <!-- Real Photo Preview (Natural Aspect Ratio) -->
+              <div class="relative w-full h-48 overflow-hidden bg-slate-100">
                 <img
                   src={item.image}
                   alt={item.imageAlt}
-                  class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-out"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                   loading="lazy"
                   decoding="async"
                   width="400"
-                  height="220"
+                  height="240"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent"></div>
-                
-                <!-- Badge on Top of Image -->
-                <span class="absolute top-3 right-3 text-[11px] font-bold tracking-wide uppercase px-2.5 py-0.5 rounded-full bg-navy-900/80 text-white backdrop-blur-md border border-white/20">
+                <span class="absolute top-3 right-3 text-[11px] font-bold tracking-wide uppercase px-2.5 py-0.5 rounded-full bg-slate-950/80 text-white backdrop-blur-md">
                   {item.badge}
                 </span>
-
-                <!-- Quick Visual Issue Title -->
-                <div class="absolute bottom-2.5 left-3 right-3 flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-iceblue-500/90 text-white flex items-center justify-center shrink-0 backdrop-blur-sm shadow-sm">
-                    {item.id === 'bocor-air' && (
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" />
-                      </svg>
-                    )}
-                    {item.id === 'kurang-dingin' && (
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z" />
-                      </svg>
-                    )}
-                    {item.id === 'bau-apek' && (
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2" />
-                      </svg>
-                    )}
-                    {item.id === 'bising-getar' && (
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
-                      </svg>
-                    )}
-                  </div>
-                  <span class="text-xs font-semibold text-white truncate drop-shadow">Penanganan Resmi</span>
-                </div>
               </div>
 
               <!-- Card Body Content -->
               <div class="p-5">
-                <h3 class="font-bold text-base text-navy-950 mb-2 group-hover:text-iceblue-600 transition-colors">
-                  {item.title}
-                </h3>
+                <div class="flex items-center gap-2.5 mb-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-navy-50 text-navy-800 flex items-center justify-center shrink-0">
+                    {item.id === 'bocor-air' && (
+                      <!-- Lucide Droplets -->
+                      <svg class="w-4 h-4 text-iceblue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path>
+                        <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path>
+                      </svg>
+                    )}
+                    {item.id === 'kurang-dingin' && (
+                      <!-- Lucide ThermometerSnowflake -->
+                      <svg class="w-4 h-4 text-iceblue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"></path>
+                        <path d="M2 12h5"></path>
+                      </svg>
+                    )}
+                    {item.id === 'bau-apek' && (
+                      <!-- Lucide Wind -->
+                      <svg class="w-4 h-4 text-iceblue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"></path>
+                        <path d="M9.6 4.6A2 2 0 1 1 11 8H2"></path>
+                        <path d="M12.6 19.4A2 2 0 1 0 14 16H2"></path>
+                      </svg>
+                    )}
+                    {item.id === 'bising-getar' && (
+                      <!-- Lucide VolumeX -->
+                      <svg class="w-4 h-4 text-iceblue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="22" x2="16" y1="9" y2="15"></line>
+                        <line x1="16" x2="22" y1="9" y2="15"></line>
+                      </svg>
+                    )}
+                  </div>
+                  <h3 class="font-bold text-base text-navy-950 group-hover:text-iceblue-600 transition-colors">
+                    {item.title}
+                  </h3>
+                </div>
                 
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
                   {item.description}
                 </p>
               </div>
@@ -96,10 +99,10 @@ import { painPoints, createWhatsAppLink } from '../config/site';
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-between w-full pt-3 border-t border-slate-100 text-xs font-bold text-navy-900 hover:text-wagreen-dark transition-colors group-hover:border-iceblue-200"
+                class="inline-flex items-center justify-between w-full pt-3 border-t border-slate-100 text-xs font-bold text-navy-900 hover:text-emerald-600 transition-colors"
               >
                 <span>Konsultasikan Masalah Ini</span>
-                <span class="inline-flex items-center text-wagreen font-extrabold group-hover:translate-x-1 transition-transform">
+                <span class="inline-flex items-center text-emerald-600 font-extrabold group-hover:translate-x-0.5 transition-transform">
                   WhatsApp &rarr;
                 </span>
               </a>
