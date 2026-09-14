@@ -7,8 +7,13 @@ const villaB2BWaUrl = createWhatsAppLink({
 });
 ---
 
-<section id="paket-villa" class="py-16 sm:py-24 bg-slatewhite border-b border-slate-200/70">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="paket-villa" class="relative py-16 sm:py-24 bg-slatewhite border-b border-slate-200/70 overflow-hidden">
+  <!-- Outer Subtle Blueprint Square Grid Background -->
+  <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <div class="w-full h-full bg-grid-blueprint [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="relative bg-navy-950 rounded-3xl overflow-hidden shadow-lg border border-navy-800">
       
       <!-- Ambient Image Backdrop (Luxury Bali Villa - Clearly Visible) -->
@@ -23,6 +28,7 @@ const villaB2BWaUrl = createWhatsAppLink({
           height="800"
         />
         <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-navy-900/85"></div>
+        <div class="absolute inset-0 bg-grid-blueprint-dark [mask-image:radial-gradient(ellipse_80%_70%_at_50%_50%,black_40%,transparent_100%)] pointer-events-none z-1 opacity-70"></div>
       </div>
 
       <div class="relative z-10 p-8 sm:p-12 lg:p-16">

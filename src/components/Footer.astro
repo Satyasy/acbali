@@ -5,8 +5,12 @@ const currentYear = new Date().getFullYear();
 const waFooterLink = createWhatsAppLink();
 ---
 
-<footer class="bg-navy-950 text-white pt-16 pb-12 border-t border-navy-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<footer class="relative bg-navy-950 text-white pt-16 pb-12 border-t border-navy-800 overflow-hidden">
+  <!-- Architectural Dark Blueprint Grid for Footer -->
+  <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <div class="w-full h-full bg-grid-blueprint-dark [mask-image:radial-gradient(ellipse_80%_70%_at_50%_30%,black_30%,transparent_100%)] opacity-60"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
       
       <!-- Brand & NAP Column -->
