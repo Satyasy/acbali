@@ -148,7 +148,7 @@ export const pricingList = [
     badge: "Garansi Jujur",
     description: "Inspeksi digital menyeluruh sumber kerusakan AC mati, bocor, atau berisik sebelum tindakan perbaikan.",
     serviceQuery: "Pengecekan & Diagnosis Kerusakan",
-    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Inspeksi dan cek kerusakan sistem AC dengan alat digital",
   },
   {
