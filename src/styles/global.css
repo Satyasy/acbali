@@ -121,5 +121,13 @@
     background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1.25px, transparent 1.25px);
     background-size: 22px 22px;
   }
+
+  /* Architectural Blueprint Square Grid (Engineering aesthetic - Linear style) */
+  .bg-grid-blueprint {
+    background-image: 
+      linear-gradient(to right, rgba(15, 76, 129, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 76, 129, 0.055) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
 }
 
