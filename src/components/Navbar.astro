@@ -4,15 +4,15 @@ import { siteConfig, createWhatsAppLink } from '../config/site';
 const defaultWaUrl = createWhatsAppLink();
 ---
 
-<nav class="bg-white/95 backdrop-blur-md sticky top-10 z-30 border-b border-slate-200/80 transition-all shadow-xs">
+<nav class="bg-white/95 backdrop-blur-md sticky top-[27px] sm:top-[33px] z-30 border-b border-slate-200/80 transition-all shadow-xs">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 sm:h-20">
+    <div class="flex items-center justify-between h-12 sm:h-14">
       
       <!-- Brand Logo (Symmetric Lucide Snowflake Emblem) -->
-      <a href="/" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-navy-800 text-iceblue-400 flex items-center justify-center shadow-sm group-hover:bg-navy-900 group-hover:text-iceblue-300 transition-colors">
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-navy-800 text-iceblue-400 flex items-center justify-center shadow-xs group-hover:bg-navy-900 group-hover:text-iceblue-300 transition-colors">
           <!-- Official Symmetrical Lucide Snowflake -->
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="2" x2="22" y1="12" y2="12"></line>
             <line x1="12" x2="12" y1="2" y2="22"></line>
             <path d="m20 16-4-4 4-4"></path>
@@ -22,20 +22,20 @@ const defaultWaUrl = createWhatsAppLink();
           </svg>
         </div>
         <div>
-          <div class="flex items-center gap-1.5 leading-tight">
-            <span class="font-extrabold text-lg tracking-tight text-navy-950 font-sans">JAWARA</span>
-            <span class="font-bold text-lg tracking-tight text-iceblue-600 font-sans">TEKNIK</span>
+          <div class="flex items-center gap-1 leading-none">
+            <span class="font-extrabold text-base sm:text-lg tracking-tight text-navy-950 font-sans">JAWARA</span>
+            <span class="font-bold text-base sm:text-lg tracking-tight text-iceblue-600 font-sans">TEKNIK</span>
           </div>
-          <p class="text-[11px] text-slate-500 font-medium tracking-wide">Servis AC Bergaransi Bali</p>
+          <p class="text-[10px] text-slate-500 font-medium tracking-wide leading-none mt-0.5">Servis AC Bali</p>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <div class="hidden md:flex items-center space-x-7 text-sm font-semibold text-slate-700">
-        <a href="#masalah" class="hover:text-iceblue-600 transition-colors py-1">Kendala AC</a>
+      <div class="hidden md:flex items-center space-x-6 text-[13px] font-semibold text-slate-700">
         <a href="#tarif" class="hover:text-iceblue-600 transition-colors py-1">Daftar Tarif</a>
+        <a href="#masalah" class="hover:text-iceblue-600 transition-colors py-1">Kendala AC</a>
         <a href="#paket-villa" class="hover:text-iceblue-600 transition-colors py-1">Paket Villa & B2B</a>
-        <a href="#wilayah" class="hover:text-iceblue-600 transition-colors py-1">Wilayah Layanan</a>
+        <a href="#wilayah" class="hover:text-iceblue-600 transition-colors py-1">Wilayah Bali</a>
         <a href="#cara-order" class="hover:text-iceblue-600 transition-colors py-1">Cara Pesan</a>
         <a href="#faq" class="hover:text-iceblue-600 transition-colors py-1">FAQ</a>
       </div>
@@ -46,13 +46,13 @@ const defaultWaUrl = createWhatsAppLink();
           href={defaultWaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 btn-cta-whatsapp px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm"
+          class="inline-flex items-center gap-2 btn-cta-whatsapp px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-[13px]"
         >
-          <!-- WhatsApp Icon -->
-          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
-            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.27-2.42 5.82a8.19 8.19 0 0 1-5.82 2.42c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.5 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.52 1.09 2.52.73 2.98.69.45-.05 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+          <!-- Official Lucide MessageCircle (100% Symmetrical) -->
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
           </svg>
-          <span class="hidden sm:inline">Hubungi</span> WhatsApp
+          <span class="hidden sm:inline">Chat</span> WhatsApp
         </a>
       </div>
     </div>

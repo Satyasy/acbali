@@ -2,89 +2,158 @@
 import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
 ---
 
-<section id="wilayah" class="py-16 sm:py-24 bg-white border-b border-slate-200/60">
+<section id="wilayah" class="py-16 sm:py-24 bg-slate-50/60 border-b border-slate-200/60">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
       <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 text-iceblue-700 text-xs font-semibold mb-3 border border-iceblue-200">
         <!-- Lucide MapPin -->
-        <svg class="w-3.5 h-3.5 text-iceblue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        <svg class="w-3.5 h-3.5 text-iceblue-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
         </svg>
-        <span>Cakupan Teknisi Siaga di Bali</span>
+        <span>Posko Teknisi Tersebar di Bali</span>
       </div>
       <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
         Jangkauan Wilayah Layanan Panggilan Teknisi di Bali
       </h2>
-      <p class="mt-3.5 text-base text-slate-600">
-        Teknisi kami tersebar di pos-pos strategis untuk memastikan estimasi tiba tercepat ke lokasi Anda.
+      <p class="mt-3.5 text-sm sm:text-base text-slate-600">
+        Teknisi kami siaga di titik-titik strategis untuk memastikan kedatangan tepat waktu langsung ke lokasi Anda.
       </p>
     </div>
 
-    <!-- Regions Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-      {coverageAreas.map((area) => (
-        <article class="bg-slatewhite rounded-2xl p-6 sm:p-7 border border-slate-200/90 hover:border-iceblue-400 transition-all duration-300 shadow-sm glass-bubble-hover flex flex-col justify-between">
-          <div>
-            <!-- Region Header -->
-            <div class="flex items-center justify-between gap-2 mb-5 pb-4 border-b border-slate-200/70">
-              <div class="flex items-center gap-2.5">
-                <div class="w-9 h-9 rounded-xl bg-navy-800 text-white flex items-center justify-center font-bold shadow-sm">
-                  <!-- Lucide MapPin -->
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <h3 class="font-extrabold text-lg text-navy-950">{area.regency}</h3>
-              </div>
-              <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-iceblue-100 text-iceblue-800 border border-iceblue-200">
-                {area.badge}
-              </span>
-            </div>
+    <!-- Regions Grid with Enhanced Visual Styling & Modern Glass Accents -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 mb-12">
+      {coverageAreas.map((area, index) => {
+        const areaWaUrl = createWhatsAppLink({
+          service: `Layanan Teknisi Wilayah ${area.regency}`,
+          notes: `Halo Jawara Teknik, saya butuh teknisi AC di wilayah ${area.regency}. Mohon info jadwal tercepat.`,
+        });
 
-            <!-- District / Locality Chips -->
-            <div class="space-y-4">
-              {area.districts.map((district) => (
-                <div>
-                  <h4 class="text-xs font-bold text-navy-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-iceblue-600"></span>
-                    {district.name}
-                  </h4>
-                  <div class="flex flex-wrap gap-1.5">
-                    {district.sub.map((subArea) => (
-                      <span class="text-xs px-2.5 py-1 rounded-lg bg-white text-slate-700 border border-slate-200 hover:bg-iceblue-50 hover:border-iceblue-300 transition-colors shadow-2xs">
-                        {subArea}
-                      </span>
-                    ))}
+        // Dynamic theme styling per region
+        const isDenpasar = index === 0;
+        const isBadung = index === 1;
+
+        return (
+          <article class="group bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 hover:border-iceblue-400/80 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+            <!-- Subtle Top Accent Gradient Line -->
+            <div class={`absolute top-0 left-0 right-0 h-1.5 ${
+              isDenpasar
+                ? 'bg-gradient-to-r from-iceblue-500 to-navy-600'
+                : isBadung
+                ? 'bg-gradient-to-r from-emerald-400 to-iceblue-500'
+                : 'bg-gradient-to-r from-navy-600 to-slate-700'
+            }`}></div>
+
+            <div>
+              <!-- Region Header -->
+              <div class="flex items-start justify-between gap-3 mb-6 pt-1 pb-5 border-b border-slate-100">
+                <div class="flex items-center gap-3">
+                  <div class={`w-11 h-11 rounded-2xl flex items-center justify-center shadow-xs shrink-0 ${
+                    isDenpasar
+                      ? 'bg-iceblue-50 text-iceblue-600 border border-iceblue-200/60'
+                      : isBadung
+                      ? 'bg-emerald-50 text-emerald-600 border border-emerald-200/60'
+                      : 'bg-navy-50 text-navy-800 border border-navy-200/60'
+                  }`}>
+                    {isDenpasar && (
+                      <!-- Lucide Building2 -->
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                        <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                        <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                        <path d="M10 6h4"></path>
+                        <path d="M10 10h4"></path>
+                        <path d="M10 14h4"></path>
+                        <path d="M10 18h4"></path>
+                      </svg>
+                    )}
+                    {isBadung && (
+                      <!-- Lucide Palmtree -->
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4"></path>
+                        <path d="M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3"></path>
+                        <path d="M5.89 13 4 14l1.5 3 2.5-.5L9 22h2l-.5-6.5L13 14l-1.5-3"></path>
+                        <path d="M13 17.5a14.28 14.28 0 0 0 2.5 4.5h2l-.5-5.5 2-2.5-1.5-2.5"></path>
+                      </svg>
+                    )}
+                    {!isDenpasar && !isBadung && (
+                      <!-- Lucide Compass -->
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                      </svg>
+                    )}
+                  </div>
+                  <div>
+                    <h3 class="font-extrabold text-lg text-navy-950 leading-tight">{area.regency}</h3>
+                    <p class="text-[11px] text-slate-500 font-medium">
+                      {isDenpasar ? 'Pusat Kota & Residensial' : isBadung ? 'Hub Villa, Hotel & Bisnis' : 'Jalur Residensial & Wisata'}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
 
-          <!-- Quick Action per Region -->
-          <div class="mt-6 pt-4 border-t border-slate-200/70">
-            <a
-              href={createWhatsAppLink({
-                service: `Layanan Teknisi Wilayah ${area.regency}`,
-                notes: `Saya berada di area ${area.regency}, apakah ada teknisi siaga saat ini?`,
-              })}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-full inline-flex items-center justify-center gap-2 text-xs font-bold py-2.5 px-3 rounded-xl bg-white hover:bg-wagreen hover:text-slate-950 text-navy-900 border border-slate-200 shadow-2xs transition-colors"
-            >
-              <span>Cek Teknisi di {area.regency}</span>
-              <span>&rarr;</span>
-            </a>
-          </div>
-        </article>
-      ))}
+                <span class={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0 border ${
+                  isDenpasar
+                    ? 'bg-iceblue-50 text-iceblue-700 border-iceblue-200'
+                    : isBadung
+                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                    : 'bg-slate-100 text-slate-700 border-slate-200'
+                }`}>
+                  {area.badge}
+                </span>
+              </div>
+
+              <!-- District & Locality Chips -->
+              <div class="space-y-4 mb-6">
+                {area.districts.map((district) => (
+                  <div class="bg-slate-50/70 rounded-2xl p-3.5 border border-slate-100">
+                    <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-iceblue-500"></span>
+                      {district.name}
+                    </h4>
+                    <div class="flex flex-wrap gap-1.5">
+                      {district.sub.map((subArea) => (
+                        <span class="text-xs px-2.5 py-1 rounded-lg bg-white text-slate-700 font-medium border border-slate-200/90 shadow-2xs hover:border-iceblue-400 hover:text-iceblue-700 transition-colors">
+                          {subArea}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Interactive Quick Action Button with Silky Smooth Sliding Arrow -->
+            <div class="pt-2">
+              <a
+                href={areaWaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group/btn w-full inline-flex items-center justify-between text-xs sm:text-[13px] font-bold py-3 px-4 rounded-xl bg-navy-950 hover:bg-wagreen text-white hover:text-slate-950 shadow-xs hover:shadow-lg transition-all duration-300"
+              >
+                <span class="flex items-center gap-2">
+                  <!-- Official Lucide MessageCircle -->
+                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                  </svg>
+                  <span>Cek Teknisi di {area.regency}</span>
+                </span>
+                
+                <!-- Silky Smooth Animated Arrow -->
+                <svg class="w-4 h-4 shrink-0 transform group-hover/btn:translate-x-1.5 transition-transform duration-300 ease-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+        );
+      })}
     </div>
 
     <!-- Area Note Banner & Google Maps Verified Profile -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-      <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between gap-4">
+      <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between gap-4 group hover:border-iceblue-400 transition-colors">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-iceblue-50 text-iceblue-600 border border-iceblue-200/60 flex items-center justify-center shrink-0">
             <!-- Lucide MapPin -->
@@ -94,7 +163,7 @@ import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
             </svg>
           </div>
           <div>
-            <h4 class="font-bold text-sm text-navy-950">Terdaftar di Google Maps</h4>
+            <h4 class="font-bold text-sm text-navy-950">Terdaftar Resmi di Google Maps</h4>
             <p class="text-xs text-slate-500">Service AC Panggilan Jawara Teknik</p>
           </div>
         </div>
@@ -102,10 +171,10 @@ import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
           href={siteConfig.mapsDirectUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1 text-xs font-bold text-iceblue-600 hover:text-iceblue-700 underline shrink-0"
+          class="inline-flex items-center gap-1.5 text-xs font-bold text-iceblue-600 hover:text-iceblue-700 shrink-0 group/link"
         >
           <span>Buka Maps</span>
-          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-3.5 h-3.5 transform group-hover/link:translate-x-0.5 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
             <polyline points="15 3 21 3 21 9"></polyline>
             <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -113,7 +182,7 @@ import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
         </a>
       </div>
 
-      <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between gap-4">
+      <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between gap-4 group hover:border-emerald-400 transition-colors">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center shrink-0">
             <!-- Lucide Navigation -->
@@ -122,18 +191,21 @@ import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
             </svg>
           </div>
           <div>
-            <h4 class="font-bold text-sm text-navy-950">Area Anda Belum Ada?</h4>
-            <p class="text-xs text-slate-500">Tetap melayani se-Bali sesuai jadwal</p>
+            <h4 class="font-bold text-sm text-navy-950">Lokasi Anda Belum Terdaftar?</h4>
+            <p class="text-xs text-slate-500">Tetap melayani se-Bali dengan konfirmasi jadwal</p>
           </div>
         </div>
         <a
           href={createWhatsAppLink({ service: "Cek Wilayah Khusus Bali" })}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 hover:text-emerald-700 underline shrink-0"
+          class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 shrink-0 group/link"
         >
           <span>Tanya Admin</span>
-          <span>&rarr;</span>
+          <svg class="w-3.5 h-3.5 transform group-hover/link:translate-x-0.5 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
         </a>
       </div>
     </div>

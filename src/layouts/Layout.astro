@@ -14,7 +14,7 @@ const {
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://jawara-teknik.com').href;
 
-// JSON-LD HVAC / Local Business Structured Data
+// 1. JSON-LD HVAC / Local Business Structured Data
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HVACBusiness"],
@@ -111,6 +111,69 @@ const businessSchema = {
   }
 };
 
+// 2. Google Search Sitelinks & WebSite Schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://jawara-teknik.com/#website",
+  "url": "https://jawara-teknik.com",
+  "name": "Jawara Teknik - Servis AC Panggilan Bali",
+  "alternateName": "Jawara Teknik Bali",
+  "description": siteConfig.description,
+  "inLanguage": "id-ID"
+};
+
+// 3. Google Search Sitelinks Navigation Elements Schema
+const sitelinksSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "SiteNavigationElement",
+      "position": 1,
+      "name": "Daftar Tarif Servis AC",
+      "description": "Harga pasti transparan cuci AC standar, inverter, tambah freon, dan bongkar pasang di Bali",
+      "url": "https://jawara-teknik.com/#tarif"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 2,
+      "name": "Solusi Keluhan & Kerusakan AC",
+      "description": "Diagnosa penanganan AC tidak dingin, bocor air menetes, bau apek, dan suara bising",
+      "url": "https://jawara-teknik.com/#masalah"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 3,
+      "name": "Paket Rutin Villa & B2B Bali",
+      "description": "Kontrak pemeliharaan berkala AC untuk villa, resort, kafe, dan perkantoran dengan invoice resmi",
+      "url": "https://jawara-teknik.com/#paket-villa"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 4,
+      "name": "Cakupan Wilayah Siaga Bali",
+      "description": "Area pos teknisi panggilan Denpasar, Badung, Canggu, Seminyak, Kuta, Sanur, Ubud, Gianyar, Tabanan",
+      "url": "https://jawara-teknik.com/#wilayah"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 5,
+      "name": "Alur 3 Langkah Pemesanan",
+      "description": "Tata cara mudah panggil teknisi via WhatsApp tanpa antre dan respon kilat 60 menit",
+      "url": "https://jawara-teknik.com/#cara-order"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 6,
+      "name": "Tanya Jawab (FAQ)",
+      "description": "Pertanyaan seputar garansi 30 hari, estimasi durasi servis, dan kesiapan teknisi hari libur",
+      "url": "https://jawara-teknik.com/#faq"
+    }
+  ]
+};
+
+// 4. FAQ Schema for Google Rich Results
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -157,13 +220,18 @@ const faqSchema = {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={siteConfig.heroImage} />
 
-    <!-- Preconnect & Fonts -->
+    <!-- Performance: Preload Critical Hero Image & Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href={siteConfig.heroImage} fetchpriority="high" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F4C81' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='2' x2='22' y1='12' y2='12'/><line x1='12' x2='12' y1='2' y2='22'/><path d='m20 16-4-4 4-4'/><path d='m4 8 4 4-4 4'/><path d='m16 4-4 4-4-4'/><path d='m8 20 4-4 4 4'/></svg>" />
 
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org Structured Data (HVAC, WebSite Sitelinks, FAQ) -->
     <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(sitelinksSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </head>
   <body class="bg-slatewhite text-slate-900 selection:bg-iceblue-600 selection:text-white min-h-screen flex flex-col font-sans pb-20 lg:pb-0">
