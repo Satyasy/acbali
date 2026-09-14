@@ -39,7 +39,7 @@ export const siteConfig: SiteConfig = {
   operatingHoursShort: "Buka 24 Jam Non-Stop",
   responseTime: "Respon Cepat 60 Menit",
   warranty: "Garansi 30 Hari",
-  heroImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1280&q=75",
+  heroImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=75",
   address: {
     street: "Jl. Teuku Umar No. 88",
     subDistrict: "Dauh Puri Klod, Denpasar Barat",
