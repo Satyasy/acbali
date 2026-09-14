@@ -7,206 +7,126 @@ const primaryWaUrl = createWhatsAppLink({
 });
 ---
 
-<section id="hero" class="relative pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-14 lg:pb-24 overflow-hidden bg-white border-b border-slate-200/70">
+<section id="hero" class="relative min-h-[calc(100vh-80px)] max-h-[820px] flex items-center justify-center pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-8 lg:pb-10 overflow-hidden bg-slate-950">
   
-  <!-- Subtle Blueprint Square Grid Background -->
-  <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
-    <div class="w-full h-full bg-grid-blueprint [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
+  <!-- Clearly Visible Hero Background Photo with Subtle Dark Cinematic Gradient -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src={siteConfig.heroImage}
+      alt="Teknisi profesional AC di Denpasar Badung Bali"
+      class="w-full h-full object-cover object-center opacity-80 filter brightness-95 contrast-105"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      width="1920"
+      height="1080"
+    />
+    <!-- Clean dark overlay for crisp text contrast without hiding the photo -->
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/45"></div>
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="max-w-4xl mx-auto text-center">
       
-      <!-- LEFT COLUMN: Headline, Value Proposition & Pill CTA Button -->
-      <div class="lg:col-span-6 flex flex-col items-start text-left">
-        
-        <!-- Trust Status Pill (Linear/Apple style) -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-50 border border-navy-200/80 text-navy-900 text-xs font-semibold mb-5 shadow-2xs">
-          <!-- Official Lucide MapPin -->
-          <svg class="w-3.5 h-3.5 text-iceblue-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          <span>Siaga 24 Jam Non-Stop</span>
-          <span class="text-slate-300">•</span>
-          <span class="text-iceblue-700 font-bold">Respon Tiba 60 Menit</span>
-        </div>
-
-        <!-- Main H1 Headline (Bold, editorial typography matching sample) -->
-        <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-black text-navy-950 tracking-tight leading-[1.12] mb-5">
-          Servis & Cuci AC <br class="hidden sm:inline" />
-          Panggilan Cepat <br class="hidden sm:inline" />
-          di Seluruh Bali
-        </h1>
-
-        <!-- Sub-headline Description -->
-        <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mb-8 max-w-xl">
-          Solusi tuntas AC bocor air, tidak dingin, bau apek, hingga isi freon. Teknisi bersertifikat tiba tepat waktu di hunian, kos, ruko, hingga standar hospitality villa mewah.
-        </p>
-
-        <!-- CTA Buttons Row (Desktop: inside left column; Mobile: below mosaic cards matching sample/layout.png) -->
-        <div class="hidden sm:flex flex-row items-center gap-3.5 w-auto mb-10">
-          <!-- Primary Dark Rounded Pill Button -->
-          <a
-            href={primaryWaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-3 bg-navy-950 hover:bg-navy-900 text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 group"
-          >
-            <!-- Lucide MessageCircle -->
-            <svg class="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-            </svg>
-            <span>Pesan Teknisi Sekarang</span>
-            <!-- Lucide ArrowRight -->
-            <svg class="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </a>
-
-          <!-- Secondary Pricing Link Pill -->
-          <a
-            href="#tarif"
-            class="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200/80 text-navy-900 font-semibold text-sm sm:text-base px-6 py-3.5 rounded-full border border-slate-200/90 transition-all duration-200"
-          >
-            <span>Lihat Daftar Tarif</span>
-          </a>
-        </div>
-
-        <!-- 3 Trust Highlights -->
-        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 w-full max-w-lg">
-          <div>
-            <div class="text-xl sm:text-2xl font-extrabold text-navy-950">30 Hari</div>
-            <div class="text-xs text-slate-500 font-medium">Garansi Penuh</div>
-          </div>
-          <div>
-            <div class="text-xl sm:text-2xl font-extrabold text-navy-950">60 Menit</div>
-            <div class="text-xs text-slate-500 font-medium">Respon Armada</div>
-          </div>
-          <div>
-            <div class="text-xl sm:text-2xl font-extrabold text-navy-950">4.9 / 5.0</div>
-            <div class="text-xs text-slate-500 font-medium">Rating Pelanggan</div>
-          </div>
-        </div>
-
+      <!-- Top Pill Indicator (Apple Frosted Glass) -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-apple-pill text-slate-100 text-xs font-semibold mb-3 sm:mb-4 shadow-xs">
+        <!-- Lucide MapPin -->
+        <svg class="w-3.5 h-3.5 text-iceblue-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span>Siaga 24 Jam Non-Stop</span>
+        <span class="text-slate-400">•</span>
+        <span class="text-iceblue-200">Respon Tiba 60 Menit</span>
       </div>
 
-      <!-- RIGHT COLUMN: Asymmetrical 3-Card Photo Mosaic with Bali Silhouette (matching sample/layout.png) -->
-      <div class="lg:col-span-6 relative">
-        
-        <!-- Subtle Bali Island Geographic Silhouette in Background -->
-        <div class="absolute -inset-4 sm:-inset-8 pointer-events-none select-none flex items-center justify-center opacity-35" aria-hidden="true">
-          <svg class="w-full h-full max-w-lg text-slate-200" viewBox="0 0 800 500" fill="currentColor">
-            <!-- Stylized smooth Bali Island silhouette map -->
-            <path d="M120,240 C140,210 190,190 250,180 C320,170 390,160 460,175 C530,190 590,200 650,225 C700,245 720,275 690,310 C660,345 610,350 560,340 C510,330 460,345 400,365 C340,385 280,395 220,380 C170,365 130,340 110,300 C95,270 100,255 120,240 Z" opacity="0.4"></path>
-            <!-- West Bali peninsula extension -->
-            <path d="M80,260 C95,245 120,250 140,270 C130,290 105,295 85,285 C75,280 70,270 80,260 Z" opacity="0.3"></path>
-            <!-- Bukit Peninsula South Bali -->
-            <path d="M380,370 C410,365 445,385 450,420 C455,450 430,475 395,470 C365,465 350,435 360,405 C365,390 370,375 380,370 Z" opacity="0.35"></path>
+      <!-- Main H1 Headline -->
+      <h1 class="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.2] mb-3 sm:mb-4 drop-shadow-md">
+        Jasa Servis & Cuci AC Panggilan Cepat di <span class="text-gradient-ice">Denpasar, Badung</span>, dan Sekitarnya
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="text-xs sm:text-sm lg:text-base text-slate-100 font-normal leading-relaxed mb-6 sm:mb-7 max-w-2xl mx-auto drop-shadow-xs">
+        Teknisi ahli berpengalaman siap menuju rumah, villa, kos, dan kantor Anda di seluruh Bali. Pengerjaan rapi, tarif pasti di awal, dan garansi 30 hari penuh.
+      </p>
+
+      <!-- Primary & Secondary CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-7 sm:mb-9">
+        <!-- Primary WhatsApp CTA Button -->
+        <a
+          href={primaryWaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 btn-cta-whatsapp text-slate-950 font-bold text-sm sm:text-base px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl shadow-lg"
+        >
+          <!-- Official Lucide MessageCircle (100% Symmetrical) -->
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
           </svg>
+          <span>Panggil Teknisi via WhatsApp</span>
+        </a>
+
+        <!-- Secondary Pricing CTA Button (Apple Glass) -->
+        <a
+          href="#tarif"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-white font-bold text-sm sm:text-base px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl glass-apple-pill shadow-xs"
+        >
+          <!-- Lucide Receipt -->
+          <svg class="w-4 h-4 text-iceblue-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1Z"></path>
+            <path d="M16 8h-8"></path>
+            <path d="M16 12h-8"></path>
+            <path d="M12 16h-4"></path>
+          </svg>
+          <span>Lihat Daftar Tarif</span>
+        </a>
+      </div>
+
+      <!-- Trust Badges Grid (Apple Vibrant Frosted Glass) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
+        
+        <!-- Trust Badge 1: Garansi 30 Hari -->
+        <div class="glass-apple-dark p-3 sm:p-3.5 rounded-xl flex items-center gap-3 transition-all">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-iceblue-500/20 text-iceblue-300 border border-iceblue-300/30 flex items-center justify-center shrink-0 shadow-inner">
+            <!-- Official Lucide ShieldCheck -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-bold text-white text-xs sm:text-sm">Garansi 30 Hari Penuh</h2>
+            <p class="text-[11px] sm:text-xs text-slate-200">Klaim mudah jika kendala kembali muncul.</p>
+          </div>
         </div>
 
-        <!-- Asymmetrical Mosaic Cards Grid -->
-        <div class="relative z-10 grid grid-cols-12 gap-4 sm:gap-5 items-center">
-          
-          <!-- TALL CARD ON LEFT (col-span-7) -->
-          <div class="col-span-7 relative group">
-            <div class="h-[360px] sm:h-[440px] rounded-xl overflow-hidden shadow-lg border border-slate-200/90 relative bg-slate-100">
-              <img
-                src={siteConfig.heroImage}
-                alt="Teknisi Servis AC Profesional di Bali"
-                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-                width="800"
-                height="880"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent"></div>
-              
-              <!-- Floating Pill Badge on Card -->
-              <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-lg bg-white/95 backdrop-blur-md border border-white/80 shadow-xs">
-                <div class="flex items-center gap-2.5">
-                  <div class="w-8 h-8 rounded-full bg-navy-900 text-iceblue-400 flex items-center justify-center shrink-0">
-                    <!-- Lucide Wrench -->
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-xs font-bold text-navy-950">Teknisi Bersertifikat</p>
-                    <p class="text-[11px] text-slate-500">Peralatan lengkap & terpal higienis</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <!-- Trust Badge 2: Multi-Merek -->
+        <div class="glass-apple-dark p-3 sm:p-3.5 rounded-xl flex items-center gap-3 transition-all">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-navy-500/30 text-iceblue-300 border border-navy-300/30 flex items-center justify-center shrink-0 shadow-inner">
+            <!-- Official Lucide Wrench -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
           </div>
-
-          <!-- 2 STACKED CARDS ON RIGHT (col-span-5) -->
-          <div class="col-span-5 flex flex-col gap-4 sm:gap-5">
-            
-            <!-- STACKED TOP CARD: Outdoor / High Pressure Steam Wash -->
-            <div class="h-[172px] sm:h-[210px] rounded-xl overflow-hidden shadow-md border border-slate-200/90 relative bg-slate-100 group">
-              <img
-                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
-                alt="Cuci Evaporator & Kondensor Outdoor AC Bali"
-                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                loading="eager"
-                decoding="async"
-                width="600"
-                height="420"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent"></div>
-              
-              <div class="absolute bottom-3 left-3 right-3 text-white">
-                <span class="inline-block px-2 py-0.5 rounded-full bg-iceblue-500/80 text-[10px] font-bold text-white mb-1">Outdoor Unit</span>
-                <p class="text-xs font-bold leading-tight drop-shadow-xs">Cuci Bersih Total</p>
-              </div>
-            </div>
-
-            <!-- STACKED BOTTOM CARD: Luxury Villa AC Comfort -->
-            <div class="h-[172px] sm:h-[210px] rounded-xl overflow-hidden shadow-md border border-slate-200/90 relative bg-slate-100 group">
-              <img
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80"
-                alt="AC Sejuk Nyaman di Villa Bali"
-                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                loading="eager"
-                decoding="async"
-                width="600"
-                height="420"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent"></div>
-              
-              <div class="absolute bottom-3 left-3 right-3 text-white">
-                <span class="inline-block px-2 py-0.5 rounded-full bg-emerald-500/80 text-[10px] font-bold text-white mb-1">Dingin Optimal</span>
-                <p class="text-xs font-bold leading-tight drop-shadow-xs">Standar Villa Mewah</p>
-              </div>
-            </div>
-
+          <div>
+            <h2 class="font-bold text-white text-xs sm:text-sm">Teknisi Multi-Merek</h2>
+            <p class="text-[11px] sm:text-xs text-slate-200">Daikin, Panasonic, Sharp, Gree, LG.</p>
           </div>
-
         </div>
 
-        <!-- Mobile CTA Button Below Cards (matching sample/layout.png mobile layout) -->
-        <div class="mt-6 flex flex-col gap-3 sm:hidden">
-          <a
-            href={primaryWaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-3 bg-navy-950 hover:bg-navy-900 text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-md transition-all duration-200"
-          >
-            <!-- Lucide MessageCircle -->
-            <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+        <!-- Trust Badge 3: Tanpa Biaya Tersembunyi -->
+        <div class="glass-apple-dark p-3 sm:p-3.5 rounded-xl flex items-center gap-3 transition-all">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-300/30 flex items-center justify-center shrink-0 shadow-inner">
+            <!-- Official Lucide CheckCircle2 -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m9 12 2 2 4-4"></path>
             </svg>
-            <span>Pesan Teknisi Sekarang</span>
-            <!-- Lucide ArrowRight -->
-            <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </a>
+          </div>
+          <div>
+            <h2 class="font-bold text-white text-xs sm:text-sm">Tanpa Biaya Tersembunyi</h2>
+            <p class="text-[11px] sm:text-xs text-slate-200">Tarif transparan disetujui di awal.</p>
+          </div>
         </div>
 
       </div>
