@@ -4,7 +4,7 @@ import { orderingSteps, createWhatsAppLink } from '../config/site';
 const stepWaUrl = createWhatsAppLink();
 ---
 
-<section id="cara-order" class="relative py-16 sm:py-24 bg-white border-b border-slate-200/60 overflow-hidden">
+<section id="cara-order" class="relative py-16 sm:py-24 bg-white border-b border-slate-200/60 overflow-hidden section-content-visibility">
   <!-- Subtle Architectural Blueprint Square Grid Background (Linear style) -->
   <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
     <div class="w-full h-full bg-grid-blueprint [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
@@ -32,7 +32,7 @@ const stepWaUrl = createWhatsAppLink();
     <!-- Steps Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
       {orderingSteps.map((item, index) => (
-        <article class="group relative bg-slatewhite rounded-3xl p-8 border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+        <article class="group relative glass-apple-card rounded-xl p-8 flex flex-col justify-between">
           <div>
             <!-- Number badge -->
             <div class="flex items-center justify-between mb-6">

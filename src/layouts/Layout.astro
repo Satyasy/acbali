@@ -8,7 +8,7 @@ interface Props {
 }
 
 const {
-  title = `${siteConfig.name} - Jasa Servis & Cuci AC Panggilan Cepat di Bali (06.00 – 23.00 WITA)`,
+  title = `${siteConfig.name} - Jasa Servis & Cuci AC Panggilan Cepat di Bali (24 Jam Non-Stop)`,
   description = siteConfig.description,
 } = Astro.props;
 
@@ -57,8 +57,8 @@ const businessSchema = {
         "Saturday",
         "Sunday"
       ],
-      "opens": "06:00",
-      "closes": "23:00"
+      "opens": "00:00",
+      "closes": "23:59"
     }
   ],
   "areaServed": [
@@ -220,7 +220,9 @@ const faqSchema = {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={siteConfig.heroImage} />
 
-    <!-- Performance: Preload Critical Hero Image & Preconnect Fonts -->
+    <!-- Performance: Preload Critical Hero Image & Preconnect Fonts & Images -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="image" href={siteConfig.heroImage} fetchpriority="high" />
@@ -238,7 +240,7 @@ const faqSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(sitelinksSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </head>
-  <body class="bg-slatewhite text-slate-900 selection:bg-iceblue-600 selection:text-white min-h-screen flex flex-col font-sans pb-20 lg:pb-0">
+  <body class="bg-slatewhite text-slate-900 selection:bg-iceblue-600 selection:text-white min-h-screen flex flex-col font-sans">
     <slot />
   </body>
 </html>
