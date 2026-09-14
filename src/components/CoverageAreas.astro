@@ -1,28 +1,39 @@
 ---
 import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
+
+const denpasarArea = coverageAreas[0];
+const badungArea = coverageAreas[1];
+const extraArea = coverageAreas[2];
+
+const denpasarBadungWaUrl = createWhatsAppLink({
+  service: "Layanan Teknisi Wilayah Denpasar & Badung",
+  notes: "Halo Jawara Teknik, saya butuh teknisi AC di Denpasar/Badung. Mohon info teknisi terdekat yang siaga.",
+});
+
+const villaB2BWaUrl = createWhatsAppLink({
+  service: "Paket Kontrak Pemeliharaan Rutin Villa & Homestay",
+  notes: "Halo Jawara Teknik, saya ingin konsultasi kontrak perawatan AC untuk villa/properti komersial di Bali.",
+});
+
+const gianyarTabananWaUrl = createWhatsAppLink({
+  service: "Layanan Teknisi Wilayah Gianyar & Tabanan",
+  notes: "Halo Jawara Teknik, saya butuh jadwal kunjungan teknisi AC untuk wilayah Gianyar/Tabanan.",
+});
+
+const customAreaWaUrl = createWhatsAppLink({
+  service: "Cek Wilayah & Jadwal Khusus Bali",
+  notes: "Halo Jawara Teknik, lokasi saya di luar area utama. Apakah bisa dijadwalkan kunjungan teknisi?",
+});
 ---
 
-<section id="wilayah" class="relative py-16 sm:py-24 bg-slate-50/70 border-b border-slate-200/60 overflow-hidden">
-  <!-- Subtle Ambient Background Silhouettes (Snowflake & Breeze Wave Watermarks) -->
+<section id="wilayah" class="scroll-mt-20 relative py-16 sm:py-24 bg-slate-50/60 border-b border-slate-200/70 overflow-hidden">
+  <!-- Subtle Ambient Architectural Dot-Matrix Background (Linear/Vercel Aesthetic) -->
   <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
-    <!-- Top-Right Geometric Snowflake Silhouette -->
-    <svg class="absolute -top-16 -right-16 w-96 h-96 text-iceblue-500/[0.04]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="2" x2="22" y1="12" y2="12"></line>
-      <line x1="12" x2="12" y1="2" y2="22"></line>
-      <path d="m20 16-4-4 4-4"></path>
-      <path d="m4 8 4 4-4 4"></path>
-      <path d="m16 4-4 4-4-4"></path>
-      <path d="m8 20 4-4 4 4"></path>
-    </svg>
-    <!-- Bottom-Left Flowing Cooling Breeze Vector -->
-    <svg class="absolute -bottom-10 -left-10 w-[520px] h-60 text-navy-800/[0.035]" viewBox="0 0 520 200" fill="none" stroke="currentColor" stroke-width="1.8">
-      <path d="M0 60 C 130 15, 260 100, 520 45" />
-      <path d="M0 100 C 150 55, 290 140, 520 85" />
-      <path d="M0 140 C 170 95, 320 180, 520 125" />
-    </svg>
+    <div class="w-full h-full bg-dot-matrix [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)] opacity-75"></div>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
     <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
       <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 text-iceblue-700 text-xs font-semibold mb-3 border border-iceblue-200 shadow-2xs">
         <!-- Lucide MapPin -->
@@ -33,220 +44,432 @@ import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
         <span>Posko Teknisi Tersebar di Bali</span>
       </div>
       <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
-        Jangkauan Wilayah Layanan Panggilan Teknisi di Bali
+        Jangkauan Wilayah & Layanan Prioritas di Bali
       </h2>
       <p class="mt-3.5 text-sm sm:text-base text-slate-600">
-        Teknisi kami siaga di titik-titik strategis untuk memastikan kedatangan tepat waktu langsung ke lokasi Anda.
+        Armada teknisi siaga di titik-titik strategis untuk kedatangan tepat waktu di hunian, kos, hingga standar hospitality villa.
       </p>
     </div>
 
-    <!-- Regions Grid with Deep Internal Gradients & Watermark Accents -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 mb-12">
-      {coverageAreas.map((area, index) => {
-        const areaWaUrl = createWhatsAppLink({
-          service: `Layanan Teknisi Wilayah ${area.regency}`,
-          notes: `Halo Jawara Teknik, saya butuh teknisi AC di wilayah ${area.regency}. Mohon info jadwal tercepat.`,
-        });
+    <!-- Asymmetric Bento Grid Architecture -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+      
+      <!-- BENTO CARD 1: HERO SPOTLIGHT - Denpasar & Badung (lg:col-span-7) -->
+      <article class="lg:col-span-7 bg-white/95 rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+        <!-- Ambient Interior Gradient Accent -->
+        <div class="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-sky-100/40 via-transparent to-transparent pointer-events-none -mr-16 -mt-16 rounded-full blur-2xl"></div>
 
-        // Dynamic theme styling per region
-        const isDenpasar = index === 0;
-        const isBadung = index === 1;
-
-        return (
-          <article class={`group rounded-3xl p-6 sm:p-7 border shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden ${
-            isDenpasar
-              ? 'bg-gradient-to-b from-white via-sky-50/25 to-sky-50/50 border-slate-200/90 hover:border-iceblue-400'
-              : isBadung
-              ? 'bg-gradient-to-b from-white via-emerald-50/25 to-emerald-50/50 border-slate-200/90 hover:border-emerald-400'
-              : 'bg-gradient-to-b from-white via-slate-50/40 to-slate-100/60 border-slate-200/90 hover:border-navy-400'
-          }`}>
-            <!-- Subtle Watermark Silhouette in Card Corner -->
-            <div class="absolute -top-3 -right-3 w-28 h-28 pointer-events-none select-none text-slate-900/[0.035] group-hover:text-slate-900/[0.06] transition-colors" aria-hidden="true">
-              {isDenpasar && (
-                <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <div class="relative z-10">
+          <!-- Card Header & Live Status Badge -->
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-5 border-b border-slate-200/70">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-iceblue-50 text-iceblue-600 border border-iceblue-200 flex items-center justify-center shadow-2xs shrink-0">
+                <!-- Lucide Building2 -->
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
                   <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
                   <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                  <path d="M10 6h4"></path>
+                  <path d="M10 10h4"></path>
+                  <path d="M10 14h4"></path>
+                  <path d="M10 18h4"></path>
                 </svg>
-              )}
-              {isBadung && (
-                <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4"></path>
-                  <path d="M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3"></path>
-                </svg>
-              )}
-              {!isDenpasar && !isBadung && (
-                <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-                </svg>
-              )}
+              </div>
+              <div>
+                <h3 class="font-extrabold text-xl text-navy-950 leading-tight">Zona Utama: Denpasar & Badung</h3>
+                <p class="text-xs text-slate-500 font-medium">Persebaran Armada Teknisi Terbesar di Bali</p>
+              </div>
             </div>
 
-            <div class="relative z-10">
-              <!-- Region Header -->
-              <div class="flex items-start justify-between gap-3 mb-6 pt-1 pb-5 border-b border-slate-200/60">
-                <div class="flex items-center gap-3">
-                  <div class={`w-11 h-11 rounded-2xl flex items-center justify-center shadow-xs shrink-0 ${
-                    isDenpasar
-                      ? 'bg-white text-iceblue-600 border border-iceblue-200/70 shadow-xs'
-                      : isBadung
-                      ? 'bg-white text-emerald-600 border border-emerald-200/70 shadow-xs'
-                      : 'bg-white text-navy-800 border border-navy-200/70 shadow-xs'
-                  }`}>
-                    {isDenpasar && (
-                      <!-- Lucide Building2 -->
-                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
-                        <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
-                        <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
-                        <path d="M10 6h4"></path>
-                        <path d="M10 10h4"></path>
-                        <path d="M10 14h4"></path>
-                        <path d="M10 18h4"></path>
-                      </svg>
-                    )}
-                    {isBadung && (
-                      <!-- Lucide Palmtree -->
-                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4"></path>
-                        <path d="M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3"></path>
-                        <path d="M5.89 13 4 14l1.5 3 2.5-.5L9 22h2l-.5-6.5L13 14l-1.5-3"></path>
-                        <path d="M13 17.5a14.28 14.28 0 0 0 2.5 4.5h2l-.5-5.5 2-2.5-1.5-2.5"></path>
-                      </svg>
-                    )}
-                    {!isDenpasar && !isBadung && (
-                      <!-- Lucide Compass -->
-                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-                      </svg>
-                    )}
-                  </div>
-                  <div>
-                    <h3 class="font-extrabold text-lg text-navy-950 leading-tight">{area.regency}</h3>
-                    <p class="text-[11px] text-slate-500 font-medium">
-                      {isDenpasar ? 'Pusat Kota & Residensial' : isBadung ? 'Hub Villa, Hotel & Bisnis' : 'Jalur Residensial & Wisata'}
-                    </p>
-                  </div>
-                </div>
+            <!-- Live Status Indicator -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold shadow-2xs">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>Siaga: Estimasi 30 – 45 Menit</span>
+            </div>
+          </div>
 
-                <span class={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0 border ${
-                  isDenpasar
-                    ? 'bg-white text-iceblue-700 border-iceblue-200 shadow-2xs'
-                    : isBadung
-                    ? 'bg-white text-emerald-700 border-emerald-200 shadow-2xs'
-                    : 'bg-white text-slate-700 border-slate-200 shadow-2xs'
-                }`}>
-                  {area.badge}
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+            Prioritas panggilan darurat untuk rumah tangga, kos-kosan, ruko, restoran, dan perkantoran. Teknisi siap meluncur langsung dari posko terdekat.
+          </p>
+
+          <!-- Dual Column District Matrix -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <!-- Kota Denpasar Block -->
+            <div class="bg-slate-50/80 rounded-2xl p-4 border border-slate-200/60">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wider flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-iceblue-500"></span>
+                  Kota Denpasar
+                </h4>
+                <span class="text-[10px] font-bold text-iceblue-700 bg-iceblue-50 px-2 py-0.5 rounded-md border border-iceblue-200">
+                  4 Kecamatan
                 </span>
               </div>
-
-              <!-- District & Locality Chips -->
-              <div class="space-y-4 mb-6">
-                {area.districts.map((district) => (
-                  <div class="bg-slate-50/70 rounded-2xl p-3.5 border border-slate-100">
-                    <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-                      <span class="w-2 h-2 rounded-full bg-iceblue-500"></span>
-                      {district.name}
-                    </h4>
-                    <div class="flex flex-wrap gap-1.5">
-                      {district.sub.map((subArea) => (
-                        <span class="text-xs px-2.5 py-1 rounded-lg bg-white text-slate-700 font-medium border border-slate-200/90 shadow-2xs hover:border-iceblue-400 hover:text-iceblue-700 transition-colors">
-                          {subArea}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+              <div class="flex flex-wrap gap-1.5">
+                {denpasarArea.districts.flatMap(d => d.sub).slice(0, 8).map((areaName) => (
+                  <span class="text-xs px-2.5 py-1 rounded-lg bg-white text-slate-700 font-medium border border-slate-200/80 shadow-2xs hover:border-iceblue-400 hover:text-iceblue-700 transition-colors">
+                    {areaName}
+                  </span>
                 ))}
               </div>
             </div>
 
-            <!-- Interactive Quick Action Button with Silky Smooth Sliding Arrow -->
-            <div class="pt-2">
-              <a
-                href={areaWaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group/btn w-full inline-flex items-center justify-between text-xs sm:text-[13px] font-bold py-3 px-4 rounded-xl bg-navy-950 hover:bg-wagreen text-white hover:text-slate-950 shadow-xs hover:shadow-lg transition-all duration-300"
-              >
-                <span class="flex items-center gap-2">
-                  <!-- Official Lucide MessageCircle -->
-                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-                  </svg>
-                  <span>Cek Teknisi di {area.regency}</span>
+            <!-- Kabupaten Badung Block -->
+            <div class="bg-slate-50/80 rounded-2xl p-4 border border-slate-200/60">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wider flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Kabupaten Badung
+                </h4>
+                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                  Pusat Wisata & Villa
                 </span>
-                
-                <!-- Silky Smooth Animated Arrow -->
-                <svg class="w-4 h-4 shrink-0 transform group-hover/btn:translate-x-1.5 transition-transform duration-300 ease-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                {badungArea.districts.flatMap(d => d.sub).slice(0, 8).map((areaName) => (
+                  <span class="text-xs px-2.5 py-1 rounded-lg bg-white text-slate-700 font-medium border border-slate-200/80 shadow-2xs hover:border-emerald-400 hover:text-emerald-700 transition-colors">
+                    {areaName}
+                  </span>
+                ))}
+              </div>
             </div>
-          </article>
-        );
-      })}
-    </div>
-
-    <!-- Area Note Banner & Google Maps Verified Profile -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-      <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between gap-4 group hover:border-iceblue-400 transition-colors">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-iceblue-50 text-iceblue-600 border border-iceblue-200/60 flex items-center justify-center shrink-0">
-            <!-- Lucide MapPin -->
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
           </div>
-          <div>
-            <h4 class="font-bold text-sm text-navy-950">Terdaftar Resmi di Google Maps</h4>
-            <p class="text-xs text-slate-500">Service AC Panggilan Jawara Teknik</p>
+
+          <!-- Micro Metric Proof Pills -->
+          <div class="flex flex-wrap items-center gap-3 pt-1 pb-4">
+            <div class="flex items-center gap-1.5 text-xs text-slate-600 font-medium">
+              <!-- Lucide Zap -->
+              <svg class="w-4 h-4 text-iceblue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              <span>Respon Darurat 60 Menit</span>
+            </div>
+            <span class="text-slate-300">•</span>
+            <div class="flex items-center gap-1.5 text-xs text-slate-600 font-medium">
+              <!-- Lucide ShieldCheck -->
+              <svg class="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+              <span>Garansi Pekerjaan 30 Hari</span>
+            </div>
+            <span class="text-slate-300">•</span>
+            <div class="flex items-center gap-1.5 text-xs text-slate-600 font-medium">
+              <!-- Lucide Clock -->
+              <svg class="w-4 h-4 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>06.00 – 23.00 WITA Setiap Hari</span>
+            </div>
           </div>
         </div>
-        <a
-          href={siteConfig.mapsDirectUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-xs font-bold text-iceblue-600 hover:text-iceblue-700 shrink-0 group/link"
-        >
-          <span>Buka Maps</span>
-          <svg class="w-3.5 h-3.5 transform group-hover/link:translate-x-0.5 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-        </a>
-      </div>
 
-      <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between gap-4 group hover:border-emerald-400 transition-colors">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center shrink-0">
+        <!-- Call to Action Button -->
+        <div class="pt-4 border-t border-slate-100">
+          <a
+            href={denpasarBadungWaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/btn w-full inline-flex items-center justify-between text-xs sm:text-sm font-bold py-3.5 px-4 sm:px-5 rounded-2xl bg-navy-950 hover:bg-wagreen text-white hover:text-slate-950 shadow-xs hover:shadow-xl transition-all duration-300"
+          >
+            <span class="flex items-center gap-2.5">
+              <!-- Official Lucide MessageCircle -->
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+              </svg>
+              <span>Hubungi Teknisi Denpasar & Badung</span>
+            </span>
+
+            
+            <svg class="w-4 h-4 shrink-0 transform group-hover/btn:translate-x-1.5 transition-transform duration-300 ease-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- BENTO CARD 2: DARK LUXE - Layanan Khusus Villa & Komersial B2B (lg:col-span-5) -->
+      <article class="lg:col-span-5 bg-navy-950 text-white rounded-3xl p-6 sm:p-8 border border-navy-800 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+        <!-- Ambient Luxury Villa Backdrop Image -->
+        <div class="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=80"
+            alt="Luxury Bali Villa AC Service Maintenance"
+            class="w-full h-full object-cover object-center opacity-25 filter brightness-95 group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+            decoding="async"
+            width="900"
+            height="600"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/85 to-navy-900/70"></div>
+          <div class="absolute inset-0 bg-dot-matrix-dark opacity-35 pointer-events-none"></div>
+        </div>
+
+        <div class="relative z-10">
+          <!-- Card Header & Badge -->
+          <div class="flex items-center justify-between gap-3 mb-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-iceblue-500/20 text-iceblue-300 border border-iceblue-400/30 text-xs font-semibold">
+              <!-- Lucide Sparkles -->
+              <svg class="w-3.5 h-3.5 text-iceblue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                <path d="M5 3v4"></path>
+                <path d="M19 17v4"></path>
+                <path d="M3 5h4"></path>
+                <path d="M17 19h4"></path>
+              </svg>
+              <span>Spesialis Hospitality & B2B</span>
+            </div>
+
+            <span class="text-[10px] font-bold text-amber-300 bg-amber-950/60 border border-amber-500/30 px-2.5 py-1 rounded-full uppercase tracking-wider">
+              Kontrak Berkala
+            </span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-3">
+            Kontrak Perawatan Villa, Kafe & Homestay
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+            Cegah komplain tamu wisatawan akibat AC bocor air atau panas mendadak saat check-in. Jadwal teratur 2-3 bulan sekali tanpa repot pantau manual.
+          </p>
+
+          <!-- 3 Value Pillars -->
+          <div class="space-y-3 mb-6">
+            <div class="bg-white/5 backdrop-blur-xs p-3.5 rounded-xl border border-white/10 flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                <!-- Lucide Zap -->
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-xs text-white">Prioritas Kunjungan Tamu</h4>
+                <p class="text-[11px] text-slate-400">Respon kilat saat unit di kamar tamu bermasalah.</p>
+              </div>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur-xs p-3.5 rounded-xl border border-white/10 flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-iceblue-500/20 text-iceblue-400 flex items-center justify-center shrink-0 mt-0.5">
+                <!-- Lucide FileText -->
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-xs text-white">Invoice Resmi & Rekap Laporan</h4>
+                <p class="text-[11px] text-slate-400">Dokumentasi rapi untuk pembukuan akuntansi & owner.</p>
+              </div>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur-xs p-3.5 rounded-xl border border-white/10 flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                <!-- Lucide ShieldCheck -->
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-xs text-white">Standar Bersih Properti Mewah</h4>
+                <p class="text-[11px] text-slate-400">Terpal proteksi lantai & pengerjaan minim cipratan air.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- B2B Call to Action Button -->
+        <div class="pt-4 border-t border-white/10 relative z-10">
+          <a
+            href={villaB2BWaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/btn w-full inline-flex items-center justify-between text-sm font-bold py-3.5 px-5 rounded-2xl bg-white hover:bg-iceblue-400 text-navy-950 shadow-md hover:shadow-xl transition-all duration-300"
+          >
+            <span class="flex items-center gap-2.5">
+              <!-- Official Lucide Building2 -->
+              <svg class="w-4 h-4 shrink-0 text-navy-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+              </svg>
+              <span>Konsultasi Paket Kontrak Villa</span>
+            </span>
+            
+            <svg class="w-4 h-4 shrink-0 transform group-hover/btn:translate-x-1.5 transition-transform duration-300 ease-out text-navy-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- BENTO CARD 3: JALUR WISATA & EKSPANSI - Gianyar & Tabanan (lg:col-span-6) -->
+      <article class="lg:col-span-6 bg-white/95 rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <!-- Header -->
+          <div class="flex items-start justify-between gap-3 mb-6 pb-5 border-b border-slate-200/70">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 border border-amber-200 flex items-center justify-center shadow-2xs shrink-0">
+                <!-- Lucide Compass -->
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-lg text-navy-950 leading-tight">Area Gianyar & Tabanan</h3>
+                <p class="text-xs text-slate-500 font-medium">Jalur Wisata, Seni & Residensial</p>
+              </div>
+            </div>
+
+            <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200 shrink-0">
+              Jadwal Terencana
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
+            Menjangkau hunian pribadi, cafe, guest house dan villa di kawasan Ubud, Sukawati, Batubulan, hingga Tabanan Kota dengan jaminan ketepatan waktu.
+          </p>
+
+          <!-- Locality Chips -->
+          <div class="space-y-3 mb-6">
+            <div>
+              <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-2">Gianyar:</span>
+              <div class="flex flex-wrap gap-1.5">
+                {extraArea.districts[0].sub.map((subArea) => (
+                  <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 font-medium border border-slate-200/80 shadow-2xs hover:border-amber-400 hover:text-amber-800 transition-colors">
+                    {subArea}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-2">Tabanan:</span>
+              <div class="flex flex-wrap gap-1.5">
+                {extraArea.districts[1].sub.map((subArea) => (
+                  <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 font-medium border border-slate-200/80 shadow-2xs hover:border-amber-400 hover:text-amber-800 transition-colors">
+                    {subArea}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="pt-4 border-t border-slate-100">
+          <a
+            href={gianyarTabananWaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/btn w-full inline-flex items-center justify-between text-xs sm:text-sm font-bold py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-wagreen text-white hover:text-slate-950 shadow-xs hover:shadow-lg transition-all duration-300"
+          >
+            <span class="flex items-center gap-2">
+              <!-- Lucide CalendarCheck -->
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                <line x1="16" x2="16" y1="2" y2="6"></line>
+                <line x1="8" x2="8" y1="2" y2="6"></line>
+                <line x1="3" x2="21" y1="10" y2="10"></line>
+                <path d="m9 16 2 2 4-4"></path>
+              </svg>
+              <span>Jadwalkan Teknisi Gianyar & Tabanan</span>
+            </span>
+
+            <svg class="w-4 h-4 shrink-0 transform group-hover/btn:translate-x-1.5 transition-transform duration-300 ease-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- BENTO CARD 4: GOOGLE MAPS & LOKASI FLEKSIBEL (lg:col-span-6) -->
+      <article class="lg:col-span-6 bg-gradient-to-br from-white via-sky-50/20 to-sky-100/30 rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <!-- Header -->
+          <div class="flex items-start justify-between gap-3 mb-6 pb-5 border-b border-slate-200/70">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-iceblue-50 text-iceblue-600 border border-iceblue-200 flex items-center justify-center shadow-2xs shrink-0">
+                <!-- Lucide MapPin -->
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-lg text-navy-950 leading-tight">Terdaftar Resmi Google Maps</h3>
+                <p class="text-xs text-slate-500 font-medium">Transparansi Profil & Legalitas Usaha</p>
+              </div>
+            </div>
+
+            <!-- Star Rating Badge -->
+            <div class="flex items-center gap-1 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-full text-xs font-bold text-amber-800 shrink-0">
+              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-500" viewBox="0 0 24 24">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span>4.9 / 5.0</span>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
+            Pangkalan fisik dan legalitas Jawara Teknik terverifikasi resmi pada Google Bisnis. Kepercayaan dan keamanan aset properti Anda selalu menjadi prioritas kami.
+          </p>
+
+          <!-- Address & Coverage Guarantee -->
+          <div class="bg-white/80 rounded-2xl p-4 border border-slate-200/70 mb-6 space-y-2.5">
+            <div class="flex items-center gap-2 text-xs text-navy-900 font-bold">
+              <!-- Lucide Home -->
+              <svg class="w-4 h-4 text-iceblue-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Jl. Tukad Badung No. 88, Renon - Denpasar Selatan, Bali</span>
+            </div>
+            <p class="text-[11px] text-slate-500">
+              <strong class="text-navy-900">Area Anda Belum Terdaftar?</strong> Jangan khawatir, kami tetap melayani panggilan ke seluruh Bali dengan kesepakatan jadwal langsung.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dual Action Buttons -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+          <a
+            href={siteConfig.mapsDirectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/btn inline-flex items-center justify-center gap-2 text-xs sm:text-[13px] font-bold py-3 px-4 rounded-xl bg-white border border-slate-300 hover:border-iceblue-500 text-navy-900 hover:text-iceblue-600 shadow-2xs transition-all duration-300"
+          >
             <!-- Lucide Navigation -->
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-4 h-4 text-iceblue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
             </svg>
-          </div>
-          <div>
-            <h4 class="font-bold text-sm text-navy-950">Lokasi Anda Belum Terdaftar?</h4>
-            <p class="text-xs text-slate-500">Tetap melayani se-Bali dengan konfirmasi jadwal</p>
-          </div>
+            <span>Buka Google Maps</span>
+          </a>
+
+          <a
+            href={customAreaWaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/btn inline-flex items-center justify-center gap-2 text-xs sm:text-[13px] font-bold py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white shadow-xs hover:shadow-md transition-all duration-300"
+          >
+            <!-- Lucide MessageCircle -->
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+            </svg>
+            <span>Tanya Admin Area Lain</span>
+          </a>
         </div>
-        <a
-          href={createWhatsAppLink({ service: "Cek Wilayah Khusus Bali" })}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 shrink-0 group/link"
-        >
-          <span>Tanya Admin</span>
-          <svg class="w-3.5 h-3.5 transform group-hover/link:translate-x-0.5 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
+      </article>
+
     </div>
   </div>
 </section>

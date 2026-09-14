@@ -110,4 +110,16 @@
     transform: translateY(1px);
     box-shadow: 0 2px 8px 0 rgba(37, 211, 102, 0.4);
   }
+
+  /* Architectural Dot-Matrix Grid (Subtle Linear/Vercel style - High Taste, No AI Slop) */
+  .bg-dot-matrix {
+    background-image: radial-gradient(rgba(15, 76, 129, 0.08) 1.25px, transparent 1.25px);
+    background-size: 22px 22px;
+  }
+
+  .bg-dot-matrix-dark {
+    background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1.25px, transparent 1.25px);
+    background-size: 22px 22px;
+  }
 }
+
