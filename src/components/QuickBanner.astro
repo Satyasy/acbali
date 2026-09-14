@@ -1,0 +1,99 @@
+---
+import { siteConfig } from '../config/site';
+---
+
+<section class="relative py-14 sm:py-20 bg-white border-b border-slate-200/70 overflow-hidden">
+  
+  <!-- Subtle Blueprint Square Grid Background -->
+  <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <div class="w-full h-full bg-grid-blueprint [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Wide Gray/Tinted Rounded Banner (matching sample/layout.png Section 5) -->
+    <div class="bg-slate-100/90 rounded-3xl p-8 sm:p-12 lg:p-14 border border-slate-200/90 text-center shadow-xs">
+      
+      <!-- Top Pill -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-slate-200 text-xs font-semibold text-navy-950 mb-4 shadow-2xs">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Admin Siaga via WhatsApp (06.00 – 23.00 WITA)</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight max-w-2xl mx-auto mb-3">
+        Butuh Teknisi AC Hari Ini atau Jadwal Kunjungan?
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto mb-8 leading-relaxed">
+        Ketik kendala AC atau lokasi Anda di bawah ini, teknisi siaga kami akan langsung merespon via WhatsApp resmi.
+      </p>
+
+      <!-- Interactive Search / Message Input (matching sample/layout.png input + button) -->
+      <form id="quick-wa-form" class="max-w-xl mx-auto flex flex-col sm:flex-row items-center gap-2.5 bg-white p-2 sm:p-2.5 rounded-full border border-slate-200/90 shadow-sm mb-4">
+        <div class="flex items-center gap-2.5 px-3 w-full">
+          <!-- Lucide MessageSquare -->
+          <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <input
+            type="text"
+            id="quick-wa-input"
+            placeholder="Ketik keluhan atau lokasi Anda (contoh: Canggu, AC bocor)..."
+            class="w-full text-xs sm:text-sm text-navy-950 placeholder-slate-400 bg-transparent focus:outline-hidden py-2"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-navy-950 hover:bg-navy-900 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shrink-0 transition-all duration-200 group cursor-pointer"
+        >
+          <!-- Lucide MessageCircle -->
+          <svg class="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+          </svg>
+          <span>Chat WhatsApp</span>
+          <!-- Lucide ArrowRight -->
+          <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-white group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Trust Assurance Footnote -->
+      <div class="flex flex-wrap items-center justify-center gap-y-1 gap-x-4 text-[11px] sm:text-xs text-slate-500">
+        <span>✓ Garansi 30 Hari Penuh</span>
+        <span>•</span>
+        <span>✓ Tiba Dalam 60 Menit</span>
+        <span>•</span>
+        <span>✓ Tarif Transparan di Awal</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Interactive Quick WA Form Script -->
+<script is:inline define:vars={{ phoneRaw: siteConfig.phoneRaw }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('quick-wa-form');
+    const input = document.getElementById('quick-wa-input');
+
+    if (form && input) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const customText = input.value.trim();
+        const defaultText = "Halo Admin Jawara Teknik, saya butuh bantuan servis AC untuk hari ini di Bali.";
+        const message = customText 
+          ? `Halo Admin Jawara Teknik, saya butuh bantuan servis AC:\n- Keluhan / Lokasi: ${customText}`
+          : defaultText;
+
+        const url = `https://wa.me/${phoneRaw}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+    }
+  });
+</script>

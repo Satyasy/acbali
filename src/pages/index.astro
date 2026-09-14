@@ -8,6 +8,7 @@ import Pricing from '../components/Pricing.astro';
 import B2BSection from '../components/B2BSection.astro';
 import CoverageAreas from '../components/CoverageAreas.astro';
 import HowToOrder from '../components/HowToOrder.astro';
+import QuickBanner from '../components/QuickBanner.astro';
 import FAQSection from '../components/FAQSection.astro';
 import Footer from '../components/Footer.astro';
 import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
@@ -25,25 +26,25 @@ import { siteConfig } from '../config/site';
   <Navbar />
 
   <main>
-    <!-- 2. Hero Section -->
+    <!-- 2. Hero Section (Split 2-Column with Asymmetric Photo Mosaic matching sample/layout.png) -->
     <Hero />
 
-    <!-- 3. Pain Points / Common Issues Grid -->
-    <PainPoints />
-
-    <!-- 4. Transparent Pricing Catalog -->
+    <!-- 3. Layanan Utama & Katalog Tarif dengan Filter Pills (matching 'Top Destinations') -->
     <Pricing />
 
-    <!-- 5. B2B / Commercial Highlight Section -->
-    <B2BSection />
+    <!-- 4. Solusi Kendala AC (matching 'Latest Stories': 1 Featured + 3 Compact Horizontal) -->
+    <PainPoints />
 
-    <!-- 6. Local Service Area Coverage -->
+    <!-- 5. Posko Armada & Standar Operasional di Bali (matching 'Trekker Highlights' 3-Column) -->
     <CoverageAreas />
+
+    <!-- 6. Pre-Footer Interactive Action Banner (matching 'Get Your Travel Inspiration') -->
+    <QuickBanner />
 
     <!-- 7. How to Order (3 Simple Steps) -->
     <HowToOrder />
 
-    <!-- Additional FAQ Section for High SEO & Trust -->
+    <!-- 8. Additional FAQ Section for High SEO & Trust -->
     <FAQSection />
   </main>
 

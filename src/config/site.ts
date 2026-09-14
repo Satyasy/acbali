@@ -181,7 +181,7 @@ export const pricingList = [
     badge: "Vakum Total",
     description: "Proses flushing, uji kebocoran pipa tembaga, vakum total sistem dengan mesin, dan pengisian full freon baru.",
     serviceQuery: "Isi Freon dari Nol (Vakum Total)",
-    image: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Vakum total sistem kompresor AC dan pengisian freon baru",
   },
 ];
