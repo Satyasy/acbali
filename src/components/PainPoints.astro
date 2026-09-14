@@ -1,0 +1,112 @@
+---
+import { painPoints, createWhatsAppLink } from '../config/site';
+---
+
+<section id="masalah" class="py-16 sm:py-24 bg-slatewhite border-b border-slate-200/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-100 text-navy-900 text-xs font-semibold mb-3 border border-navy-200/60">
+        <!-- Lucide Stethoscope / Activity -->
+        <svg class="w-3.5 h-3.5 text-navy-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        <span>Diagnosa & Penanganan Cepat</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
+        Solusi Cepat Masalah Pendingin Udara Anda
+      </h2>
+      <p class="mt-3.5 text-base text-slate-600">
+        Dokumentasi penanganan kendala AC di rumah, villa, dan kantor oleh teknisi berpengalaman Jawara Teknik.
+      </p>
+    </div>
+
+    <!-- Cards Grid with Rich Stock Photos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {painPoints.map((item) => {
+        const waLink = createWhatsAppLink({
+          service: item.title,
+          notes: item.description,
+        });
+
+        return (
+          <article class="group relative bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm glass-bubble-hover flex flex-col justify-between">
+            <div>
+              <!-- Photo Thumbnail with Aspect Ratio -->
+              <div class="relative w-full h-44 overflow-hidden bg-slate-100">
+                <img
+                  src={item.image}
+                  alt={item.imageAlt}
+                  class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-out"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="220"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent"></div>
+                
+                <!-- Badge on Top of Image -->
+                <span class="absolute top-3 right-3 text-[11px] font-bold tracking-wide uppercase px-2.5 py-0.5 rounded-full bg-navy-900/80 text-white backdrop-blur-md border border-white/20">
+                  {item.badge}
+                </span>
+
+                <!-- Quick Visual Issue Title -->
+                <div class="absolute bottom-2.5 left-3 right-3 flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-iceblue-500/90 text-white flex items-center justify-center shrink-0 backdrop-blur-sm shadow-sm">
+                    {item.id === 'bocor-air' && (
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" />
+                      </svg>
+                    )}
+                    {item.id === 'kurang-dingin' && (
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z" />
+                      </svg>
+                    )}
+                    {item.id === 'bau-apek' && (
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2" />
+                      </svg>
+                    )}
+                    {item.id === 'bising-getar' && (
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
+                      </svg>
+                    )}
+                  </div>
+                  <span class="text-xs font-semibold text-white truncate drop-shadow">Penanganan Resmi</span>
+                </div>
+              </div>
+
+              <!-- Card Body Content -->
+              <div class="p-5">
+                <h3 class="font-bold text-base text-navy-950 mb-2 group-hover:text-iceblue-600 transition-colors">
+                  {item.title}
+                </h3>
+                
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+
+            <!-- Action Link at Card Bottom -->
+            <div class="p-5 pt-0">
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-between w-full pt-3 border-t border-slate-100 text-xs font-bold text-navy-900 hover:text-wagreen-dark transition-colors group-hover:border-iceblue-200"
+              >
+                <span>Konsultasikan Masalah Ini</span>
+                <span class="inline-flex items-center text-wagreen font-extrabold group-hover:translate-x-1 transition-transform">
+                  WhatsApp &rarr;
+                </span>
+              </a>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>

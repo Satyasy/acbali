@@ -1,0 +1,110 @@
+---
+import { coverageAreas, createWhatsAppLink } from '../config/site';
+---
+
+<section id="wilayah" class="py-16 sm:py-24 bg-white border-b border-slate-200/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 text-iceblue-700 text-xs font-semibold mb-3 border border-iceblue-200">
+        <!-- Lucide MapPin -->
+        <svg class="w-3.5 h-3.5 text-iceblue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Cakupan Teknisi Siaga di Bali</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
+        Jangkauan Wilayah Layanan Panggilan Teknisi di Bali
+      </h2>
+      <p class="mt-3.5 text-base text-slate-600">
+        Teknisi kami tersebar di pos-pos strategis untuk memastikan estimasi tiba tercepat ke lokasi Anda.
+      </p>
+    </div>
+
+    <!-- Regions Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+      {coverageAreas.map((area) => (
+        <article class="bg-slatewhite rounded-2xl p-6 sm:p-7 border border-slate-200/90 hover:border-iceblue-400 transition-all duration-300 shadow-sm glass-bubble-hover flex flex-col justify-between">
+          <div>
+            <!-- Region Header -->
+            <div class="flex items-center justify-between gap-2 mb-5 pb-4 border-b border-slate-200/70">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-navy-800 text-white flex items-center justify-center font-bold shadow-sm">
+                  <!-- Lucide MapPin -->
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 class="font-extrabold text-lg text-navy-950">{area.regency}</h3>
+              </div>
+              <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-iceblue-100 text-iceblue-800 border border-iceblue-200">
+                {area.badge}
+              </span>
+            </div>
+
+            <!-- District / Locality Chips -->
+            <div class="space-y-4">
+              {area.districts.map((district) => (
+                <div>
+                  <h4 class="text-xs font-bold text-navy-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-iceblue-600"></span>
+                    {district.name}
+                  </h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    {district.sub.map((subArea) => (
+                      <span class="text-xs px-2.5 py-1 rounded-lg bg-white text-slate-700 border border-slate-200 hover:bg-iceblue-50 hover:border-iceblue-300 transition-colors shadow-2xs">
+                        {subArea}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Quick Action per Region -->
+          <div class="mt-6 pt-4 border-t border-slate-200/70">
+            <a
+              href={createWhatsAppLink({
+                service: `Layanan Teknisi Wilayah ${area.regency}`,
+                notes: `Saya berada di area ${area.regency}, apakah ada teknisi siaga saat ini?`,
+              })}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 text-xs font-bold py-2.5 px-3 rounded-xl bg-white hover:bg-wagreen hover:text-slate-950 text-navy-900 border border-slate-200 shadow-2xs transition-colors"
+            >
+              <span>Cek Teknisi di {area.regency}</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Area Note Banner (Zero Emojis, Clean Lucide Navigation Icon) -->
+    <div class="text-center bg-slatewhite rounded-2xl p-6 border border-slate-200/90 shadow-sm max-w-2xl mx-auto flex flex-col items-center">
+      <div class="flex items-center gap-2 text-navy-900 font-bold text-sm mb-1">
+        <!-- Lucide Navigation -->
+        <svg class="w-4 h-4 text-iceblue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+        </svg>
+        <span>Lokasi Anda Belum Tercantum di Atas?</span>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-xl">
+        Kami tetap melayani panggilan ke seluruh kawasan Bali sesuai konfirmasi jadwal ketersediaan teknisi.
+      </p>
+      <div class="mt-3">
+        <a
+          href={createWhatsAppLink({ service: "Cek Wilayah Khusus Bali" })}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-xs font-bold text-iceblue-600 hover:text-iceblue-700 underline underline-offset-4"
+        >
+          <span>Konfirmasi Alamat Anda dengan Admin Jawara Teknik</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

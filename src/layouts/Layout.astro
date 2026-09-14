@@ -1,0 +1,167 @@
+---
+import { siteConfig, faqs } from '../config/site';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${siteConfig.name} - Jasa Servis & Cuci AC Panggilan Cepat di Bali (06.00 – 23.00 WITA)`,
+  description = siteConfig.description,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://jawara-teknik.com').href;
+
+// JSON-LD HVAC / Local Business Structured Data
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HVACBusiness"],
+  "@id": "https://jawara-teknik.com/#business",
+  "name": siteConfig.legalName,
+  "alternateName": siteConfig.name,
+  "description": siteConfig.description,
+  "url": "https://jawara-teknik.com",
+  "telephone": siteConfig.phone,
+  "priceRange": "Rp 60.000 - Rp 375.000",
+  "paymentAccepted": ["Cash", "QRIS", "Bank Transfer"],
+  "currenciesAccepted": "IDR",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": siteConfig.address.street,
+    "addressLocality": siteConfig.address.subDistrict,
+    "addressRegion": siteConfig.address.province,
+    "postalCode": siteConfig.address.postalCode,
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": siteConfig.address.geo.latitude,
+    "longitude": siteConfig.address.geo.longitude
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "06:00",
+      "closes": "23:00"
+    }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Denpasar" },
+    { "@type": "AdministrativeArea", "name": "Badung" },
+    { "@type": "Place", "name": "Canggu" },
+    { "@type": "Place", "name": "Seminyak" },
+    { "@type": "Place", "name": "Sanur" },
+    { "@type": "Place", "name": "Kuta" },
+    { "@type": "Place", "name": "Jimbaran" },
+    { "@type": "Place", "name": "Ubud" },
+    { "@type": "AdministrativeArea", "name": "Gianyar" },
+    { "@type": "AdministrativeArea", "name": "Tabanan" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Layanan Servis & Cuci AC Bali",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cuci AC Standar (0.5 – 1 PK)",
+          "description": "Cuci filter, cover indoor, talang air, evaporator steam, dan pembersihan kisi-kisi kondensor outdoor."
+        },
+        "price": "75000",
+        "priceCurrency": "IDR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cuci Unit AC Inverter",
+          "description": "Perawatan khusus modul PCB elektrikal sensitif dan chemical wash aman sensor."
+        },
+        "price": "100000",
+        "priceCurrency": "IDR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Tambah Freon R32 / R410a",
+          "description": "Pengisian freon ramah lingkungan tipe R32 atau R410a hingga tekanan standar."
+        },
+        "price": "200000",
+        "priceCurrency": "IDR"
+      }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+---
+
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#0F4C81" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Jawara Teknik Servis AC Bali" />
+    <meta name="keywords" content="servis ac denpasar, cuci ac bali, service ac badung, cuci ac canggu, servis ac seminyak, perbaikan ac sanur, isi freon ac bali, bengkel ac panggilan bali, teknisi ac 24 jam bali, ac inverter bali" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={siteConfig.heroImage} />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content={siteConfig.legalName} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={siteConfig.heroImage} />
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230F4C81'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A5.99 5.99 0 0 1 6.07 11H7a1 1 0 0 1 0-2h-.93A5.99 5.99 0 0 1 11 6.07V7a1 1 0 0 1 2 0v-.93A5.99 5.99 0 0 1 17.93 11H17a1 1 0 0 1 0 2h.93A5.99 5.99 0 0 1 13 16.93z'/></svg>" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+  <body class="bg-slatewhite text-slate-900 selection:bg-iceblue-600 selection:text-white min-h-screen flex flex-col font-sans pb-20 lg:pb-0">
+    <slot />
+  </body>
+</html>

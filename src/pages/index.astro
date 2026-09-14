@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import PainPoints from '../components/PainPoints.astro';
+import Pricing from '../components/Pricing.astro';
+import B2BSection from '../components/B2BSection.astro';
+import CoverageAreas from '../components/CoverageAreas.astro';
+import HowToOrder from '../components/HowToOrder.astro';
+import FAQSection from '../components/FAQSection.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import { siteConfig } from '../config/site';
+---
+
+<Layout 
+  title={`${siteConfig.legalName} - Jasa Servis & Cuci AC Panggilan Cepat di Bali (06.00 – 23.00 WITA)`}
+  description={siteConfig.description}
+>
+  <!-- 1. Top Bar -->
+  <TopBar />
+
+  <!-- Main Navigation Bar -->
+  <Navbar />
+
+  <main>
+    <!-- 2. Hero Section -->
+    <Hero />
+
+    <!-- 3. Pain Points / Common Issues Grid -->
+    <PainPoints />
+
+    <!-- 4. Transparent Pricing Catalog -->
+    <Pricing />
+
+    <!-- 5. B2B / Commercial Highlight Section -->
+    <B2BSection />
+
+    <!-- 6. Local Service Area Coverage -->
+    <CoverageAreas />
+
+    <!-- 7. How to Order (3 Simple Steps) -->
+    <HowToOrder />
+
+    <!-- Additional FAQ Section for High SEO & Trust -->
+    <FAQSection />
+  </main>
+
+  <!-- 9. Footer & NAP Integration -->
+  <Footer />
+
+  <!-- 8. Floating Sticky WhatsApp CTA (Mobile & Desktop) -->
+  <FloatingWhatsApp />
+</Layout>

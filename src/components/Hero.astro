@@ -1,0 +1,138 @@
+---
+import { siteConfig, createWhatsAppLink } from '../config/site';
+
+const primaryWaUrl = createWhatsAppLink({
+  service: "Panggilan Cepat (Cuci / Perbaikan AC)",
+  notes: "Mohon info ketersediaan teknisi terdekat hari ini",
+});
+---
+
+<section class="relative min-h-[620px] lg:min-h-[700px] flex items-center justify-center pt-12 pb-20 sm:pt-16 sm:pb-28 overflow-hidden bg-navy-950">
+  <!-- Background Image with Dark Navy Transparent Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src={siteConfig.heroImage}
+      alt="Teknisi profesional AC di Denpasar Badung Bali"
+      class="w-full h-full object-cover object-center opacity-30 filter brightness-75 scale-105 transform duration-1000 ease-out"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950/90 via-navy-900/80 to-navy-950"></div>
+    <!-- Subtle Specular Highlights -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-72 bg-iceblue-500/15 rounded-full blur-3xl pointer-events-none"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      
+      <!-- Top Pill Indicator (iOS Frosted Glass) -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-ios-pill text-white text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="tracking-wide">Spesialis Pendingin Udara Bali</span>
+        <span class="text-iceblue-300">•</span>
+        <span class="text-iceblue-200">Respon 60 Menit</span>
+      </div>
+
+      <!-- Main H1 Headline -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6 drop-shadow-sm">
+        Jasa Servis & Cuci AC Panggilan Cepat di <span class="text-gradient-ice">Denpasar, Badung</span>, dan Sekitarnya
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="text-base sm:text-xl text-slate-200 font-normal leading-relaxed mb-8 sm:mb-10 max-w-3xl mx-auto drop-shadow">
+        Teknisi ahli berpengalaman siap menuju rumah, villa, kos, dan kantor Anda di seluruh Bali. Pengerjaan rapi, tarif pasti di awal, dan bergaransi 30 hari.
+      </p>
+
+      <!-- Primary & Secondary CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 mb-10 sm:mb-14">
+        <!-- Primary WhatsApp CTA Button (iPhone Bubble Glass) -->
+        <a
+          href={primaryWaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 text-slate-950 font-extrabold text-base sm:text-lg px-8 py-4 rounded-2xl glass-cta-bubble group"
+        >
+          <!-- Lucide MessageSquare / WhatsApp Icon -->
+          <svg class="w-6 h-6 fill-current group-hover:scale-110 transition-transform duration-200" viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.27-2.42 5.82a8.19 8.19 0 0 1-5.82 2.42c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.5 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.52 1.09 2.52.73 2.98.69.45-.05 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+          </svg>
+          <span>Panggil Teknisi via WhatsApp</span>
+        </a>
+
+        <!-- Secondary Pricing CTA Button (iPhone Frosted Glass) -->
+        <a
+          href="#tarif"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 text-white font-bold text-base sm:text-lg px-8 py-4 rounded-2xl glass-ios-pill hover:bg-white/20 glass-bubble-hover"
+        >
+          <!-- Lucide Receipt / ClipboardList -->
+          <svg class="w-5 h-5 text-iceblue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+          </svg>
+          <span>Lihat Daftar Tarif</span>
+        </a>
+      </div>
+
+      <!-- Customer Trust Mini Strip (Clean Lucide Star Icons) -->
+      <div class="flex items-center justify-center gap-2.5 text-xs sm:text-sm text-slate-300 mb-10">
+        <div class="flex items-center text-amber-400 gap-0.5">
+          {Array.from({ length: 5 }).map(() => (
+            <!-- Lucide Star -->
+            <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          ))}
+        </div>
+        <span class="font-bold text-white">4.9 / 5.0</span>
+        <span class="text-slate-500">•</span>
+        <span class="text-slate-300">Dipercaya 1.200+ Rumah & Villa di Bali</span>
+      </div>
+
+      <!-- Trust Badges Grid (Dark Frosted Glass + Bubble Hover) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+        <!-- Trust Badge 1: Garansi 30 Hari -->
+        <div class="glass-ios-dark p-4 rounded-2xl glass-bubble-hover flex items-center gap-3.5">
+          <div class="w-11 h-11 rounded-xl bg-iceblue-500/20 text-iceblue-400 border border-iceblue-400/30 flex items-center justify-center shrink-0">
+            <!-- Lucide ShieldCheck -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-bold text-white text-sm">Garansi 30 Hari</h2>
+            <p class="text-xs text-slate-300">Klaim mudah & gratis jika kendala kembali muncul.</p>
+          </div>
+        </div>
+
+        <!-- Trust Badge 2: Multi-Merek -->
+        <div class="glass-ios-dark p-4 rounded-2xl glass-bubble-hover flex items-center gap-3.5">
+          <div class="w-11 h-11 rounded-xl bg-navy-500/30 text-iceblue-300 border border-navy-400/30 flex items-center justify-center shrink-0">
+            <!-- Lucide Wrench / WrenchScrewdriver -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-bold text-white text-sm">Teknisi Multi-Merek</h2>
+            <p class="text-xs text-slate-300">Daikin, Panasonic, Sharp, Gree, LG, Changhong.</p>
+          </div>
+        </div>
+
+        <!-- Trust Badge 3: Tanpa Biaya Tersembunyi -->
+        <div class="glass-ios-dark p-4 rounded-2xl glass-bubble-hover flex items-center gap-3.5">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-400/30 flex items-center justify-center shrink-0">
+            <!-- Lucide CheckCircle -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-bold text-white text-sm">Tanpa Biaya Tersembunyi</h2>
+            <p class="text-xs text-slate-300">Tarif pasti disetujui di awal sebelum pengerjaan.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
