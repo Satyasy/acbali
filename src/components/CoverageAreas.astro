@@ -2,10 +2,29 @@
 import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
 ---
 
-<section id="wilayah" class="py-16 sm:py-24 bg-slate-50/60 border-b border-slate-200/60">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="wilayah" class="relative py-16 sm:py-24 bg-slate-50/70 border-b border-slate-200/60 overflow-hidden">
+  <!-- Subtle Ambient Background Silhouettes (Snowflake & Breeze Wave Watermarks) -->
+  <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <!-- Top-Right Geometric Snowflake Silhouette -->
+    <svg class="absolute -top-16 -right-16 w-96 h-96 text-iceblue-500/[0.04]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="2" x2="22" y1="12" y2="12"></line>
+      <line x1="12" x2="12" y1="2" y2="22"></line>
+      <path d="m20 16-4-4 4-4"></path>
+      <path d="m4 8 4 4-4 4"></path>
+      <path d="m16 4-4 4-4-4"></path>
+      <path d="m8 20 4-4 4 4"></path>
+    </svg>
+    <!-- Bottom-Left Flowing Cooling Breeze Vector -->
+    <svg class="absolute -bottom-10 -left-10 w-[520px] h-60 text-navy-800/[0.035]" viewBox="0 0 520 200" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M0 60 C 130 15, 260 100, 520 45" />
+      <path d="M0 100 C 150 55, 290 140, 520 85" />
+      <path d="M0 140 C 170 95, 320 180, 520 125" />
+    </svg>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 text-iceblue-700 text-xs font-semibold mb-3 border border-iceblue-200">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 text-iceblue-700 text-xs font-semibold mb-3 border border-iceblue-200 shadow-2xs">
         <!-- Lucide MapPin -->
         <svg class="w-3.5 h-3.5 text-iceblue-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
@@ -21,7 +40,7 @@ import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
       </p>
     </div>
 
-    <!-- Regions Grid with Enhanced Visual Styling & Modern Glass Accents -->
+    <!-- Regions Grid with Deep Internal Gradients & Watermark Accents -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 mb-12">
       {coverageAreas.map((area, index) => {
         const areaWaUrl = createWhatsAppLink({
@@ -34,26 +53,46 @@ import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
         const isBadung = index === 1;
 
         return (
-          <article class="group bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 hover:border-iceblue-400/80 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-            <!-- Subtle Top Accent Gradient Line -->
-            <div class={`absolute top-0 left-0 right-0 h-1.5 ${
-              isDenpasar
-                ? 'bg-gradient-to-r from-iceblue-500 to-navy-600'
-                : isBadung
-                ? 'bg-gradient-to-r from-emerald-400 to-iceblue-500'
-                : 'bg-gradient-to-r from-navy-600 to-slate-700'
-            }`}></div>
+          <article class={`group rounded-3xl p-6 sm:p-7 border shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden ${
+            isDenpasar
+              ? 'bg-gradient-to-b from-white via-sky-50/25 to-sky-50/50 border-slate-200/90 hover:border-iceblue-400'
+              : isBadung
+              ? 'bg-gradient-to-b from-white via-emerald-50/25 to-emerald-50/50 border-slate-200/90 hover:border-emerald-400'
+              : 'bg-gradient-to-b from-white via-slate-50/40 to-slate-100/60 border-slate-200/90 hover:border-navy-400'
+          }`}>
+            <!-- Subtle Watermark Silhouette in Card Corner -->
+            <div class="absolute -top-3 -right-3 w-28 h-28 pointer-events-none select-none text-slate-900/[0.035] group-hover:text-slate-900/[0.06] transition-colors" aria-hidden="true">
+              {isDenpasar && (
+                <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                  <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                  <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                </svg>
+              )}
+              {isBadung && (
+                <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4"></path>
+                  <path d="M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3"></path>
+                </svg>
+              )}
+              {!isDenpasar && !isBadung && (
+                <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              )}
+            </div>
 
-            <div>
+            <div class="relative z-10">
               <!-- Region Header -->
-              <div class="flex items-start justify-between gap-3 mb-6 pt-1 pb-5 border-b border-slate-100">
+              <div class="flex items-start justify-between gap-3 mb-6 pt-1 pb-5 border-b border-slate-200/60">
                 <div class="flex items-center gap-3">
                   <div class={`w-11 h-11 rounded-2xl flex items-center justify-center shadow-xs shrink-0 ${
                     isDenpasar
-                      ? 'bg-iceblue-50 text-iceblue-600 border border-iceblue-200/60'
+                      ? 'bg-white text-iceblue-600 border border-iceblue-200/70 shadow-xs'
                       : isBadung
-                      ? 'bg-emerald-50 text-emerald-600 border border-emerald-200/60'
-                      : 'bg-navy-50 text-navy-800 border border-navy-200/60'
+                      ? 'bg-white text-emerald-600 border border-emerald-200/70 shadow-xs'
+                      : 'bg-white text-navy-800 border border-navy-200/70 shadow-xs'
                   }`}>
                     {isDenpasar && (
                       <!-- Lucide Building2 -->
@@ -94,10 +133,10 @@ import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
 
                 <span class={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0 border ${
                   isDenpasar
-                    ? 'bg-iceblue-50 text-iceblue-700 border-iceblue-200'
+                    ? 'bg-white text-iceblue-700 border-iceblue-200 shadow-2xs'
                     : isBadung
-                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                    : 'bg-slate-100 text-slate-700 border-slate-200'
+                    ? 'bg-white text-emerald-700 border-emerald-200 shadow-2xs'
+                    : 'bg-white text-slate-700 border-slate-200 shadow-2xs'
                 }`}>
                   {area.badge}
                 </span>
