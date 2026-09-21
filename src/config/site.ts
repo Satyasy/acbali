@@ -30,8 +30,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "Jawara Teknik",
-  legalName: "Jawara Teknik Servis AC Bali",
-  tagline: "Jasa Servis & Cuci AC Panggilan Cepat di Denpasar, Badung, dan Sekitarnya",
+  legalName: "Jawara Teknik Servis AC Bali Denpasar dan sekitarnya",
+  tagline: "Spesialis Pendingin Udara Panggilan Cepat di Bali",
   description: "Layanan jasa servis, cuci, isi freon, perbaikan AC panggilan di Denpasar, Badung, Canggu, Seminyak, Sanur & seluruh Bali. Buka 24 Jam non-stop setiap hari. Bergaransi 30 hari & teknisi respon cepat 60 menit.",
   phone: "+62 823-2914-2230",
   phoneRaw: "6282329142230",
@@ -66,7 +66,7 @@ export function createWhatsAppLink(params?: {
   const serviceText = params?.service ? params.service : "(Cuci / Bocor Air / Tidak Dingin)";
   const additionalNotes = params?.notes ? `\n- Catatan Khusus: ${params.notes}` : "";
 
-  const message = `Halo Admin Jawara Teknik, saya ingin jadwalkan servis AC:\n\n- Nama: \n- Lokasi/Area: \n- Kendala: ${serviceText}\n- Jumlah Unit: \n- Waktu Kunjungan: ${additionalNotes}`;
+  const message = `Halo Admin Jawara Teknik, saya ingin jadwalkan servis AC:\n\n- Nama: \n- Lokasi/Area: \n- Kendala/Layanan: ${serviceText}\n- Jumlah Unit: \n- Waktu Kunjungan: ${additionalNotes}`;
 
   return `${base}?text=${encodeURIComponent(message)}`;
 }
@@ -109,81 +109,176 @@ export const painPoints = [
 export const pricingList = [
   {
     name: "Cuci AC Standar (0.5 – 1 PK)",
-    price: "Rp 75.000",
+    price: "Rp 125.000",
     unit: "/ unit",
     highlight: false,
     badge: "Paling Populer",
     description: "Cuci filter, cover indoor, talang air, evaporator steam, dan pembersihan kisi-kisi kondensor outdoor.",
-    serviceQuery: "Cuci AC Standar 0.5 - 1 PK",
+    serviceQuery: "Cuci AC Standar 0.5 - 1 PK (Rp 125.000)",
     image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Jasa cuci AC split 0.5 PK sampai 1 PK di Bali",
   },
   {
-    name: "Cuci AC Besar (1.5 – 2 PK)",
-    price: "Rp 85.000",
+    name: "Cuci AC Standar (1.5 – 2 PK)",
+    price: "Rp 150.000",
     unit: "/ unit",
     highlight: false,
     badge: "Hemat",
-    description: "Pembersihan menyeluruh unit kapasitas besar, cek tekanan freon, dan cek arus ampere listrik.",
-    serviceQuery: "Cuci AC Besar 1.5 - 2 PK",
+    description: "Pembersihan menyeluruh unit kapasitas besar 1.5 - 2 PK, cek tekanan freon, dan cek arus ampere listrik.",
+    serviceQuery: "Cuci AC Standar 1.5 - 2 PK (Rp 150.000)",
     image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Servis cuci AC kapasitas besar 2 PK di Denpasar",
   },
   {
-    name: "Cuci Unit AC Inverter",
-    price: "Rp 100.000 – 130.000",
+    name: "Cuci Unit AC Inverter Khusus",
+    price: "Rp 150.000",
     unit: "/ unit",
     highlight: true,
     badge: "Rekomendasi Ahli",
     description: "Perawatan khusus modul PCB elektrikal sensitif, chemical wash aman sensor, dan kalibrasi motor inverter.",
-    serviceQuery: "Cuci Unit AC Inverter",
+    serviceQuery: "Cuci Unit AC Inverter Khusus (Rp 150.000)",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Spesialis cuci unit AC Inverter Daikin Panasonic Bali",
   },
   {
-    name: "Pengecekan & Diagnosis",
-    price: "Rp 60.000",
-    unit: "(Gratis jika lanjut servis)",
-    highlight: false,
-    badge: "Garansi Jujur",
-    description: "Inspeksi digital menyeluruh sumber kerusakan AC mati, bocor, atau berisik sebelum tindakan perbaikan.",
-    serviceQuery: "Pengecekan & Diagnosis Kerusakan",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Inspeksi dan cek kerusakan sistem AC dengan alat digital",
-  },
-  {
-    name: "Cuci Total / Overhaul",
-    price: "Mulai Rp 375.000",
-    unit: "/ unit",
-    highlight: false,
-    badge: "Turun Unit",
-    description: "Pembersihan total dengan menurunkan unit indoor dari dinding, cuci kerak hitam pekat, dan ganti seal.",
-    serviceQuery: "Cuci Total / Overhaul (Turun Unit)",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Cuci total overhaul turun unit AC split di Badung Bali",
-  },
-  {
-    name: "Tambah Freon R32 / R410a",
-    price: "Rp 200.000",
+    name: "Tambah / Isi Freon R32 & R410a",
+    price: "Rp 150.000 – 650.000",
     unit: "/ unit",
     highlight: false,
     badge: "Freon Murni",
-    description: "Pengisian freon ramah lingkungan tipe R32 atau R410a hingga tekanan standar pabrik (140-160 PSI).",
-    serviceQuery: "Tambah Freon R32 / R410a",
+    description: "Pengisian freon ramah lingkungan tipe R32 / R410a dari penambahan tekanan hingga pengisian full dari nol.",
+    serviceQuery: "Tambah / Isi Freon R32 & R410a (Rp 150.000 - 650.000)",
     image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Isi dan tambah freon R32 R410a resmi bergaransi",
   },
   {
-    name: "Isi Freon dari Nol (Vakum)",
-    price: "Mulai Rp 350.000",
+    name: "Perbaikan AC Bocor / Menetes",
+    price: "Mulai Rp 100.000 – 250.000",
     unit: "/ unit",
     highlight: false,
-    badge: "Vakum Total",
-    description: "Proses flushing, uji kebocoran pipa tembaga, vakum total sistem dengan mesin, dan pengisian full freon baru.",
-    serviceQuery: "Isi Freon dari Nol (Vakum Total)",
-    image: "https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Vakum total sistem kompresor AC dan pengisian freon baru",
+    badge: "Tuntas 60 Menit",
+    description: "Penanganan lendir talang drainase, pembersihan pipa pembuangan, dan perbaikan kondensasi dinding.",
+    serviceQuery: "Perbaikan AC Bocor / Menetes (Mulai Rp 100.000 - 250.000)",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Penanganan AC bocor air menetes plafon di Bali",
   },
+  {
+    name: "Jasa Pasang AC (0.5 – 2 PK)",
+    price: "Rp 350.000 – 450.000",
+    unit: "/ unit",
+    highlight: false,
+    badge: "Presisi & Rapi",
+    description: "Instalasi bracket indoor/outdoor, pemipaan rapi standar pabrik. 0.5-1 PK: Rp 350rb, 1.5-2 PK: Rp 450rb.",
+    serviceQuery: "Jasa Pasang AC Baru / Pindahan (Rp 350.000 - 450.000)",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Jasa pasang instalasi unit AC split di Bali",
+  },
+  {
+    name: "Bongkar AC / Bongkar + Pasang",
+    price: "Rp 250.000 – 650.000",
+    unit: "/ paket",
+    highlight: false,
+    badge: "Paket Lengkap",
+    description: "Bongkar saja Rp 250rb. Bongkar + pasang 0.5-1 PK Rp 550rb, bongkar + pasang 1.5-2 PK Rp 650rb.",
+    serviceQuery: "Bongkar Pasang AC (Rp 250.000 - 650.000)",
+    image: "https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Bongkar pasang AC split pindahan rumah villa kantor Bali",
+  },
+  {
+    name: "Cuci Besar / Overhaul (Turun Unit)",
+    price: "Rp 375.000 – 475.000",
+    unit: "/ unit",
+    highlight: false,
+    badge: "Cuci Total",
+    description: "Pembersihan kerak hitam bandel dengan menurunkan unit indoor. 0.5-1 PK: Rp 375rb, 1.5-2 PK: Rp 475rb.",
+    serviceQuery: "Cuci Besar / Overhaul Turun Unit (Rp 375.000 - 475.000)",
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Cuci total overhaul turun unit AC split di Badung Bali",
+  },
+];
+
+export interface TechnicalPricingItem {
+  name: string;
+  price: string;
+  unit: string;
+  category: string;
+  description: string;
+}
+
+export const technicalPricingList: TechnicalPricingItem[] = [
+  {
+    name: "Bobok Tembok Jalur Pipa",
+    price: "Rp 50.000",
+    unit: "/ titik",
+    category: "Pemasangan",
+    description: "Pembuatan jalur pipa tembaga atau pembuangan air baru pada dinding bata/beton.",
+  },
+  {
+    name: "Pengelasan Sambungan Pipa Tembaga",
+    price: "Rp 175.000",
+    unit: "/ titik",
+    category: "Perbaikan",
+    description: "Pengelasan perak berkualitas tinggi untuk mengatasi kebocoran pada sambungan pipa refrigrant.",
+  },
+  {
+    name: "Ganti Kapasitor AC (0.5 - 2 PK)",
+    price: "Rp 250.000 – 550.000",
+    unit: "/ unit",
+    category: "Sparepart",
+    description: "Penggantian kapasitor kompresor/fan original untuk mengatasi kompresor macet atau gagal start.",
+  },
+  {
+    name: "Flushing Evaporator & Jalur Pipa",
+    price: "Rp 275.000",
+    unit: "/ unit",
+    category: "Flushing & Vakum",
+    description: "Pembersihan kerak oli dan gram kotoran di dalam pipa tembaga menggunakan nitrogen / cairan khusus.",
+  },
+  {
+    name: "Vakum Total Sistem AC",
+    price: "Rp 300.000",
+    unit: "/ unit",
+    category: "Flushing & Vakum",
+    description: "Pengurasan udara dan uap air dalam pipa menggunakan mesin vakum high-vacuum gauge.",
+  },
+  {
+    name: "Vakum + Flushing AC Lengkap",
+    price: "Rp 475.000",
+    unit: "/ unit",
+    category: "Flushing & Vakum",
+    description: "Paket lengkap pembersihan total pipa dan vakum sistem sebelum pengisian freon baru.",
+  },
+  {
+    name: "Isi Oli Kompresor AC",
+    price: "Rp 325.000 – 425.000",
+    unit: "/ unit",
+    category: "Perbaikan",
+    description: "Pengisian pelumas oli kompresor murni sesuai viskositas tipe freon agar kompresor awet dan sunyi.",
+  },
+  {
+    name: "Pembersihan Cairan Ultra / Chemical Wash",
+    price: "Rp 275.000",
+    unit: "/ unit",
+    category: "Cuci AC",
+    description: "Pencucian mendalam menggunakan cairan kimia pembersih kerak membandel tanpa merusak sirip aluminium.",
+  },
+];
+
+export const priorityCoverageList = [
+  "Denpasar",
+  "Badung",
+  "Canggu",
+  "Seminyak",
+  "Sanur",
+  "Legian",
+  "Kuta",
+];
+
+export const extendedCoverageList = [
+  "Uluwatu",
+  "Gianyar",
+  "Ubud",
+  "Tabanan",
 ];
 
 export const coverageAreas = [
