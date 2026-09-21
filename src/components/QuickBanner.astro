@@ -2,7 +2,7 @@
 import { siteConfig } from '../config/site';
 ---
 
-<section class="relative py-14 sm:py-20 bg-white border-b border-slate-200/70 overflow-hidden section-content-visibility">
+<section id="form-booking" class="relative py-14 sm:py-20 bg-white border-b border-slate-200/70 overflow-hidden section-content-visibility">
   
   <!-- Subtle Blueprint Square Grid Background -->
   <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
@@ -11,64 +11,161 @@ import { siteConfig } from '../config/site';
 
   <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Wide Gray/Tinted Rounded Banner (matching sample/layout.png Section 5) -->
-    <div class="bg-slate-100/90 rounded-xl p-8 sm:p-12 lg:p-14 border border-slate-200/90 text-center shadow-xs">
+    <!-- Wide Gray/Tinted Rounded Banner (matching Section 5 sample layout) -->
+    <div class="bg-slate-100/90 rounded-2xl p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-xs">
       
-      <!-- Top Pill -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-slate-200 text-xs font-semibold text-navy-950 mb-4 shadow-2xs">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>Admin Siaga 24 Jam Non-Stop via WhatsApp</span>
-      </div>
-
-      <!-- Main Headline -->
-      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight max-w-2xl mx-auto mb-3">
-        Butuh Teknisi AC Hari Ini atau Jadwal Kunjungan?
-      </h2>
-
-      <!-- Subtitle -->
-      <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto mb-8 leading-relaxed">
-        Ketik kendala AC atau lokasi Anda di bawah ini, teknisi siaga kami akan langsung merespon via WhatsApp resmi.
-      </p>
-
-      <!-- Interactive Search / Message Input (matching sample/layout.png input + button) -->
-      <form id="quick-wa-form" class="max-w-xl mx-auto flex flex-col sm:flex-row items-center gap-2.5 bg-white p-2 sm:p-2.5 rounded-full border border-slate-200/90 shadow-sm mb-4">
-        <div class="flex items-center gap-2.5 px-3 w-full">
-          <!-- Lucide MessageSquare -->
-          <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-          <input
-            type="text"
-            id="quick-wa-input"
-            placeholder="Ketik keluhan atau lokasi Anda (contoh: Canggu, AC bocor)..."
-            class="w-full text-xs sm:text-sm text-navy-950 placeholder-slate-400 bg-transparent focus:outline-hidden py-2"
-          />
+      <!-- Top Pill & Headings -->
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-slate-200 text-xs font-semibold text-navy-950 mb-3 shadow-2xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span data-i18n="form.banner_pill">Admin Siaga 24 Jam Non-Stop via WhatsApp</span>
         </div>
 
-        <button
-          type="submit"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-navy-950 hover:bg-navy-900 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shrink-0 transition-all duration-200 group cursor-pointer"
-        >
-          <!-- Lucide MessageCircle -->
-          <svg class="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-          </svg>
-          <span>Chat WhatsApp</span>
-          <!-- Lucide ArrowRight -->
-          <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-white group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </button>
-      </form>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-950 tracking-tight mb-2.5" data-i18n="form.banner_title">
+          Butuh Teknisi AC Hari Ini atau Jadwal Kunjungan?
+        </h2>
+
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="form.banner_sub">
+          Isi data pemesanan di bawah ini untuk terhubung langsung dengan teknisi siaga kami via WhatsApp.
+        </p>
+      </div>
+
+      <!-- 5-Field Quick Template WhatsApp Form Card -->
+      <div class="bg-white p-5 sm:p-7 rounded-xl border border-slate-200/90 shadow-sm max-w-3xl mx-auto">
+        <form id="quick-wa-template-form" class="space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Field 1: Nama Pemesan -->
+            <div>
+              <label for="quick-name" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_name">
+                Nama Pemesan <span class="text-rose-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="quick-name"
+                required
+                placeholder="Ketik nama Anda (contoh: Budi / Wayan)"
+                data-i18n-ph="form.ph_name"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+              />
+            </div>
+
+            <!-- Field 2: Area / Lokasi di Bali -->
+            <div>
+              <label for="quick-area" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_area">
+                Area / Lokasi di Bali <span class="text-rose-500">*</span>
+              </label>
+              <select
+                id="quick-area"
+                required
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+              >
+                <option value="" disabled selected>Pilih Area di Bali</option>
+                <option value="Canggu (Badung)">Canggu (Badung)</option>
+                <option value="Seminyak / Kerobokan">Seminyak / Kerobokan</option>
+                <option value="Denpasar Barat">Denpasar Barat</option>
+                <option value="Denpasar Selatan">Denpasar Selatan</option>
+                <option value="Denpasar Timur">Denpasar Timur</option>
+                <option value="Denpasar Utara">Denpasar Utara</option>
+                <option value="Sanur">Sanur</option>
+                <option value="Kuta / Legian / Tuban">Kuta / Legian / Tuban</option>
+                <option value="Jimbaran / Nusa Dua">Jimbaran / Nusa Dua</option>
+                <option value="Uluwatu / Pecatu">Uluwatu / Pecatu</option>
+                <option value="Ubud (Gianyar)">Ubud (Gianyar)</option>
+                <option value="Gianyar Kota">Gianyar Kota</option>
+                <option value="Tabanan">Tabanan</option>
+                <option value="Area Bali Lainnya">Area Bali Lainnya</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Field 3: Jenis Layanan AC -->
+          <div>
+            <label for="quick-service" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_service">
+              Layanan yang Dibutuhkan <span class="text-rose-500">*</span>
+            </label>
+            <select
+              id="quick-service"
+              required
+              class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+            >
+              <option value="Cuci AC Standar (0.5 – 1 PK)">Cuci AC Standar (0.5 – 1 PK) - Rp 125.000</option>
+              <option value="Cuci AC Standar (1.5 – 2 PK)">Cuci AC Standar (1.5 – 2 PK) - Rp 150.000</option>
+              <option value="Cuci Unit AC Inverter Khusus">Cuci Unit AC Inverter Khusus - Rp 150.000</option>
+              <option value="Tambah / Isi Freon R32 & R410a">Tambah / Isi Freon R32 & R410a - Rp 150.000 – 650.000</option>
+              <option value="Perbaikan AC Bocor / Menetes">Perbaikan AC Bocor / Menetes - Mulai Rp 100.000</option>
+              <option value="Jasa Pasang AC (0.5 – 2 PK)">Jasa Pasang AC (0.5 – 2 PK) - Rp 350.000 – 450.000</option>
+              <option value="Bongkar AC / Bongkar + Pasang">Bongkar AC / Bongkar + Pasang - Rp 250.000 – 650.000</option>
+              <option value="Cuci Besar / Overhaul (Turun Unit)">Cuci Besar / Overhaul (Turun Unit) - Rp 375.000 – 475.000</option>
+              <option value="Pengecekan Kendala / Konsultasi Lainnya">Pengecekan Kendala / Konsultasi Lainnya</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Field 4: Jumlah Unit -->
+            <div>
+              <label for="quick-units" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_units">
+                Jumlah Unit AC
+              </label>
+              <select
+                id="quick-units"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+              >
+                <option value="1">1 Unit</option>
+                <option value="2">2 Unit</option>
+                <option value="3">3 Unit</option>
+                <option value="4">4 Unit</option>
+                <option value="5+ Unit (Proyek Villa / Usaha)">5+ Unit (Proyek Villa / Usaha)</option>
+              </select>
+            </div>
+
+            <!-- Field 5: Waktu Kunjungan -->
+            <div>
+              <label for="quick-time" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_time">
+                Pilihan Waktu Kunjungan
+              </label>
+              <select
+                id="quick-time"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+              >
+                <option value="Hari Ini (Secepatnya / Emergency)">Hari Ini (Secepatnya / Emergency)</option>
+                <option value="Besok Pagi (08:00 – 12:00)">Besok Pagi (08:00 – 12:00)</option>
+                <option value="Besok Siang (13:00 – 17:00)">Besok Siang (13:00 – 17:00)</option>
+                <option value="Besok Sore / Malam (17:00 – 21:00)">Besok Sore / Malam (17:00 – 21:00)</option>
+                <option value="Jadwal Khusus / Reservasi Nanti">Jadwal Khusus / Reservasi Nanti</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Submit CTA Button -->
+          <div class="pt-2">
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center gap-2.5 bg-navy-950 hover:bg-navy-900 active:bg-black text-white font-bold text-xs sm:text-sm py-3.5 px-6 rounded-xl shadow-md transition-all duration-200 cursor-pointer group"
+            >
+              <!-- Lucide MessageCircle -->
+              <svg class="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+              </svg>
+              <span data-i18n="form.btn_submit">Kirim Jadwal via WhatsApp</span>
+              <!-- Lucide ArrowRight -->
+              <svg class="w-4 h-4 text-slate-300 group-hover:text-white group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+
+        </form>
+      </div>
 
       <!-- Trust Assurance Footnote -->
-      <div class="flex flex-wrap items-center justify-center gap-y-1 gap-x-4 text-[11px] sm:text-xs text-slate-500">
-        <span>✓ Garansi 30 Hari Penuh</span>
+      <div class="flex flex-wrap items-center justify-center gap-y-1 gap-x-4 text-[11px] sm:text-xs text-slate-500 mt-6">
+        <span data-i18n="form.trust1">✓ Garansi 30 Hari Penuh</span>
         <span>•</span>
-        <span>✓ Tiba Dalam 60 Menit</span>
+        <span data-i18n="form.trust2">✓ Tiba Dalam 60 Menit</span>
         <span>•</span>
-        <span>✓ Tarif Transparan di Awal</span>
+        <span data-i18n="form.trust3">✓ Tarif Transparan di Awal</span>
       </div>
 
     </div>
@@ -79,17 +176,29 @@ import { siteConfig } from '../config/site';
 <!-- Interactive Quick WA Form Script -->
 <script is:inline define:vars={{ phoneRaw: siteConfig.phoneRaw }}>
   document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('quick-wa-form');
-    const input = document.getElementById('quick-wa-input');
+    const form = document.getElementById('quick-wa-template-form');
+    const nameInput = document.getElementById('quick-name');
+    const areaSelect = document.getElementById('quick-area');
+    const serviceSelect = document.getElementById('quick-service');
+    const unitsSelect = document.getElementById('quick-units');
+    const timeSelect = document.getElementById('quick-time');
 
-    if (form && input) {
+    if (form) {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const customText = input.value.trim();
-        const defaultText = "Halo Admin Jawara Teknik, saya butuh bantuan servis AC untuk hari ini di Bali.";
-        const message = customText 
-          ? `Halo Admin Jawara Teknik, saya butuh bantuan servis AC:\n- Keluhan / Lokasi: ${customText}`
-          : defaultText;
+        const lang = localStorage.getItem('jawara_lang') || 'id';
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        const areaVal = areaSelect ? areaSelect.value : '';
+        const serviceVal = serviceSelect ? serviceSelect.value : '';
+        const unitsVal = unitsSelect ? unitsSelect.value : '1';
+        const timeVal = timeSelect ? timeSelect.value : '';
+
+        let message = '';
+        if (lang === 'en') {
+          message = `Hello Admin Jawara Teknik Bali, I would like to schedule an AC service appointment:\n\n• Name: ${nameVal}\n• Area / Location: ${areaVal}\n• Service: ${serviceVal}\n• Quantity: ${unitsVal} Unit(s)\n• Preferred Schedule: ${timeVal}`;
+        } else {
+          message = `Halo Admin Jawara Teknik Bali, saya ingin jadwalkan servis AC:\n\n• Nama: ${nameVal}\n• Lokasi / Area: ${areaVal}\n• Layanan: ${serviceVal}\n• Jumlah: ${unitsVal} Unit\n• Waktu Kunjungan: ${timeVal}`;
+        }
 
         const url = `https://wa.me/${phoneRaw}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank', 'noopener,noreferrer');

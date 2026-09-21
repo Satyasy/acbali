@@ -1,5 +1,6 @@
 ---
 import { siteConfig, faqs } from '../config/site';
+import { translations } from '../config/i18n';
 import '../styles/global.css';
 
 interface Props {
@@ -242,5 +243,95 @@ const faqSchema = {
   </head>
   <body class="bg-slatewhite text-slate-900 selection:bg-iceblue-600 selection:text-white min-h-screen flex flex-col font-sans">
     <slot />
+
+    <!-- Client-side Lightweight i18n Engine (Zero Lag, 100 Lighthouse) -->
+    <script is:inline define:vars={{ translationsData: translations }}>
+      (function() {
+        const defaultLang = 'id';
+        function getSavedLang() {
+          try {
+            return localStorage.getItem('jawara_lang') || defaultLang;
+          } catch (e) {
+            return defaultLang;
+          }
+        }
+
+        function resolveValue(obj, path) {
+          if (!obj || !path) return null;
+          const parts = path.split('.');
+          let curr = obj;
+          for (const part of parts) {
+            if (curr && typeof curr === 'object' && part in curr) {
+              curr = curr[part];
+            } else {
+              return null;
+            }
+          }
+          return typeof curr === 'string' ? curr : null;
+        }
+
+        function applyLanguage(lang) {
+          const dict = translationsData[lang] || translationsData.id;
+          if (!dict) return;
+
+          try {
+            localStorage.setItem('jawara_lang', lang);
+          } catch (e) {}
+
+          document.documentElement.lang = lang;
+
+          // Update text nodes
+          const elements = document.querySelectorAll('[data-i18n]');
+          elements.forEach((el) => {
+            const path = el.getAttribute('data-i18n');
+            const val = resolveValue(dict, path);
+            if (val !== null) {
+              el.textContent = val;
+            }
+          });
+
+          // Update input placeholders
+          const phElements = document.querySelectorAll('[data-i18n-ph]');
+          phElements.forEach((el) => {
+            const path = el.getAttribute('data-i18n-ph');
+            const val = resolveValue(dict, path);
+            if (val !== null) {
+              el.setAttribute('placeholder', val);
+            }
+          });
+
+          // Update language toggle buttons visual state
+          const langBtns = document.querySelectorAll('[data-lang-btn]');
+          langBtns.forEach((btn) => {
+            const btnLang = btn.getAttribute('data-lang-btn');
+            if (btnLang === lang) {
+              btn.className = 'lang-btn px-2.5 py-1 rounded-full transition-all duration-150 cursor-pointer bg-navy-950 text-white shadow-2xs font-bold';
+            } else {
+              btn.className = 'lang-btn px-2.5 py-1 rounded-full transition-all duration-150 cursor-pointer text-slate-600 hover:text-navy-950 font-medium';
+            }
+          });
+
+          window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+        }
+
+        // Run on DOM ready or immediately if already loaded
+        const initialLang = getSavedLang();
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => applyLanguage(initialLang));
+        } else {
+          applyLanguage(initialLang);
+        }
+
+        // Delegate language switch clicks
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-lang-btn]');
+          if (btn) {
+            e.preventDefault();
+            const targetLang = btn.getAttribute('data-lang-btn');
+            if (targetLang) applyLanguage(targetLang);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

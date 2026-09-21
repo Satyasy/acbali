@@ -31,28 +31,70 @@ const defaultWaUrl = createWhatsAppLink();
       </a>
 
       <!-- Desktop Navigation Links -->
-      <div class="hidden md:flex items-center space-x-6 text-[13px] font-semibold text-slate-700">
-        <a href="#tarif" class="hover:text-iceblue-600 transition-colors py-1">Daftar Tarif</a>
-        <a href="#masalah" class="hover:text-iceblue-600 transition-colors py-1">Kendala AC</a>
-        <a href="#paket-villa" class="hover:text-iceblue-600 transition-colors py-1">Paket Villa & B2B</a>
-        <a href="#wilayah" class="hover:text-iceblue-600 transition-colors py-1">Wilayah Bali</a>
-        <a href="#cara-order" class="hover:text-iceblue-600 transition-colors py-1">Cara Pesan</a>
-        <a href="#faq" class="hover:text-iceblue-600 transition-colors py-1">FAQ</a>
+      <div class="hidden lg:flex items-center space-x-6 text-[13px] font-semibold text-slate-700">
+        <a href="#tarif" class="hover:text-iceblue-600 transition-colors py-1" data-i18n="nav.rates">Daftar Tarif</a>
+        <a href="#masalah" class="hover:text-iceblue-600 transition-colors py-1" data-i18n="nav.issues">Kendala AC</a>
+        <a href="#paket-villa" class="hover:text-iceblue-600 transition-colors py-1" data-i18n="nav.villa">Paket Villa & B2B</a>
+        <a href="#wilayah" class="hover:text-iceblue-600 transition-colors py-1" data-i18n="nav.areas">Wilayah Bali</a>
+        <a href="#cara-order" class="hover:text-iceblue-600 transition-colors py-1" data-i18n="nav.order">Cara Pesan</a>
+        <a href="#faq" class="hover:text-iceblue-600 transition-colors py-1" data-i18n="nav.faq">FAQ</a>
       </div>
 
-      <!-- Action Button -->
-      <div class="flex items-center gap-2">
+      <!-- Action Buttons & Language Switcher -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Language Switcher Pill [ ID | EN ] -->
+        <div class="inline-flex items-center p-0.5 bg-slate-100 rounded-full border border-slate-200/90 text-[11px] font-bold" role="group" aria-label="Language Selector">
+          <button
+            type="button"
+            data-lang-btn="id"
+            class="lang-btn px-2.5 py-1 rounded-full transition-all duration-150 cursor-pointer bg-navy-950 text-white shadow-2xs"
+            aria-label="Bahasa Indonesia"
+          >
+            ID
+          </button>
+          <button
+            type="button"
+            data-lang-btn="en"
+            class="lang-btn px-2.5 py-1 rounded-full transition-all duration-150 cursor-pointer text-slate-600 hover:text-navy-950"
+            aria-label="English"
+          >
+            EN
+          </button>
+        </div>
+
+        <!-- Quick Booking Trigger Button -->
+        <button
+          type="button"
+          data-open-modal
+          data-service="Konsultasi Servis AC Cepat"
+          class="hidden sm:inline-flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-navy-900 text-xs font-bold px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-slate-200/90 transition-colors cursor-pointer"
+        >
+          <!-- Lucide CalendarClock -->
+          <svg class="w-3.5 h-3.5 text-iceblue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"></path>
+            <path d="M16 2v4"></path>
+            <path d="M8 2v4"></path>
+            <path d="M3 10h18"></path>
+            <circle cx="17" cy="16.5" r="4.5"></circle>
+            <polyline points="17 14 17 16.5 19 18"></polyline>
+          </svg>
+          <span data-i18n="nav.quick_book">Booking Cepat</span>
+        </button>
+
+        <!-- Official Direct WhatsApp CTA Button -->
         <a
           href={defaultWaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 btn-cta-whatsapp px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-[13px]"
+          class="inline-flex items-center gap-1.5 sm:gap-2 btn-cta-whatsapp px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-[13px]"
         >
           <!-- Official Lucide MessageCircle (100% Symmetrical) -->
           <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
           </svg>
-          <span class="hidden sm:inline">Chat</span> WhatsApp
+          <span class="hidden md:inline" data-i18n="nav.chat_wa">Chat WhatsApp</span>
+          <span class="md:hidden">WA</span>
         </a>
       </div>
     </div>

@@ -27,12 +27,12 @@ const allIssuesWaUrl = createWhatsAppLink({
           <svg class="w-3.5 h-3.5 text-navy-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
           </svg>
-          <span>Diagnosa Tuntas & Solusi Ahli</span>
+          <span data-i18n="painpoints.badge">Diagnosa Tuntas & Solusi Ahli</span>
         </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight" data-i18n="painpoints.title">
           Solusi Masalah AC Paling Sering di Bali
         </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-600">
+        <p class="mt-2 text-sm sm:text-base text-slate-600" data-i18n="painpoints.desc">
           Dokumentasi penanganan teknisi di lapangan untuk mengatasi berbagai kendala AC secara tepat tanpa coba-coba.
         </p>
       </div>
@@ -42,7 +42,9 @@ const allIssuesWaUrl = createWhatsAppLink({
         href={allIssuesWaUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="hidden sm:inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-navy-950 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-slate-200/90 transition-all duration-200 shrink-0"
+        data-open-modal
+        data-service="Konsultasi Kendala AC Khusus Lainnya"
+        class="hidden sm:inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-navy-950 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-slate-200/90 transition-all duration-200 shrink-0 cursor-pointer"
       >
         <span>Lihat Semua Penanganan</span>
         <svg class="w-3.5 h-3.5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

@@ -1,0 +1,286 @@
+---
+import { siteConfig } from '../config/site';
+---
+
+<!-- Global Booking Modal Dialog -->
+<div
+  id="booking-modal"
+  class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-all duration-200"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-booking-title"
+>
+  <!-- Backdrop -->
+  <div
+    id="modal-backdrop"
+    class="absolute inset-0 bg-navy-950/70 backdrop-blur-xs transition-opacity duration-200"
+  ></div>
+
+  <!-- Modal Card -->
+  <div class="relative z-10 w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200/90 overflow-hidden transform scale-95 transition-all duration-200">
+    
+    <!-- Modal Header -->
+    <div class="bg-navy-950 px-5 py-4 sm:px-6 sm:py-5 flex items-start justify-between text-white border-b border-navy-900">
+      <div>
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-iceblue-500/20 text-iceblue-300 text-[11px] font-semibold mb-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span data-i18n="topbar.badge1">Melayani 24 Jam Non-Stop</span>
+        </div>
+        <h3 id="modal-booking-title" class="text-base sm:text-lg font-extrabold tracking-tight text-white" data-i18n="form.modal_title">
+          Formulir Booking Servis AC
+        </h3>
+        <p class="text-xs text-slate-300 mt-0.5" data-i18n="form.modal_sub">
+          Lengkapi data di bawah ini untuk langsung terhubung dengan teknisi siaga kami.
+        </p>
+      </div>
+
+      <!-- Close Button -->
+      <button
+        type="button"
+        id="btn-close-modal"
+        class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+        aria-label="Tutup Formulir"
+      >
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Form Body -->
+    <form id="modal-booking-form" class="p-5 sm:p-6 space-y-3.5 max-h-[80vh] overflow-y-auto">
+      
+      <!-- Field 1: Nama Lengkap -->
+      <div>
+        <label for="modal-input-name" class="block text-xs font-bold text-navy-950 mb-1" data-i18n="form.label_name">
+          Nama Pemesan <span class="text-rose-500">*</span>
+        </label>
+        <div class="relative">
+          <input
+            type="text"
+            id="modal-input-name"
+            required
+            placeholder="Ketik nama Anda (contoh: Budi / Wayan)"
+            data-i18n-ph="form.ph_name"
+            class="w-full px-3.5 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+          />
+        </div>
+      </div>
+
+      <!-- Field 2: Area / Lokasi di Bali -->
+      <div>
+        <label for="modal-input-area" class="block text-xs font-bold text-navy-950 mb-1" data-i18n="form.label_area">
+          Area / Lokasi di Bali <span class="text-rose-500">*</span>
+        </label>
+        <select
+          id="modal-input-area"
+          required
+          class="w-full px-3.5 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+        >
+          <option value="" disabled selected>Pilih Wilayah / Area di Bali</option>
+          <option value="Canggu (Badung)">Canggu (Badung)</option>
+          <option value="Seminyak / Kerobokan">Seminyak / Kerobokan</option>
+          <option value="Denpasar Barat">Denpasar Barat</option>
+          <option value="Denpasar Selatan">Denpasar Selatan</option>
+          <option value="Denpasar Timur">Denpasar Timur</option>
+          <option value="Denpasar Utara">Denpasar Utara</option>
+          <option value="Sanur">Sanur</option>
+          <option value="Kuta / Legian / Tuban">Kuta / Legian / Tuban</option>
+          <option value="Jimbaran / Nusa Dua">Jimbaran / Nusa Dua</option>
+          <option value="Uluwatu / Pecatu">Uluwatu / Pecatu</option>
+          <option value="Ubud (Gianyar)">Ubud (Gianyar)</option>
+          <option value="Gianyar Kota">Gianyar Kota</option>
+          <option value="Tabanan">Tabanan</option>
+          <option value="Area Bali Lainnya">Area Bali Lainnya</option>
+        </select>
+      </div>
+
+      <!-- Field 3: Jenis Layanan AC -->
+      <div>
+        <label for="modal-input-service" class="block text-xs font-bold text-navy-950 mb-1" data-i18n="form.label_service">
+          Layanan yang Dibutuhkan <span class="text-rose-500">*</span>
+        </label>
+        <select
+          id="modal-input-service"
+          required
+          class="w-full px-3.5 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+        >
+          <option value="Cuci AC Standar (0.5 – 1 PK)">Cuci AC Standar (0.5 – 1 PK) - Rp 125.000</option>
+          <option value="Cuci AC Standar (1.5 – 2 PK)">Cuci AC Standar (1.5 – 2 PK) - Rp 150.000</option>
+          <option value="Cuci Unit AC Inverter Khusus">Cuci Unit AC Inverter Khusus - Rp 150.000</option>
+          <option value="Tambah / Isi Freon R32 & R410a">Tambah / Isi Freon R32 & R410a - Rp 150.000 – 650.000</option>
+          <option value="Perbaikan AC Bocor / Menetes">Perbaikan AC Bocor / Menetes - Mulai Rp 100.000</option>
+          <option value="Jasa Pasang AC (0.5 – 2 PK)">Jasa Pasang AC (0.5 – 2 PK) - Rp 350.000 – 450.000</option>
+          <option value="Bongkar AC / Bongkar + Pasang">Bongkar AC / Bongkar + Pasang - Rp 250.000 – 650.000</option>
+          <option value="Cuci Besar / Overhaul (Turun Unit)">Cuci Besar / Overhaul (Turun Unit) - Rp 375.000 – 475.000</option>
+          <option value="Pengecekan Kendala / Konsultasi Lainnya">Pengecekan Kendala / Konsultasi Lainnya</option>
+        </select>
+      </div>
+
+      <!-- Field 4 & 5 (2-Column Grid on Mobile/Desktop) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        <!-- Field 4: Jumlah Unit -->
+        <div>
+          <label for="modal-input-units" class="block text-xs font-bold text-navy-950 mb-1" data-i18n="form.label_units">
+            Jumlah Unit AC
+          </label>
+          <select
+            id="modal-input-units"
+            class="w-full px-3.5 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+          >
+            <option value="1">1 Unit</option>
+            <option value="2">2 Unit</option>
+            <option value="3">3 Unit</option>
+            <option value="4">4 Unit</option>
+            <option value="5+ Unit (Proyek Villa / Usaha)">5+ Unit (Proyek Villa / Usaha)</option>
+          </select>
+        </div>
+
+        <!-- Field 5: Waktu Kunjungan -->
+        <div>
+          <label for="modal-input-time" class="block text-xs font-bold text-navy-950 mb-1" data-i18n="form.label_time">
+            Waktu Kunjungan
+          </label>
+          <select
+            id="modal-input-time"
+            class="w-full px-3.5 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+          >
+            <option value="Hari Ini (Secepatnya / Emergency)">Hari Ini (Secepatnya / Emergency)</option>
+            <option value="Besok Pagi (08:00 – 12:00)">Besok Pagi (08:00 – 12:00)</option>
+            <option value="Besok Siang (13:00 – 17:00)">Besok Siang (13:00 – 17:00)</option>
+            <option value="Besok Sore / Malam (17:00 – 21:00)">Besok Sore / Malam (17:00 – 21:00)</option>
+            <option value="Jadwal Khusus / Reservasi Nanti">Jadwal Khusus / Reservasi Nanti</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Submit CTA Button -->
+      <div class="pt-2">
+        <button
+          type="submit"
+          class="w-full inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs sm:text-sm py-3 px-5 rounded-xl shadow-md transition-all cursor-pointer group"
+        >
+          <!-- Lucide MessageCircle -->
+          <svg class="w-4 h-4 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+          </svg>
+          <span data-i18n="form.btn_submit">Kirim Jadwal via WhatsApp</span>
+          <!-- Lucide ArrowRight -->
+          <svg class="w-3.5 h-3.5 text-white/80 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Trust Badges Under Button -->
+      <div class="flex items-center justify-center gap-3 text-[11px] text-slate-500 pt-1">
+        <span data-i18n="form.trust1">✓ Garansi 30 Hari</span>
+        <span>•</span>
+        <span data-i18n="form.trust2">✓ Tiba 60 Menit</span>
+        <span>•</span>
+        <span data-i18n="form.trust3">✓ Transparan di Awal</span>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- Modal Logic Script -->
+<script is:inline define:vars={{ phoneRaw: siteConfig.phoneRaw }}>
+  (function() {
+    const modal = document.getElementById('booking-modal');
+    const backdrop = document.getElementById('modal-backdrop');
+    const closeBtn = document.getElementById('btn-close-modal');
+    const form = document.getElementById('modal-booking-form');
+    const nameInput = document.getElementById('modal-input-name');
+    const areaSelect = document.getElementById('modal-input-area');
+    const serviceSelect = document.getElementById('modal-input-service');
+    const unitsSelect = document.getElementById('modal-input-units');
+    const timeSelect = document.getElementById('modal-input-time');
+
+    function openModal(serviceName) {
+      if (!modal) return;
+      if (serviceName && serviceSelect) {
+        // Try matching option
+        let matched = false;
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].text.toLowerCase().includes(serviceName.toLowerCase()) ||
+              serviceSelect.options[i].value.toLowerCase().includes(serviceName.toLowerCase())) {
+            serviceSelect.selectedIndex = i;
+            matched = true;
+            break;
+          }
+        }
+        if (!matched && serviceName) {
+          serviceSelect.options[serviceSelect.options.length - 1].selected = true;
+        }
+      }
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      const card = modal.querySelector('.relative.z-10');
+      if (card) {
+        card.classList.remove('scale-95');
+        card.classList.add('scale-100');
+      }
+      if (nameInput) setTimeout(() => nameInput.focus(), 150);
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      const card = modal.querySelector('.relative.z-10');
+      if (card) {
+        card.classList.remove('scale-100');
+        card.classList.add('scale-95');
+      }
+    }
+
+    // Bind triggers across the page
+    document.addEventListener('click', (e) => {
+      const target = e.target.closest('[data-open-modal]');
+      if (target) {
+        e.preventDefault();
+        const service = target.getAttribute('data-service') || '';
+        openModal(service);
+      }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('pointer-events-none')) {
+        closeModal();
+      }
+    });
+
+    // Expose globally so other components can call window.openBookingModal(service)
+    window.openBookingModal = openModal;
+    window.closeBookingModal = closeModal;
+
+    // Handle Form Submit
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const lang = localStorage.getItem('jawara_lang') || 'id';
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        const areaVal = areaSelect ? areaSelect.value : '';
+        const serviceVal = serviceSelect ? serviceSelect.value : '';
+        const unitsVal = unitsSelect ? unitsSelect.value : '1';
+        const timeVal = timeSelect ? timeSelect.value : '';
+
+        let message = '';
+        if (lang === 'en') {
+          message = `Hello Admin Jawara Teknik Bali, I would like to schedule an AC service appointment:\n\n• Name: ${nameVal}\n• Area / Location: ${areaVal}\n• Service: ${serviceVal}\n• Quantity: ${unitsVal} Unit(s)\n• Preferred Schedule: ${timeVal}`;
+        } else {
+          message = `Halo Admin Jawara Teknik Bali, saya ingin jadwalkan servis AC:\n\n• Nama: ${nameVal}\n• Lokasi / Area: ${areaVal}\n• Layanan: ${serviceVal}\n• Jumlah: ${unitsVal} Unit\n• Waktu Kunjungan: ${timeVal}`;
+        }
+
+        const waUrl = `https://wa.me/${phoneRaw}?text=${encodeURIComponent(message)}`;
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+        closeModal();
+      });
+    }
+  })();
+</script>

@@ -35,18 +35,18 @@ const primaryWaUrl = createWhatsAppLink({
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
           <circle cx="12" cy="10" r="3"></circle>
         </svg>
-        <span>Siaga 24 Jam Non-Stop</span>
+        <span data-i18n="topbar.badge1">Siaga 24 Jam Non-Stop</span>
         <span class="text-slate-400">•</span>
-        <span class="text-iceblue-200">Respon Tiba 60 Menit</span>
+        <span class="text-iceblue-200" data-i18n="topbar.badge2">Respon Tiba 60 Menit</span>
       </div>
 
       <!-- Main H1 Headline -->
       <h1 class="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.2] mb-3 sm:mb-4 drop-shadow-md">
-        Jasa Servis & Cuci AC Panggilan Cepat di <span class="text-gradient-ice">Denpasar, Badung</span>, dan Sekitarnya
+        <span data-i18n="hero.title_1">Servis & Cuci AC Panggilan Cepat</span> <span data-i18n="hero.in">di</span> <span class="text-gradient-ice">Denpasar, Badung</span>, <span data-i18n="hero.title_2">dan Sekitarnya</span>
       </h1>
 
       <!-- Sub-headline -->
-      <p class="text-xs sm:text-sm lg:text-base text-slate-100 font-normal leading-relaxed mb-6 sm:mb-7 max-w-2xl mx-auto drop-shadow-xs">
+      <p class="text-xs sm:text-sm lg:text-base text-slate-100 font-normal leading-relaxed mb-6 sm:mb-7 max-w-2xl mx-auto drop-shadow-xs" data-i18n="hero.desc">
         Spesialis pendingin udara panggilan cepat di Bali. Teknisi ahli berpengalaman siap menuju rumah, villa, kos, dan kantor Anda. Pengerjaan rapi, tarif transparan di awal, dan garansi 30 hari penuh.
       </p>
 
@@ -57,13 +57,15 @@ const primaryWaUrl = createWhatsAppLink({
           href={primaryWaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 btn-cta-whatsapp text-slate-950 font-bold text-sm sm:text-base px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl shadow-lg"
+          data-open-modal
+          data-service="Panggilan Cepat (Cuci / Perbaikan AC)"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 btn-cta-whatsapp text-slate-950 font-bold text-sm sm:text-base px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl shadow-lg cursor-pointer"
         >
           <!-- Official Lucide MessageCircle (100% Symmetrical) -->
           <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
           </svg>
-          <span>Panggil Teknisi via WhatsApp</span>
+          <span data-i18n="hero.btn_order">Pesan Teknisi Sekarang</span>
         </a>
 
         <!-- Secondary Pricing CTA Button (Apple Glass) -->
@@ -78,7 +80,7 @@ const primaryWaUrl = createWhatsAppLink({
             <path d="M16 12h-8"></path>
             <path d="M12 16h-4"></path>
           </svg>
-          <span>Lihat Daftar Tarif</span>
+          <span data-i18n="hero.btn_pricing">Lihat Daftar Tarif</span>
         </a>
       </div>
 
@@ -95,7 +97,7 @@ const primaryWaUrl = createWhatsAppLink({
             </svg>
           </div>
           <div>
-            <h2 class="font-bold text-white text-xs sm:text-sm">Garansi 30 Hari Penuh</h2>
+            <h2 class="font-bold text-white text-xs sm:text-sm" data-i18n="topbar.badge3">Garansi 30 Hari Penuh</h2>
             <p class="text-[11px] sm:text-xs text-slate-200">Klaim mudah jika kendala kembali muncul.</p>
           </div>
         </div>
