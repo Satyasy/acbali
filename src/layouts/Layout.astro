@@ -280,6 +280,12 @@ const faqSchema = {
 
           document.documentElement.lang = lang;
 
+          // Seamless 150ms iOS-style crossfade
+          document.body.classList.add('lang-crossfade');
+          setTimeout(() => {
+            document.body.classList.remove('lang-crossfade');
+          }, 150);
+
           // Update text nodes
           const elements = document.querySelectorAll('[data-i18n]');
           elements.forEach((el) => {
@@ -300,14 +306,25 @@ const faqSchema = {
             }
           });
 
+          // iOS Sliding Glass Thumb & Micro-Zoom
+          const thumb = document.getElementById('lang-glass-thumb');
+          if (thumb) {
+            const isEn = lang === 'en';
+            // Subtle spring zoom effect during slide
+            thumb.style.transform = isEn ? 'translateX(100%) scale(1.06)' : 'translateX(0) scale(1.06)';
+            setTimeout(() => {
+              thumb.style.transform = isEn ? 'translateX(100%) scale(1)' : 'translateX(0) scale(1)';
+            }, 180);
+          }
+
           // Update language toggle buttons visual state
           const langBtns = document.querySelectorAll('[data-lang-btn]');
           langBtns.forEach((btn) => {
             const btnLang = btn.getAttribute('data-lang-btn');
             if (btnLang === lang) {
-              btn.className = 'lang-btn px-2.5 py-1 rounded-full transition-all duration-150 cursor-pointer bg-navy-950 text-white shadow-2xs font-bold';
+              btn.className = 'lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-black transition-colors duration-200 cursor-pointer text-navy-950';
             } else {
-              btn.className = 'lang-btn px-2.5 py-1 rounded-full transition-all duration-150 cursor-pointer text-slate-600 hover:text-navy-950 font-medium';
+              btn.className = 'lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-medium transition-colors duration-200 cursor-pointer text-slate-500 hover:text-navy-950';
             }
           });
 

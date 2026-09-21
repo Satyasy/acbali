@@ -100,6 +100,46 @@ export const idTranslations: TranslationDictionary = {
     btn_order_short: "Pesan",
     consult_btn: "Konsultasikan Kendala AC Anda via WhatsApp",
 
+    tech_0_name: "Bobok Tembok Jalur Pipa",
+    tech_0_desc: "Pembuatan jalur pipa tembaga atau pembuangan air baru pada dinding bata/beton.",
+    tech_0_cat: "Pemasangan",
+    tech_0_unit: "/ titik",
+
+    tech_1_name: "Pengelasan Sambungan Pipa Tembaga",
+    tech_1_desc: "Pengelasan perak berkualitas tinggi untuk mengatasi kebocoran pada sambungan pipa refrigrant.",
+    tech_1_cat: "Perbaikan",
+    tech_1_unit: "/ titik",
+
+    tech_2_name: "Ganti Kapasitor AC (0.5 - 2 PK)",
+    tech_2_desc: "Penggantian kapasitor kompresor/fan original untuk mengatasi kompresor macet atau gagal start.",
+    tech_2_cat: "Sparepart",
+    tech_2_unit: "/ unit",
+
+    tech_3_name: "Flushing Evaporator & Jalur Pipa",
+    tech_3_desc: "Pembersihan kerak oli dan gram kotoran di dalam pipa tembaga menggunakan nitrogen / cairan khusus.",
+    tech_3_cat: "Flushing & Vakum",
+    tech_3_unit: "/ unit",
+
+    tech_4_name: "Vakum Total Sistem AC",
+    tech_4_desc: "Pengurasan udara dan uap air dalam pipa menggunakan mesin vakum high-vacuum gauge.",
+    tech_4_cat: "Flushing & Vakum",
+    tech_4_unit: "/ unit",
+
+    tech_5_name: "Vakum + Flushing AC Lengkap",
+    tech_5_desc: "Paket lengkap pembersihan total pipa dan vakum sistem sebelum pengisian freon baru.",
+    tech_5_cat: "Flushing & Vakum",
+    tech_5_unit: "/ unit",
+
+    tech_6_name: "Isi Oli Kompresor AC",
+    tech_6_desc: "Pengisian pelumas oli kompresor murni sesuai viskositas tipe freon agar kompresor awet dan sunyi.",
+    tech_6_cat: "Perbaikan",
+    tech_6_unit: "/ unit",
+
+    tech_7_name: "Pembersihan Cairan Ultra / Chemical Wash",
+    tech_7_desc: "Pencucian mendalam menggunakan cairan kimia pembersih kerak membandel tanpa merusak sirip aluminium.",
+    tech_7_cat: "Cuci AC",
+    tech_7_unit: "/ unit",
+
     // Guarantee Banner
     guarantee_title: "Transparansi Biaya & Garansi Penuh 30 Hari",
     guarantee_desc: "Seluruh estimasi biaya disepakati di awal tanpa biaya siluman. Setiap perbaikan dilindungi garansi 30 hari penuh demi kepuasan dan ketenangan Anda.",

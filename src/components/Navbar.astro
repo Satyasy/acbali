@@ -43,12 +43,24 @@ const defaultWaUrl = createWhatsAppLink();
       <!-- Action Buttons & Language Switcher -->
       <div class="flex items-center gap-2 sm:gap-3">
         
-        <!-- Language Switcher Pill [ ID | EN ] -->
-        <div class="inline-flex items-center p-0.5 bg-slate-100 rounded-full border border-slate-200/90 text-xs font-bold" role="group" aria-label="Language Selector">
+        <!-- iOS Segmented Language Switcher [ ID | EN ] -->
+        <div
+          id="lang-switcher-track"
+          class="relative inline-flex items-center p-1 bg-slate-200/80 backdrop-blur-md rounded-full border border-slate-300/70 shadow-2xs text-xs select-none transition-transform duration-200 active:scale-95"
+          role="group"
+          aria-label="Language Selector"
+        >
+          <!-- Sliding Frosted Glass Thumb with Spring & Zoom -->
+          <span
+            id="lang-glass-thumb"
+            class="absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-white shadow-xs border border-white/90 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] pointer-events-none left-1"
+            aria-hidden="true"
+          ></span>
+
           <button
             type="button"
             data-lang-btn="id"
-            class="lang-btn px-2.5 py-1 rounded-full transition-all duration-150 cursor-pointer bg-navy-950 text-white shadow-2xs"
+            class="lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-bold transition-colors duration-200 cursor-pointer text-navy-950"
             aria-label="Bahasa Indonesia"
           >
             ID
@@ -56,7 +68,7 @@ const defaultWaUrl = createWhatsAppLink();
           <button
             type="button"
             data-lang-btn="en"
-            class="lang-btn px-2.5 py-1 rounded-full transition-all duration-150 cursor-pointer text-slate-600 hover:text-navy-950"
+            class="lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-bold transition-colors duration-200 cursor-pointer text-slate-500 hover:text-navy-950"
             aria-label="English"
           >
             EN

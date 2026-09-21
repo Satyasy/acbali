@@ -100,6 +100,46 @@ export const enTranslations: TranslationDictionary = {
     btn_order_short: "Book",
     consult_btn: "Consult Your AC Issue via WhatsApp",
 
+    tech_0_name: "Wall Chasing for Piping",
+    tech_0_desc: "Chasing new channels for copper piping or water drainage lines into brick/concrete walls.",
+    tech_0_cat: "Installation",
+    tech_0_unit: "/ point",
+
+    tech_1_name: "Copper Pipe Joint Brazing & Welding",
+    tech_1_desc: "High-grade silver brazing to seal refrigerant pipe leaks and restore airtight pressure.",
+    tech_1_cat: "Repair",
+    tech_1_unit: "/ point",
+
+    tech_2_name: "AC Capacitor Replacement (0.5 – 2 HP)",
+    tech_2_desc: "Genuine compressor/fan run capacitor replacement to resolve starting failures or stalls.",
+    tech_2_cat: "Spare Parts",
+    tech_2_unit: "/ unit",
+
+    tech_3_name: "Evaporator & Pipe Circuit Flushing",
+    tech_3_desc: "Flushing burnt oil sludge and metal particles inside copper lines using nitrogen / solvent.",
+    tech_3_cat: "Flush & Vacuum",
+    tech_3_unit: "/ unit",
+
+    tech_4_name: "Complete Deep Vacuum System",
+    tech_4_desc: "Evacuating moisture and non-condensable air from copper lines with high-vacuum gauges.",
+    tech_4_cat: "Flush & Vacuum",
+    tech_4_unit: "/ unit",
+
+    tech_5_name: "Full Vacuum & Pipe Flushing Package",
+    tech_5_desc: "Complete deep pipeline flush and high-vacuum evacuation before new refrigerant charging.",
+    tech_5_cat: "Flush & Vacuum",
+    tech_5_unit: "/ unit",
+
+    tech_6_name: "Compressor Lubricant Oil Refill",
+    tech_6_desc: "Refilling pure synthetic compressor oil matching refrigerant viscosity for quiet operation.",
+    tech_6_cat: "Repair",
+    tech_6_unit: "/ unit",
+
+    tech_7_name: "Ultra Chemical Wash Treatment",
+    tech_7_desc: "Intensive chemical wash to dissolve stubborn grime and fungi without corroding aluminum fins.",
+    tech_7_cat: "AC Cleaning",
+    tech_7_unit: "/ unit",
+
     // Guarantee Banner
     guarantee_title: "Transparent Pricing & 30-Day Full Warranty",
     guarantee_desc: "All service fees are agreed upon upfront without hidden surcharges. Every repair includes a 30-day warranty for complete peace of mind.",

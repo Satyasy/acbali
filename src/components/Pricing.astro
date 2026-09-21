@@ -195,7 +195,7 @@ const consultWaUrl = createWhatsAppLink({
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100">
-            {technicalPricingList.map((tech) => {
+            {technicalPricingList.map((tech, idx) => {
               const techWaUrl = createWhatsAppLink({
                 service: `${tech.name} (${tech.price} ${tech.unit})`,
                 notes: tech.description,
@@ -204,17 +204,17 @@ const consultWaUrl = createWhatsAppLink({
               return (
                 <tr class="hover:bg-slate-50/70 transition-colors group/row">
                   <td class="py-3.5 px-3">
-                    <div class="font-bold text-navy-950">{tech.name}</div>
-                    <div class="text-xs text-slate-500 mt-0.5">{tech.description}</div>
+                    <div class="font-bold text-navy-950" data-i18n={`pricing.tech_${idx}_name`}>{tech.name}</div>
+                    <div class="text-xs text-slate-500 mt-0.5" data-i18n={`pricing.tech_${idx}_desc`}>{tech.description}</div>
                   </td>
                   <td class="py-3.5 px-3 whitespace-nowrap">
-                    <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+                    <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold" data-i18n={`pricing.tech_${idx}_cat`}>
                       {tech.category}
                     </span>
                   </td>
                   <td class="py-3.5 px-3 whitespace-nowrap">
                     <div class="font-black text-navy-950 tabular-nums">{tech.price}</div>
-                    <div class="text-xs text-slate-500">{tech.unit}</div>
+                    <div class="text-xs text-slate-500" data-i18n={`pricing.tech_${idx}_unit`}>{tech.unit}</div>
                   </td>
                   <td class="py-3.5 px-3 text-right whitespace-nowrap">
                     <a
