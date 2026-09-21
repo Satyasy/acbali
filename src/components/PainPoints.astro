@@ -65,7 +65,7 @@ const allIssuesWaUrl = createWhatsAppLink({
             <img
               src={featuredItem.image}
               alt={featuredItem.imageAlt}
-              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              class="w-full h-full object-cover object-center"
               loading="lazy"
               decoding="async"
               width="800"
@@ -84,7 +84,7 @@ const allIssuesWaUrl = createWhatsAppLink({
               <span class="text-slate-500 font-normal">Respon Tiba 60 Menit</span>
             </div>
             
-            <h3 class="text-xl sm:text-2xl font-black text-navy-950 mb-3 group-hover:text-iceblue-600 transition-colors" data-i18n="painpoints.item_0_title">
+            <h3 class="text-xl sm:text-2xl font-black text-navy-950 mb-3 group-hover:text-iceblue-700 transition-colors" data-i18n="painpoints.item_0_title">
               {featuredItem.title}
             </h3>
             
@@ -127,7 +127,7 @@ const allIssuesWaUrl = createWhatsAppLink({
                 <img
                   src={item.image}
                   alt={item.imageAlt}
-                  class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-out"
+                  class="w-full h-full object-cover object-center"
                   loading="lazy"
                   decoding="async"
                   width="200"
@@ -137,11 +137,11 @@ const allIssuesWaUrl = createWhatsAppLink({
 
               <!-- Content on Right of Thumbnail -->
               <div class="flex-1 min-w-0">
-                <div class="inline-block px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-[10px] font-bold uppercase tracking-wider mb-1.5" data-i18n={`painpoints.item_${idx + 1}_badge`}>
+                <div class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider mb-1.5" data-i18n={`painpoints.item_${idx + 1}_badge`}>
                   {item.badge}
                 </div>
                 
-                <h4 class="font-bold text-sm sm:text-base text-navy-950 group-hover:text-iceblue-600 transition-colors line-clamp-1 mb-1" data-i18n={`painpoints.item_${idx + 1}_title`}>
+                <h4 class="font-bold text-sm sm:text-base text-navy-950 group-hover:text-iceblue-700 transition-colors line-clamp-1 mb-1" data-i18n={`painpoints.item_${idx + 1}_title`}>
                   {item.title}
                 </h4>
                 
