@@ -1,0 +1,19 @@
+# aislop configuration file
+# Docs: https://scanaislop.com/docs/configuration
+
+ci:
+  failBelow: 80
+
+exclude:
+  - dist
+  - node_modules
+  - .astro
+  - scratch
+  - sample
+
+rules:
+  ai-slop/hardcoded-url: "off"
+  ai-slop/narrative-comment: error
+  ai-slop/trivial-comment: warning
+  ai-slop/dead-code: error
+  security/hardcoded-secret: error

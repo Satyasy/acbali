@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "slop": "aislop scan",
+    "slop:fix": "aislop fix --safe"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.5",
