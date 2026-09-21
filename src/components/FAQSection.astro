@@ -21,22 +21,22 @@ const faqWaUrl = createWhatsAppLink({
           <circle cx="12" cy="12" r="10" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m.08 4h.01" />
         </svg>
-        <span>Informasi Lengkap & Transparan</span>
+        <span data-i18n="faq.badge">Informasi Lengkap & Transparan</span>
       </div>
-      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight" data-i18n="faq.title">
         Pertanyaan yang Sering Diajukan (FAQ)
       </h2>
-      <p class="mt-3.5 text-base text-slate-600">
+      <p class="mt-3.5 text-base text-slate-600" data-i18n="faq.desc">
         Jawaban seputar garansi 30 hari, pencucian AC inverter, freon, dan respon teknisi di Bali.
       </p>
     </div>
 
     <!-- Accordion List -->
     <div class="space-y-4 reveal-on-scroll">
-      {faqs.map((faq) => (
+      {faqs.map((faq, index) => (
         <details class="group bg-white rounded-xl border border-slate-200/90 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:border-iceblue-400 open:shadow-sm">
           <summary class="flex items-center justify-between cursor-pointer font-bold text-base sm:text-lg text-navy-950 list-none gap-4">
-            <span class="group-hover:text-iceblue-600 transition-colors">
+            <span class="group-hover:text-iceblue-600 transition-colors" data-i18n={`faq.q_${index}`}>
               {faq.question}
             </span>
             <span class="w-8 h-8 rounded-full bg-slate-100 group-open:bg-navy-800 group-open:text-white flex items-center justify-center shrink-0 transition-all duration-200">
@@ -45,7 +45,7 @@ const faqWaUrl = createWhatsAppLink({
               </svg>
             </span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-600 leading-relaxed">
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-600 leading-relaxed" data-i18n={`faq.a_${index}`}>
             {faq.answer}
           </div>
         </details>
@@ -55,8 +55,8 @@ const faqWaUrl = createWhatsAppLink({
     <!-- Extra Questions Card -->
     <div class="mt-12 p-6 rounded-xl bg-white border border-slate-200/90 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <div>
-        <h3 class="font-bold text-navy-950 text-base">Masih ada pertanyaan lain yang belum terjawab?</h3>
-        <p class="text-xs sm:text-sm text-slate-500">Customer service kami siap membantu konsultasi teknis gratis.</p>
+        <h3 class="font-bold text-navy-950 text-base" data-i18n="faq.extra_title">Masih ada pertanyaan lain yang belum terjawab?</h3>
+        <p class="text-xs sm:text-sm text-slate-500" data-i18n="faq.extra_sub">Customer service kami siap membantu konsultasi teknis gratis.</p>
       </div>
       <a
         href={faqWaUrl}
@@ -64,7 +64,7 @@ const faqWaUrl = createWhatsAppLink({
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 bg-navy-800 hover:bg-navy-900 text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-colors shrink-0"
       >
-        <span>Tanya Langsung via WA</span>
+        <span data-i18n="faq.extra_btn">Tanya Langsung via WA</span>
         <span>&rarr;</span>
       </a>
     </div>

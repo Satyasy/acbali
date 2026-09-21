@@ -19,12 +19,12 @@ const stepWaUrl = createWhatsAppLink();
         <svg class="w-3.5 h-3.5 text-navy-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
         </svg>
-        <span>Alur Pemesanan Cepat</span>
+        <span data-i18n="order.badge">Alur Pemesanan Cepat</span>
       </div>
-      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight" data-i18n="order.title">
         3 Langkah Praktis Memanggil Teknisi Jawara Teknik
       </h2>
-      <p class="mt-3.5 text-base text-slate-600">
+      <p class="mt-3.5 text-base text-slate-600" data-i18n="order.desc">
         Tanpa perlu unduh aplikasi atau registrasi rumit. Cukup beberapa ketukan di WhatsApp.
       </p>
     </div>
@@ -39,24 +39,24 @@ const stepWaUrl = createWhatsAppLink();
               <span class="text-5xl font-black text-navy-700 tracking-tighter">
                 {item.step}
               </span>
-              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-navy-900 text-white text-[11px] font-bold">
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-navy-900 text-white text-[11px] font-bold" data-i18n={`order.step${index + 1}_badge`}>
                 {index === 0 && 'Mulai Disini'}
                 {index === 1 && 'Proses Kilat'}
                 {index === 2 && 'Selesai & Bergaransi'}
               </span>
             </div>
 
-            <h3 class="text-lg font-bold text-navy-950 mb-3 leading-snug">
+            <h3 class="text-lg font-bold text-navy-950 mb-3 leading-snug" data-i18n={`order.step${index + 1}_title`}>
               {item.title}
             </h3>
 
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-sm text-slate-600 leading-relaxed" data-i18n={`order.step${index + 1}_desc`}>
               {item.description}
             </p>
           </div>
 
           <div class="mt-8 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs text-navy-900 font-semibold">
-            <span class="text-iceblue-700 font-bold">{item.actionText}</span>
+            <span class="text-iceblue-700 font-bold" data-i18n={`order.step${index + 1}_action`}>{item.actionText}</span>
             <!-- Official Lucide ArrowRight with smooth glide -->
             <svg class="w-4 h-4 text-slate-400 group-hover:text-navy-950 transform group-hover:translate-x-1.5 transition-all duration-300 ease-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
@@ -79,7 +79,7 @@ const stepWaUrl = createWhatsAppLink();
         <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
         </svg>
-        <span>Pesan Sekarang via WhatsApp (Respon 60 Menit)</span>
+        <span data-i18n="order.btn_order">Pesan Sekarang via WhatsApp (Respon 60 Menit)</span>
         <svg class="w-4 h-4 shrink-0 transform group-hover/order:translate-x-1.5 transition-transform duration-200 ease-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>

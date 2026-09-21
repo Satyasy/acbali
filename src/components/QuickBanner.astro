@@ -60,7 +60,7 @@ import { siteConfig } from '../config/site';
                 required
                 class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
               >
-                <option value="" disabled selected>Pilih Area di Bali</option>
+                <option value="" disabled selected data-i18n="form.opt_area_default">Pilih Area di Bali</option>
                 <option value="Canggu (Badung)">Canggu (Badung)</option>
                 <option value="Seminyak / Kerobokan">Seminyak / Kerobokan</option>
                 <option value="Denpasar Barat">Denpasar Barat</option>
@@ -74,7 +74,7 @@ import { siteConfig } from '../config/site';
                 <option value="Ubud (Gianyar)">Ubud (Gianyar)</option>
                 <option value="Gianyar Kota">Gianyar Kota</option>
                 <option value="Tabanan">Tabanan</option>
-                <option value="Area Bali Lainnya">Area Bali Lainnya</option>
+                <option value="Area Bali Lainnya" data-i18n="form.opt_area_other">Area Bali Lainnya</option>
               </select>
             </div>
           </div>
@@ -89,15 +89,15 @@ import { siteConfig } from '../config/site';
               required
               class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
             >
-              <option value="Cuci AC Standar (0.5 – 1 PK)">Cuci AC Standar (0.5 – 1 PK) - Rp 125.000</option>
-              <option value="Cuci AC Standar (1.5 – 2 PK)">Cuci AC Standar (1.5 – 2 PK) - Rp 150.000</option>
-              <option value="Cuci Unit AC Inverter Khusus">Cuci Unit AC Inverter Khusus - Rp 150.000</option>
-              <option value="Tambah / Isi Freon R32 & R410a">Tambah / Isi Freon R32 & R410a - Rp 150.000 – 650.000</option>
-              <option value="Perbaikan AC Bocor / Menetes">Perbaikan AC Bocor / Menetes - Mulai Rp 100.000</option>
-              <option value="Jasa Pasang AC (0.5 – 2 PK)">Jasa Pasang AC (0.5 – 2 PK) - Rp 350.000 – 450.000</option>
-              <option value="Bongkar AC / Bongkar + Pasang">Bongkar AC / Bongkar + Pasang - Rp 250.000 – 650.000</option>
-              <option value="Cuci Besar / Overhaul (Turun Unit)">Cuci Besar / Overhaul (Turun Unit) - Rp 375.000 – 475.000</option>
-              <option value="Pengecekan Kendala / Konsultasi Lainnya">Pengecekan Kendala / Konsultasi Lainnya</option>
+              <option value="Cuci AC Standar (0.5 – 1 PK)" data-i18n="form.opt_srv_cuci1">Cuci AC Standar (0.5 – 1 PK) - Rp 125.000</option>
+              <option value="Cuci AC Standar (1.5 – 2 PK)" data-i18n="form.opt_srv_cuci2">Cuci AC Standar (1.5 – 2 PK) - Rp 150.000</option>
+              <option value="Cuci Unit AC Inverter Khusus" data-i18n="form.opt_srv_inverter">Cuci Unit AC Inverter Khusus - Rp 150.000</option>
+              <option value="Tambah / Isi Freon R32 & R410a" data-i18n="form.opt_srv_freon">Tambah / Isi Freon R32 & R410a - Rp 150.000 – 650.000</option>
+              <option value="Perbaikan AC Bocor / Menetes" data-i18n="form.opt_srv_leak">Perbaikan AC Bocor / Menetes - Mulai Rp 100.000</option>
+              <option value="Jasa Pasang AC (0.5 – 2 PK)" data-i18n="form.opt_srv_install">Jasa Pasang AC (0.5 – 2 PK) - Rp 350.000 – 450.000</option>
+              <option value="Bongkar AC / Bongkar + Pasang" data-i18n="form.opt_srv_dismantle">Bongkar AC / Bongkar + Pasang - Rp 250.000 – 650.000</option>
+              <option value="Cuci Besar / Overhaul (Turun Unit)" data-i18n="form.opt_srv_overhaul">Cuci Besar / Overhaul (Turun Unit) - Rp 375.000 – 475.000</option>
+              <option value="Pengecekan Kendala / Konsultasi Lainnya" data-i18n="form.opt_srv_other">Pengecekan Kendala / Konsultasi Lainnya</option>
             </select>
           </div>
 
@@ -111,11 +111,11 @@ import { siteConfig } from '../config/site';
                 id="quick-units"
                 class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
               >
-                <option value="1">1 Unit</option>
-                <option value="2">2 Unit</option>
-                <option value="3">3 Unit</option>
-                <option value="4">4 Unit</option>
-                <option value="5+ Unit (Proyek Villa / Usaha)">5+ Unit (Proyek Villa / Usaha)</option>
+                <option value="1" data-i18n="form.opt_units_1">1 Unit</option>
+                <option value="2" data-i18n="form.opt_units_2">2 Unit</option>
+                <option value="3" data-i18n="form.opt_units_3">3 Unit</option>
+                <option value="4" data-i18n="form.opt_units_4">4 Unit</option>
+                <option value="5+ Unit (Proyek Villa / Usaha)" data-i18n="form.opt_units_5">5+ Unit (Proyek Villa / Usaha)</option>
               </select>
             </div>
 
@@ -128,11 +128,11 @@ import { siteConfig } from '../config/site';
                 id="quick-time"
                 class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
               >
-                <option value="Hari Ini (Secepatnya / Emergency)">Hari Ini (Secepatnya / Emergency)</option>
-                <option value="Besok Pagi (08:00 – 12:00)">Besok Pagi (08:00 – 12:00)</option>
-                <option value="Besok Siang (13:00 – 17:00)">Besok Siang (13:00 – 17:00)</option>
-                <option value="Besok Sore / Malam (17:00 – 21:00)">Besok Sore / Malam (17:00 – 21:00)</option>
-                <option value="Jadwal Khusus / Reservasi Nanti">Jadwal Khusus / Reservasi Nanti</option>
+                <option value="Hari Ini (Secepatnya / Emergency)" data-i18n="form.opt_time_today">Hari Ini (Secepatnya / Emergency)</option>
+                <option value="Besok Pagi (08:00 – 12:00)" data-i18n="form.opt_time_morn">Besok Pagi (08:00 – 12:00)</option>
+                <option value="Besok Siang (13:00 – 17:00)" data-i18n="form.opt_time_noon">Besok Siang (13:00 – 17:00)</option>
+                <option value="Besok Sore / Malam (17:00 – 21:00)" data-i18n="form.opt_time_eve">Besok Sore / Malam (17:00 – 21:00)</option>
+                <option value="Jadwal Khusus / Reservasi Nanti" data-i18n="form.opt_time_custom">Jadwal Khusus / Reservasi Nanti</option>
               </select>
             </div>
           </div>
