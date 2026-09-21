@@ -26,7 +26,7 @@ const customAreaWaUrl = createWhatsAppLink({
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header (matching sample/layout.png 3-column section) -->
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-12">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-12 reveal-on-scroll">
       <div>
         <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 text-iceblue-700 text-xs font-semibold mb-3 border border-iceblue-200 shadow-2xs">
           <!-- Lucide MapPin -->
@@ -65,7 +65,7 @@ const customAreaWaUrl = createWhatsAppLink({
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
       
       <!-- CARD 1: Posko Utama Denpasar & Badung -->
-      <article class="glass-apple-card rounded-xl p-6 sm:p-7 flex flex-col justify-between group">
+      <article class="glass-apple-card rounded-xl p-6 sm:p-7 flex flex-col justify-between group reveal-on-scroll">
         <div>
           <!-- Header -->
           <div class="flex items-center justify-between gap-3 mb-5">
@@ -137,7 +137,7 @@ const customAreaWaUrl = createWhatsAppLink({
       </article>
 
       <!-- CARD 2: Google Maps Terverifikasi Resmi -->
-      <article class="glass-apple-card rounded-xl p-6 sm:p-7 flex flex-col justify-between group">
+      <article data-reveal-delay="80" class="glass-apple-card rounded-xl p-6 sm:p-7 flex flex-col justify-between group reveal-on-scroll">
         <div>
           <!-- Header with Rating -->
           <div class="flex items-center justify-between gap-3 mb-5">
@@ -196,7 +196,7 @@ const customAreaWaUrl = createWhatsAppLink({
       </article>
 
       <!-- CARD 3: Standar Kerja Hospitality & B2B Villa -->
-      <article class="glass-apple-dark rounded-xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group">
+      <article data-reveal-delay="160" class="glass-apple-dark rounded-xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group reveal-on-scroll">
         <!-- Subtle dark blueprint grid overlay -->
         <div class="absolute inset-0 bg-grid-blueprint-dark opacity-35 pointer-events-none"></div>
 

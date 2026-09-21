@@ -38,7 +38,7 @@ const consultWaUrl = createWhatsAppLink({
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header (Title left-aligned matching sample/layout.png) -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 reveal-on-scroll">
       <div>
         <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold mb-3 border border-emerald-200/80">
           <!-- Lucide ShieldCheck -->
@@ -94,7 +94,7 @@ const consultWaUrl = createWhatsAppLink({
 
     <!-- 4-Card Horizontal Grid (Matching sample/layout.png Top Destinations) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="pricing-grid">
-      {itemsWithCategory.map((item) => {
+      {itemsWithCategory.map((item, idx) => {
         const orderUrl = createWhatsAppLink({
           service: item.serviceQuery,
           notes: `Estimasi Tarif: ${item.price} ${item.unit}`,
@@ -103,7 +103,8 @@ const consultWaUrl = createWhatsAppLink({
         return (
           <article
             data-cat={item.category}
-            class="pricing-item glass-apple-card rounded-xl p-3 sm:p-3.5 flex flex-col justify-between group"
+            data-reveal-delay={(idx % 4) * 80}
+            class="pricing-item glass-apple-card rounded-xl p-3 sm:p-3.5 flex flex-col justify-between group reveal-on-scroll"
           >
             <div>
               <!-- Rounded-LG Image Preview -->
@@ -160,7 +161,7 @@ const consultWaUrl = createWhatsAppLink({
     </div>
 
     <!-- Technical & Sparepart Pricing Table (Accordion/Structured Glass Layout) -->
-    <div class="mb-12 glass-apple-card rounded-xl p-5 sm:p-7 overflow-hidden border border-slate-200/90 shadow-xs">
+    <div class="mb-12 glass-apple-card rounded-xl p-5 sm:p-7 overflow-hidden border border-slate-200/90 shadow-xs reveal-on-scroll">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
         <div>
           <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-navy-50 text-navy-900 text-xs font-semibold mb-2 border border-navy-200/70">

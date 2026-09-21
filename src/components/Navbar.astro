@@ -4,7 +4,7 @@ import { siteConfig, createWhatsAppLink } from '../config/site';
 const defaultWaUrl = createWhatsAppLink();
 ---
 
-<nav class="bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200/80 transition-all shadow-xs">
+<nav id="main-navbar" class="sticky top-0 z-40 transition-all duration-300 glass-navbar">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-12 sm:h-14">
       
@@ -100,3 +100,20 @@ const defaultWaUrl = createWhatsAppLink();
     </div>
   </div>
 </nav>
+
+<!-- iPhone Dynamic Frosted Glass Scroll Behavior -->
+<script is:inline>
+  (function() {
+    const nav = document.getElementById('main-navbar');
+    if (!nav) return;
+    function updateNavbarGlass() {
+      if (window.scrollY > 15) {
+        nav.classList.add('glass-navbar-scrolled');
+      } else {
+        nav.classList.remove('glass-navbar-scrolled');
+      }
+    }
+    window.addEventListener('scroll', updateNavbarGlass, { passive: true });
+    updateNavbarGlass();
+  })();
+</script>

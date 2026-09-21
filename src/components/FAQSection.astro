@@ -14,7 +14,7 @@ const faqWaUrl = createWhatsAppLink({
 
 
   <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12 sm:mb-16">
+    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 reveal-on-scroll">
       <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 text-iceblue-700 text-xs font-semibold mb-3 border border-iceblue-200">
         <!-- Lucide HelpCircle -->
         <svg class="w-3.5 h-3.5 text-iceblue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -32,7 +32,7 @@ const faqWaUrl = createWhatsAppLink({
     </div>
 
     <!-- Accordion List -->
-    <div class="space-y-4">
+    <div class="space-y-4 reveal-on-scroll">
       {faqs.map((faq) => (
         <details class="group bg-white rounded-xl border border-slate-200/90 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:border-iceblue-400 open:shadow-sm">
           <summary class="flex items-center justify-between cursor-pointer font-bold text-base sm:text-lg text-navy-950 list-none gap-4">

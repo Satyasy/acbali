@@ -13,7 +13,7 @@ const stepWaUrl = createWhatsAppLink();
 
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+    <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 reveal-on-scroll">
       <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-100 text-navy-900 text-xs font-semibold mb-3 border border-navy-200/60">
         <!-- Lucide ListOrdered -->
         <svg class="w-3.5 h-3.5 text-navy-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -32,7 +32,7 @@ const stepWaUrl = createWhatsAppLink();
     <!-- Steps Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
       {orderingSteps.map((item, index) => (
-        <article class="group relative glass-apple-card rounded-xl p-8 flex flex-col justify-between">
+        <article data-reveal-delay={index * 90} class="group relative glass-apple-card rounded-xl p-8 flex flex-col justify-between reveal-on-scroll">
           <div>
             <!-- Number badge -->
             <div class="flex items-center justify-between mb-6">
