@@ -12,24 +12,24 @@ const {
   description = siteConfig.description,
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://jawara-teknik.com').href;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://jawarateknikac.com').href;
 
 // 1. JSON-LD HVAC / Local Business Structured Data
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HVACBusiness"],
-  "@id": "https://jawara-teknik.com/#business",
+  "@id": "https://jawarateknikac.com/#business",
   "name": siteConfig.legalName,
   "alternateName": siteConfig.name,
   "description": siteConfig.description,
-  "url": "https://jawara-teknik.com",
+  "url": "https://jawarateknikac.com",
   "hasMap": siteConfig.mapsDirectUrl,
   "sameAs": [
     siteConfig.mapsDirectUrl,
     siteConfig.mapsSearchUrl
   ],
   "telephone": siteConfig.phone,
-  "priceRange": "Rp 60.000 - Rp 375.000",
+  "priceRange": "Rp 50.000 - Rp 650.000",
   "paymentAccepted": ["Cash", "QRIS", "Bank Transfer"],
   "currenciesAccepted": "IDR",
   "address": {
@@ -115,8 +115,8 @@ const businessSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://jawara-teknik.com/#website",
-  "url": "https://jawara-teknik.com",
+  "@id": "https://jawarateknikac.com/#website",
+  "url": "https://jawarateknikac.com",
   "name": "Jawara Teknik - Servis AC Panggilan Bali",
   "alternateName": "Jawara Teknik Bali",
   "description": siteConfig.description,
@@ -133,42 +133,42 @@ const sitelinksSchema = {
       "position": 1,
       "name": "Daftar Tarif Servis AC",
       "description": "Harga pasti transparan cuci AC standar, inverter, tambah freon, dan bongkar pasang di Bali",
-      "url": "https://jawara-teknik.com/#tarif"
+      "url": "https://jawarateknikac.com/#tarif"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 2,
       "name": "Solusi Keluhan & Kerusakan AC",
       "description": "Diagnosa penanganan AC tidak dingin, bocor air menetes, bau apek, dan suara bising",
-      "url": "https://jawara-teknik.com/#masalah"
+      "url": "https://jawarateknikac.com/#masalah"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 3,
       "name": "Paket Rutin Villa & B2B Bali",
       "description": "Kontrak pemeliharaan berkala AC untuk villa, resort, kafe, dan perkantoran dengan invoice resmi",
-      "url": "https://jawara-teknik.com/#paket-villa"
+      "url": "https://jawarateknikac.com/#paket-villa"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 4,
       "name": "Cakupan Wilayah Siaga Bali",
       "description": "Area pos teknisi panggilan Denpasar, Badung, Canggu, Seminyak, Kuta, Sanur, Ubud, Gianyar, Tabanan",
-      "url": "https://jawara-teknik.com/#wilayah"
+      "url": "https://jawarateknikac.com/#wilayah"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 5,
       "name": "Alur 3 Langkah Pemesanan",
       "description": "Tata cara mudah panggil teknisi via WhatsApp tanpa antre dan respon kilat 60 menit",
-      "url": "https://jawara-teknik.com/#cara-order"
+      "url": "https://jawarateknikac.com/#cara-order"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 6,
       "name": "Tanya Jawab (FAQ)",
       "description": "Pertanyaan seputar garansi 30 hari, estimasi durasi servis, dan kesiapan teknisi hari libur",
-      "url": "https://jawara-teknik.com/#faq"
+      "url": "https://jawarateknikac.com/#faq"
     }
   ]
 };
