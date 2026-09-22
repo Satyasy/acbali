@@ -231,11 +231,7 @@ const faqSchema = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="image" href={siteConfig.heroImage} fetchpriority="high" />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
-    </noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F4C81' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='2' x2='22' y1='12' y2='12'/><line x1='12' x2='12' y1='2' y2='22'/><path d='m20 16-4-4 4-4'/><path d='m4 8 4 4-4 4'/><path d='m16 4-4 4-4-4'/><path d='m8 20 4-4 4 4'/></svg>" />
 
@@ -274,7 +270,7 @@ const faqSchema = {
           return typeof curr === 'string' ? curr : null;
         }
 
-        function applyLanguage(lang) {
+        function applyLanguage(lang, isManual = false) {
           const dict = translationsData[lang] || translationsData.id;
           if (!dict) return;
 
@@ -284,11 +280,13 @@ const faqSchema = {
 
           document.documentElement.lang = lang;
 
-          // Seamless 150ms iOS-style crossfade
-          document.body.classList.add('lang-crossfade');
-          setTimeout(() => {
-            document.body.classList.remove('lang-crossfade');
-          }, 150);
+          // Seamless 150ms iOS-style crossfade ONLY on manual user clicks
+          if (isManual) {
+            document.body.classList.add('lang-crossfade');
+            setTimeout(() => {
+              document.body.classList.remove('lang-crossfade');
+            }, 150);
+          }
 
           // Update text nodes
           const elements = document.querySelectorAll('[data-i18n]');
@@ -314,11 +312,14 @@ const faqSchema = {
           const thumb = document.getElementById('lang-glass-thumb');
           if (thumb) {
             const isEn = lang === 'en';
-            // Subtle spring zoom effect during slide
-            thumb.style.transform = isEn ? 'translateX(100%) scale(1.06)' : 'translateX(0) scale(1.06)';
-            setTimeout(() => {
+            if (isManual) {
+              thumb.style.transform = isEn ? 'translateX(100%) scale(1.06)' : 'translateX(0) scale(1.06)';
+              setTimeout(() => {
+                thumb.style.transform = isEn ? 'translateX(100%) scale(1)' : 'translateX(0) scale(1)';
+              }, 180);
+            } else {
               thumb.style.transform = isEn ? 'translateX(100%) scale(1)' : 'translateX(0) scale(1)';
-            }, 180);
+            }
           }
 
           // Update language toggle buttons visual state
@@ -335,21 +336,21 @@ const faqSchema = {
           window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
         }
 
-        // Run on DOM ready or immediately if already loaded
+        // Run on DOM ready or immediately if already loaded (without initial animation)
         const initialLang = getSavedLang();
         if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', () => applyLanguage(initialLang));
+          document.addEventListener('DOMContentLoaded', () => applyLanguage(initialLang, false));
         } else {
-          applyLanguage(initialLang);
+          applyLanguage(initialLang, false);
         }
 
-        // Delegate language switch clicks
+        // Delegate language switch clicks (trigger smooth transition)
         document.addEventListener('click', (e) => {
           const btn = e.target.closest('[data-lang-btn]');
           if (btn) {
             e.preventDefault();
             const targetLang = btn.getAttribute('data-lang-btn');
-            if (targetLang) applyLanguage(targetLang);
+            if (targetLang) applyLanguage(targetLang, true);
           }
         });
       })();
