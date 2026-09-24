@@ -24,13 +24,15 @@ const businessSchema = {
   "alternateName": siteConfig.name,
   "description": siteConfig.description,
   "url": "https://jawarateknikac.com",
+  "logo": "https://jawarateknikac.com/icon-512.png",
+  "image": "https://jawarateknikac.com/icon-512.png",
   "hasMap": siteConfig.mapsDirectUrl,
   "sameAs": [
     siteConfig.mapsDirectUrl,
     siteConfig.mapsSearchUrl
   ],
   "telephone": siteConfig.phone,
-  "priceRange": "Rp 50.000 - Rp 650.000",
+  "priceRange": "$$",
   "paymentAccepted": ["Cash", "QRIS", "Bank Transfer"],
   "currenciesAccepted": "IDR",
   "address": {
@@ -84,29 +86,39 @@ const businessSchema = {
           "@type": "Service",
           "name": "Cuci AC Standar (0.5 – 1 PK)",
           "description": "Cuci filter, cover indoor, talang air, evaporator steam, dan pembersihan kisi-kisi kondensor outdoor."
-        },
-        "price": "75000",
-        "priceCurrency": "IDR"
+        }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Cuci Unit AC Inverter",
+          "name": "Cuci Unit AC Inverter Khusus",
           "description": "Perawatan khusus modul PCB elektrikal sensitif dan chemical wash aman sensor."
-        },
-        "price": "100000",
-        "priceCurrency": "IDR"
+        }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Tambah Freon R32 / R410a",
-          "description": "Pengisian freon ramah lingkungan tipe R32 atau R410a hingga tekanan standar."
-        },
-        "price": "200000",
-        "priceCurrency": "IDR"
+          "name": "Tambah / Isi Freon R32 & R410a",
+          "description": "Pengisian freon ramah lingkungan tipe R32 atau R410a murni bergaransi."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Perbaikan AC Bocor / Menetes Air",
+          "description": "Pembersihan lendir lumut saluran drainase dan perbaikan kondensasi dinding."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Bongkar Pasang & Relokasi AC",
+          "description": "Layanan pemindahan, bongkar pasang unit AC rumah, villa, kos, dan gedung kantor di Bali."
+        }
       }
     ]
   }
@@ -118,10 +130,18 @@ const websiteSchema = {
   "@type": "WebSite",
   "@id": "https://jawarateknikac.com/#website",
   "url": "https://jawarateknikac.com",
-  "name": "Jawara Teknik - Servis AC Panggilan Bali",
-  "alternateName": "Jawara Teknik Bali",
+  "name": "Jawara Teknik AC Bali",
+  "alternateName": [
+    "Jawara Teknik",
+    "Jawara Teknik AC",
+    "Jawara Teknik Servis AC Bali",
+    "jawara teknik ac bali"
+  ],
   "description": siteConfig.description,
-  "inLanguage": "id-ID"
+  "inLanguage": "id-ID",
+  "publisher": {
+    "@id": "https://jawarateknikac.com/#business"
+  }
 };
 
 // 3. Google Search Sitelinks Navigation Elements Schema
@@ -132,43 +152,43 @@ const sitelinksSchema = {
     {
       "@type": "SiteNavigationElement",
       "position": 1,
-      "name": "Daftar Tarif Servis AC",
-      "description": "Harga pasti transparan cuci AC standar, inverter, tambah freon, dan bongkar pasang di Bali",
+      "name": "Katalog Layanan & Konsultasi Servis AC",
+      "description": "Konsultasi estimasi tarif cuci AC split, inverter, tambah freon, dan perbaikan bergaransi di Bali",
       "url": "https://jawarateknikac.com/#tarif"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 2,
-      "name": "Solusi Keluhan & Kerusakan AC",
-      "description": "Diagnosa penanganan AC tidak dingin, bocor air menetes, bau apek, dan suara bising",
+      "name": "Solusi Kendala AC Populer di Bali",
+      "description": "Diagnosa penanganan teknisi untuk AC bocor menetes air, AC kurang dingin, bau apek, dan kompresor berisik",
       "url": "https://jawarateknikac.com/#masalah"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 3,
-      "name": "Paket Rutin Villa & B2B Bali",
+      "name": "Paket Perawatan Rutin Villa & B2B Bali",
       "description": "Kontrak pemeliharaan berkala AC untuk villa, resort, kafe, dan perkantoran dengan invoice resmi",
       "url": "https://jawarateknikac.com/#paket-villa"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 4,
-      "name": "Cakupan Wilayah Siaga Bali",
-      "description": "Area pos teknisi panggilan Denpasar, Badung, Canggu, Seminyak, Kuta, Sanur, Ubud, Gianyar, Tabanan",
+      "name": "Area Jangkauan Pos Armada Siaga Bali",
+      "description": "Posko teknisi darurat 60 menit Denpasar, Badung, Canggu, Seminyak, Kuta, Sanur, Ubud, Gianyar, Tabanan",
       "url": "https://jawarateknikac.com/#wilayah"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 5,
-      "name": "Alur 3 Langkah Pemesanan",
+      "name": "Alur 3 Langkah Pemesanan WhatsApp",
       "description": "Tata cara mudah panggil teknisi via WhatsApp tanpa antre dan respon kilat 60 menit",
       "url": "https://jawarateknikac.com/#cara-order"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 6,
-      "name": "Tanya Jawab (FAQ)",
-      "description": "Pertanyaan seputar garansi 30 hari, estimasi durasi servis, dan kesiapan teknisi hari libur",
+      "name": "Tanya Jawab & Garansi 30 Hari (FAQ)",
+      "description": "Informasi garansi pengerjaan 30 hari penuh, waktu kedatangan teknisi, dan konsultasi gratis",
       "url": "https://jawarateknikac.com/#faq"
     }
   ]
@@ -233,7 +253,13 @@ const faqSchema = {
     <link rel="preload" as="image" href={siteConfig.heroImage} fetchpriority="high" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F4C81' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='2' x2='22' y1='12' y2='12'/><line x1='12' x2='12' y1='2' y2='22'/><path d='m20 16-4-4 4-4'/><path d='m4 8 4 4-4 4'/><path d='m16 4-4 4-4-4'/><path d='m8 20 4-4 4 4'/></svg>" />
+    <!-- Favicon & App Icons (Google Search Snippet & Modern Browser Compliant) -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Schema.org Structured Data (HVAC, WebSite Sitelinks, FAQ) -->
     <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
