@@ -249,9 +249,12 @@ const faqSchema = {
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="image" href={siteConfig.heroImage} fetchpriority="high" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    </noscript>
 
     <!-- Favicon & App Icons (Google Search Snippet & Modern Browser Compliant) -->
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
@@ -355,7 +358,7 @@ const faqSchema = {
             if (btnLang === lang) {
               btn.className = 'lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-black transition-colors duration-200 cursor-pointer text-navy-950';
             } else {
-              btn.className = 'lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-medium transition-colors duration-200 cursor-pointer text-slate-500 hover:text-navy-950';
+              btn.className = 'lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-bold transition-colors duration-200 cursor-pointer text-slate-700 hover:text-navy-950';
             }
           });
 
