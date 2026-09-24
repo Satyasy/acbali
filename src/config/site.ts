@@ -39,7 +39,7 @@ export const siteConfig: SiteConfig = {
   operatingHoursShort: "Buka 24 Jam Non-Stop",
   responseTime: "Respon Cepat 60 Menit",
   warranty: "Garansi 30 Hari",
-  heroImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=75",
+  heroImage: "/images/hero.webp",
   address: {
     street: "Jl. Teuku Umar No. 88",
     subDistrict: "Dauh Puri Klod, Denpasar Barat",
@@ -77,7 +77,7 @@ export const painPoints = [
     title: "AC Bocor / Menetes Air",
     description: "Tuntas atasi lendir, lumut, dan sumbatan pada pipa drainase pembuangan air secara higienis tanpa merusak plafon.",
     badge: "Sering Terjadi",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=480&q=75",
+    image: "/images/issue-bocor.webp",
     imageAlt: "Teknisi memperbaiki kebocoran pipa drainase AC di Denpasar Bali",
   },
   {
@@ -85,7 +85,7 @@ export const painPoints = [
     title: "Angin Keluar Panas / Kurang Dingin",
     description: "Pengecekan mendalam sistem tekanan kompresor, volume freon, kapasitor, dan kelistrikan modul inverter.",
     badge: "Solusi Cepat",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=480&q=75",
+    image: "/images/issue-kurang-dingin.webp",
     imageAlt: "Pengecekan tekanan freon dan kompresor AC panggilan Bali",
   },
   {
@@ -93,7 +93,7 @@ export const painPoints = [
     title: "Bau Apek & Berdebu",
     description: "Cuci total evaporator & blower dengan cairan antijamur/kuman standar medis, mengembalikan udara segar dan sehat.",
     badge: "Higienis",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=480&q=75",
+    image: "/images/issue-bau-apek.webp",
     imageAlt: "Pembersihan total evaporator AC basmi jamur dan bakteri",
   },
   {
@@ -101,7 +101,7 @@ export const painPoints = [
     title: "Suara Bising & Bergetar",
     description: "Kalibrasi blower indoor, balancing dinamo fan, peredaman getaran dudukan braket outdoor, dan kencangkan baut pengunci.",
     badge: "Presisi",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=480&q=75",
+    image: "/images/issue-bising.webp",
     imageAlt: "Kalibrasi dan perbaikan getaran unit AC outdoor di Bali",
   },
 ];
@@ -115,7 +115,7 @@ export const pricingList = [
     badge: "Paling Populer",
     description: "Cuci filter, cover indoor, talang air, evaporator steam, dan pembersihan kisi-kisi kondensor outdoor.",
     serviceQuery: "Konsultasi Estimasi Biaya Cuci AC Standar (0.5 – 1 PK)",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=480&q=75",
+    image: "/images/service-cuci-1pk.webp",
     imageAlt: "Jasa cuci AC split 0.5 PK sampai 1 PK di Bali",
   },
   {
@@ -126,7 +126,7 @@ export const pricingList = [
     badge: "Hemat",
     description: "Pembersihan menyeluruh unit kapasitas besar 1.5 - 2 PK, cek tekanan freon, dan cek arus ampere listrik.",
     serviceQuery: "Konsultasi Estimasi Biaya Cuci AC Standar (1.5 – 2 PK)",
-    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=480&q=75",
+    image: "/images/service-cuci-2pk.webp",
     imageAlt: "Servis cuci AC kapasitas besar 2 PK di Denpasar",
   },
   {
@@ -137,7 +137,7 @@ export const pricingList = [
     badge: "Rekomendasi Ahli",
     description: "Perawatan khusus modul PCB elektrikal sensitif, chemical wash aman sensor, dan kalibrasi motor inverter.",
     serviceQuery: "Konsultasi Estimasi Biaya Cuci Unit AC Inverter Khusus",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=480&q=75",
+    image: "/images/service-inverter.webp",
     imageAlt: "Spesialis cuci unit AC Inverter Daikin Panasonic Bali",
   },
   {
@@ -148,7 +148,7 @@ export const pricingList = [
     badge: "Freon Murni",
     description: "Pengisian freon ramah lingkungan tipe R32 / R410a dari penambahan tekanan hingga pengisian full dari nol.",
     serviceQuery: "Konsultasi Estimasi Biaya Tambah / Isi Freon R32 & R410a",
-    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=480&q=75",
+    image: "/images/service-freon.webp",
     imageAlt: "Isi dan tambah freon R32 R410a resmi bergaransi",
   },
   {
@@ -159,7 +159,7 @@ export const pricingList = [
     badge: "Tuntas 60 Menit",
     description: "Penanganan lendir talang drainase, pembersihan pipa pembuangan, dan perbaikan kondensasi dinding.",
     serviceQuery: "Konsultasi Estimasi Biaya Perbaikan AC Bocor / Menetes",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=480&q=75",
+    image: "/images/service-bocor.webp",
     imageAlt: "Penanganan AC bocor air menetes plafon di Bali",
   },
   {
@@ -170,7 +170,7 @@ export const pricingList = [
     badge: "Presisi & Rapi",
     description: "Instalasi bracket indoor/outdoor, pemipaan rapi standar pabrik untuk kapasitas 0.5 PK hingga 2 PK.",
     serviceQuery: "Konsultasi Estimasi Biaya Jasa Pasang AC Baru / Pindahan",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=480&q=75",
+    image: "/images/service-pasang.webp",
     imageAlt: "Jasa pasang instalasi unit AC split di Bali",
   },
   {
@@ -181,7 +181,7 @@ export const pricingList = [
     badge: "Paket Lengkap",
     description: "Bongkar saja atau paket lengkap bongkar pasang relokasi unit AC rumah, villa, kos, dan kantor.",
     serviceQuery: "Konsultasi Estimasi Biaya Bongkar Pasang AC Relokasi",
-    image: "https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=480&q=75",
+    image: "/images/service-bongkar.webp",
     imageAlt: "Bongkar pasang AC split pindahan rumah villa kantor Bali",
   },
   {
@@ -192,7 +192,7 @@ export const pricingList = [
     badge: "Cuci Total",
     description: "Pencucian menyeluruh kerak membandel dengan menurunkan unit indoor dari dinding secara higienis.",
     serviceQuery: "Konsultasi Estimasi Biaya Cuci Besar / Overhaul Turun Unit",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=480&q=75",
+    image: "/images/service-overhaul.webp",
     imageAlt: "Cuci total overhaul turun unit AC split di Badung Bali",
   },
 ];

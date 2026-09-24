@@ -234,7 +234,7 @@ const faqSchema = {
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={siteConfig.heroImage} />
+    <meta property="og:image" content={new URL(siteConfig.heroImage, 'https://jawarateknikac.com').href} />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:site_name" content={siteConfig.legalName} />
 
@@ -243,12 +243,11 @@ const faqSchema = {
     <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={siteConfig.heroImage} />
+    <meta property="twitter:image" content={new URL(siteConfig.heroImage, 'https://jawarateknikac.com').href} />
 
-    <!-- Performance: Preload Critical Hero Image & Preconnect Fonts & Images -->
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <!-- Performance: Preload Critical Hero Image & Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="image" href={siteConfig.heroImage} fetchpriority="high" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
