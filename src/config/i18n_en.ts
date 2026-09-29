@@ -2,10 +2,10 @@ import type { TranslationDictionary } from './i18n_types';
 
 export const enTranslations: TranslationDictionary = {
   nav: {
-    rates: "Rates & Tariffs",
-    issues: "Troubleshooting",
+    rates: "Services & Rates",
+    issues: "AC Issues",
     villa: "Villa & B2B",
-    areas: "Bali Areas",
+    areas: "Bali Areas & Villa",
     order: "How to Book",
     faq: "FAQ",
     chat_wa: "WhatsApp Us",
@@ -298,6 +298,16 @@ export const enTranslations: TranslationDictionary = {
     opt_srv_dismantle: "AC Dismantling & Relocation",
     opt_srv_overhaul: "Major Chemical Overhaul (Unit Drop)",
     opt_srv_other: "Diagnostics & Other Consultation",
+  },
+  ticker: {
+    item1: "24/7 Non-Stop Service Across Bali",
+    item2: "Fast 60-Minute Arrival Time",
+    item3: "Full 30-Day Work Guarantee",
+    item4: "Certified & Honest Local Technicians",
+    item5: "Coverage: Denpasar • Badung • Canggu • Seminyak • Sanur • Ubud",
+    item6: "Homes • Luxury Villas • Offices • Cafes • Guest Houses",
+    item7: "Multi-Brand: Daikin, Panasonic, Sharp, Gree, LG",
+    item8: "100% Upfront Pricing & Free Chat Consultation",
   },
   wa: {
     intro: "Hello Admin Jawara Teknik Bali, I would like to schedule an AC service appointment:",

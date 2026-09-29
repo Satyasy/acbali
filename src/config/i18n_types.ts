@@ -10,6 +10,7 @@ export interface TranslationDictionary {
   faq: Record<string, string>;
   footer: Record<string, string>;
   form: Record<string, string>;
+  ticker?: Record<string, string>;
   wa: {
     intro: string;
     name: string;

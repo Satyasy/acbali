@@ -2,10 +2,10 @@ import type { TranslationDictionary } from './i18n_types';
 
 export const idTranslations: TranslationDictionary = {
   nav: {
-    rates: "Daftar Tarif",
+    rates: "Layanan & Tarif",
     issues: "Kendala AC",
     villa: "Paket Villa & B2B",
-    areas: "Wilayah Bali",
+    areas: "Area Bali & Villa",
     order: "Cara Pesan",
     faq: "FAQ",
     chat_wa: "Chat WhatsApp",
@@ -298,6 +298,16 @@ export const idTranslations: TranslationDictionary = {
     opt_srv_dismantle: "Bongkar AC / Bongkar + Pasang",
     opt_srv_overhaul: "Cuci Besar / Overhaul (Turun Unit)",
     opt_srv_other: "Pengecekan Kendala / Konsultasi Lainnya",
+  },
+  ticker: {
+    item1: "Siaga 24 Jam Non-Stop di Bali",
+    item2: "Respon Cepat Tiba 60 Menit",
+    item3: "Garansi Servis 30 Hari Penuh",
+    item4: "Teknisi Nyata Berpengalaman & Jujur",
+    item5: "Area: Denpasar • Badung • Canggu • Seminyak • Sanur • Ubud",
+    item6: "Rumah Pribadi • Villa Mewah • Kantor • Kos • Kafe",
+    item7: "Multi-Brand: Daikin, Panasonic, Sharp, Gree, LG",
+    item8: "Tanpa Biaya Siluman & Konsultasi Gratis via Chat",
   },
   wa: {
     intro: "Halo Admin Jawara Teknik Bali, saya ingin jadwalkan servis AC:",
