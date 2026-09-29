@@ -52,7 +52,7 @@ export const siteConfig: SiteConfig = {
       longitude: 115.2078,
     },
   },
-  mapsDirectUrl: "https://share.google/o71TdKbJKVI2qBnsW",
+  mapsDirectUrl: "https://share.google/L5F6Ih7hVSmaAIBC9",
   mapsSearchUrl: "https://www.google.com/search?kgmid=/g/11zfhw7q03&q=Service+AC+panggilan+Jawara+Teknik",
   mapsEmbedUrl: "https://maps.google.com/maps?q=Service+AC+panggilan+Jawara+Teknik+Bali&t=&z=14&ie=UTF8&iwloc=&output=embed",
   googleKgmid: "/g/11zfhw7q03",

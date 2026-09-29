@@ -5,24 +5,33 @@ const primaryWaUrl = createWhatsAppLink({
   service: "Panggilan Cepat (Cuci / Perbaikan AC)",
   notes: "Halo Jawara Teknik, saya butuh bantuan teknisi AC untuk hari ini di Bali.",
 });
+
+const heroSlides = [
+  { src: "/images/hero-1.webp", alt: "Teknisi profesional AC Jawara Teknik Bali" },
+  { src: "/images/hero-2.webp", alt: "Layanan servis dan cuci AC Denpasar Badung" },
+  { src: "/images/hero-3.webp", alt: "Perbaikan kompresor dan freon AC Bali" },
+  { src: "/images/hero-4.webp", alt: "Pengecekan dan instalasi AC rumah villa kantor Bali" },
+];
 ---
 
 <section id="hero" class="relative min-h-[540px] sm:min-h-[620px] lg:min-h-[680px] max-h-[820px] flex items-center justify-center pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-8 lg:pb-10 overflow-hidden bg-slate-950">
   
-  <!-- Clearly Visible Hero Background Photo with Subtle Dark Cinematic Gradient -->
-  <div class="absolute inset-0 z-0">
-    <img
-      src={siteConfig.heroImage}
-      alt="Teknisi profesional AC di Denpasar Badung Bali"
-      class="w-full h-full object-cover object-center opacity-75"
-      loading="eager"
-      decoding="async"
-      fetchpriority="high"
-      width="1920"
-      height="1080"
-    />
+  <!-- Hero Background Carousel with Smooth Cinematic Crossfade -->
+  <div class="absolute inset-0 z-0 overflow-hidden" id="hero-carousel" aria-hidden="true">
+    {heroSlides.map((slide, index) => (
+      <img
+        src={slide.src}
+        alt={slide.alt}
+        class={`hero-slide absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-75 z-[2]' : 'opacity-0 z-[1]'}`}
+        loading={index === 0 ? "eager" : "lazy"}
+        decoding="async"
+        fetchpriority={index === 0 ? "high" : "low"}
+        width="1200"
+        height="800"
+      />
+    ))}
     <!-- Clean dark overlay for crisp text contrast without hiding the photo -->
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/45 z-[3]"></div>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -135,3 +144,34 @@ const primaryWaUrl = createWhatsAppLink({
     </div>
   </div>
 </section>
+
+<script>
+  function initHeroCarousel() {
+    const slides = document.querySelectorAll<HTMLImageElement>('.hero-slide');
+    if (slides.length <= 1) return;
+    let currentIndex = 0;
+    setInterval(() => {
+      const prevIndex = currentIndex;
+      currentIndex = (currentIndex + 1) % slides.length;
+
+      slides.forEach((slide, idx) => {
+        if (idx === currentIndex) {
+          slide.classList.remove('opacity-0', 'z-[1]');
+          slide.classList.add('opacity-75', 'z-[2]');
+        } else if (idx === prevIndex) {
+          slide.classList.remove('opacity-75', 'z-[2]');
+          slide.classList.add('opacity-0', 'z-[1]');
+        } else {
+          slide.classList.remove('opacity-75', 'z-[2]');
+          slide.classList.add('opacity-0', 'z-[0]');
+        }
+      });
+    }, 4500);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroCarousel);
+  } else {
+    initHeroCarousel();
+  }
+</script>
