@@ -2,7 +2,7 @@
 import { siteConfig, orderingSteps } from '../config/site';
 ---
 
-<section id="cara-order" class="relative py-14 sm:py-20 bg-white border-b border-slate-200/70 overflow-hidden section-content-visibility">
+<section id="cara-order" class="relative py-14 sm:py-20 bg-slate-50 border-b border-slate-200/70 overflow-hidden section-content-visibility">
   <span id="form-booking" class="sr-only"></span>
   
   <!-- Subtle Blueprint Square Grid Background -->
@@ -13,11 +13,11 @@ import { siteConfig, orderingSteps } from '../config/site';
   <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Wide Gray/Tinted Rounded Banner -->
-    <div class="bg-slate-100/90 rounded-2xl p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-xs reveal-on-scroll">
+    <div class="bg-white rounded-2xl p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-xs reveal-on-scroll">
       
       <!-- Top Pill & Headings -->
       <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-slate-200 text-xs font-semibold text-navy-950 mb-3 shadow-2xs">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-navy-950 mb-3 shadow-2xs">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           <span data-i18n="order.badge">Alur Pemesanan Cepat & Booking via WhatsApp</span>
         </div>
@@ -31,31 +31,31 @@ import { siteConfig, orderingSteps } from '../config/site';
         </p>
       </div>
 
-      <!-- Integrated 3-Step Practical Stepper -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-8 max-w-4xl mx-auto">
+      <!-- Integrated 3-Step Practical Stepper with Enlarged Badges & Scroll Slide-Up -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mb-10 max-w-4xl mx-auto">
         {orderingSteps.map((item, index) => (
-          <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-2xs flex flex-col justify-between group hover:border-iceblue-400 transition-colors">
+          <div
+            class="step-reveal-card bg-slate-50/80 hover:bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-2xs flex flex-col justify-between group hover:border-iceblue-400 hover:shadow-md transition-all duration-300"
+            style={`transition-delay: ${index * 130}ms;`}
+          >
             <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="w-7 h-7 rounded-full bg-navy-950 text-white font-extrabold text-xs flex items-center justify-center">
-                  {item.step}
+              <div class="flex items-center justify-between mb-4">
+                <span class="w-12 h-12 rounded-xl bg-navy-950 text-white font-black text-xl flex items-center justify-center group-hover:bg-iceblue-600 transition-colors shadow-2xs">
+                  0{item.step}
                 </span>
-                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-navy-50 text-navy-900 border border-navy-200/60" data-i18n={`order.step${index + 1}_badge`}>
-                  {index === 0 && 'Mulai Disini'}
-                  {index === 1 && 'Proses Kilat'}
-                  {index === 2 && 'Selesai & Bergaransi'}
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-white text-navy-900 border border-slate-200/80 shadow-2xs" data-i18n={`order.step${index + 1}_badge`}>
+                  {index === 0 && 'Langkah 1'}
+                  {index === 1 && 'Langkah 2'}
+                  {index === 2 && 'Langkah 3'}
                 </span>
               </div>
-              <h3 class="font-bold text-sm text-navy-950 mb-1 leading-snug" data-i18n={`order.step${index + 1}_title`}>
+              <h3 class="font-extrabold text-base sm:text-lg text-navy-950 group-hover:text-iceblue-700 transition-colors leading-snug my-2" data-i18n={`order.step${index + 1}_title`}>
                 {item.title}
               </h3>
-              <p class="text-xs text-slate-600 leading-relaxed" data-i18n={`order.step${index + 1}_desc`}>
-                {item.description}
-              </p>
             </div>
-            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-iceblue-700 font-bold">
+            <div class="mt-4 pt-3 border-t border-slate-200/70 flex items-center justify-between text-xs sm:text-sm text-iceblue-700 font-extrabold">
               <span data-i18n={`order.step${index + 1}_action`}>{item.actionText}</span>
-              <svg class="w-3.5 h-3.5 text-iceblue-500 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-iceblue-600 group-hover:translate-x-1.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m9 18 6-6-6-6"></path>
               </svg>
             </div>
@@ -237,5 +237,40 @@ import { siteConfig, orderingSteps } from '../config/site';
         window.open(url, '_blank', 'noopener,noreferrer');
       });
     }
+
+    // Scroll reveal observer for 3-step cards
+    const stepCards = document.querySelectorAll('.step-reveal-card');
+    if (stepCards.length > 0) {
+      const stepObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            stepObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      stepCards.forEach((c) => stepObserver.observe(c));
+    }
   });
 </script>
+
+<style>
+  .step-reveal-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    will-change: opacity, transform;
+  }
+  .step-reveal-card.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .step-reveal-card {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>

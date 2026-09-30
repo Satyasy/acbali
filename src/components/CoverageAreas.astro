@@ -17,10 +17,10 @@ const customAreaWaUrl = createWhatsAppLink({
 });
 ---
 
-<section id="wilayah" class="scroll-mt-20 relative py-16 sm:py-24 bg-white border-b border-slate-200/70 overflow-hidden section-content-visibility">
-  <!-- Subtle Architectural Blueprint Square Grid Background -->
+<section id="wilayah" class="scroll-mt-20 relative py-16 sm:py-24 bg-navy-950 border-b border-navy-900 overflow-hidden section-content-visibility">
+  <!-- Subtle Architectural Blueprint Square Grid Background (Dark Mode) -->
   <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
-    <div class="w-full h-full bg-grid-blueprint [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
+    <div class="w-full h-full bg-grid-blueprint-dark [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,18 +28,18 @@ const customAreaWaUrl = createWhatsAppLink({
     <!-- Section Header (matching sample/layout.png 3-column section) -->
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-12 reveal-on-scroll">
       <div>
-        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 text-iceblue-700 text-xs font-semibold mb-3 border border-iceblue-200 shadow-2xs">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-500/20 text-iceblue-300 text-xs font-semibold mb-3 border border-iceblue-300/30 shadow-2xs">
           <!-- Lucide MapPin -->
-          <svg class="w-3.5 h-3.5 text-iceblue-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-3.5 h-3.5 text-iceblue-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
           <span data-i18n="coverage.badge">Posko Tersebar di Bali</span>
         </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight" data-i18n="coverage.title">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight" data-i18n="coverage.title">
           Posko Armada & Standar Operasional di Bali
         </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-600" data-i18n="coverage.desc">
+        <p class="mt-2 text-sm sm:text-base text-slate-300" data-i18n="coverage.desc">
           Titik posko siaga untuk kedatangan tepat waktu di hunian keluarga hingga standar hospitality villa mewah.
         </p>
       </div>
@@ -51,10 +51,10 @@ const customAreaWaUrl = createWhatsAppLink({
         rel="noopener noreferrer"
         data-open-modal
         data-service="Cek Wilayah Siaga Servis AC Bali"
-        class="hidden sm:inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-navy-950 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-slate-200/90 transition-all duration-200 shrink-0 cursor-pointer"
+        class="hidden sm:inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-white/20 transition-all duration-200 shrink-0 cursor-pointer"
       >
         <span data-i18n="coverage.btn_check">Cek Wilayah Khusus</span>
-        <svg class="w-3.5 h-3.5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="w-3.5 h-3.5 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
         </svg>
@@ -65,11 +65,11 @@ const customAreaWaUrl = createWhatsAppLink({
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
       
       <!-- CARD 1: Posko Utama Denpasar & Badung -->
-      <article class="glass-apple-card rounded-xl p-6 sm:p-7 flex flex-col justify-between group reveal-on-scroll">
+      <article class="glass-apple-dark rounded-xl p-6 sm:p-7 flex flex-col justify-between group reveal-on-scroll">
         <div>
           <!-- Header -->
           <div class="flex items-center justify-between gap-3 mb-5">
-            <div class="w-12 h-12 rounded-xl bg-navy-50 text-navy-900 border border-navy-200/70 flex items-center justify-center shadow-2xs shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-iceblue-500/20 text-iceblue-300 border border-iceblue-300/30 flex items-center justify-center shadow-2xs shrink-0">
               <!-- Lucide Building -->
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect>
@@ -82,53 +82,53 @@ const customAreaWaUrl = createWhatsAppLink({
                 <path d="M16 14h.01"></path>
               </svg>
             </div>
-            <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200" data-i18n="coverage.card1_badge">
+            <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30" data-i18n="coverage.card1_badge">
               Siaga 60 Menit
             </span>
           </div>
 
-          <h3 class="text-xl font-extrabold text-navy-950 mb-2" data-i18n="coverage.card1_title">
+          <h3 class="text-xl font-extrabold text-white mb-2" data-i18n="coverage.card1_title">
             Area Utama & Luar Kota
           </h3>
-          <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed" data-i18n="coverage.card1_desc">
+          <p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed" data-i18n="coverage.card1_desc">
             Armada siaga meluncur cepat di area utama Bali, serta melayani jangkauan luar kota dengan reservasi jadwal.
           </p>
 
           <!-- Prioritas Cepat Tiba -->
           <div class="mb-3">
-            <span class="text-xs font-bold text-iceblue-700 uppercase tracking-wider block mb-1.5" data-i18n="coverage.card1_priority">Area Prioritas Cepat Tiba:</span>
+            <span class="text-xs font-bold text-iceblue-300 uppercase tracking-wider block mb-1.5" data-i18n="coverage.card1_priority">Area Prioritas Cepat Tiba:</span>
             <div class="flex flex-wrap gap-1.5">
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 font-medium border border-emerald-200/80">Denpasar</span>
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 font-medium border border-emerald-200/80">Badung</span>
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 font-medium border border-emerald-200/80">Canggu</span>
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 font-medium border border-emerald-200/80">Seminyak</span>
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 font-medium border border-emerald-200/80">Sanur</span>
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 font-medium border border-emerald-200/80">Legian</span>
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 font-medium border border-emerald-200/80">Kuta</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-medium border border-emerald-400/25">Denpasar</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-medium border border-emerald-400/25">Badung</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-medium border border-emerald-400/25">Canggu</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-medium border border-emerald-400/25">Seminyak</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-medium border border-emerald-400/25">Sanur</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-medium border border-emerald-400/25">Legian</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-medium border border-emerald-400/25">Kuta</span>
             </div>
           </div>
 
           <!-- Area Luar Kota / Janji -->
           <div class="mb-5">
-            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-1.5" data-i18n="coverage.card1_secondary">Area Luar Kota (Dengan Janji):</span>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1.5" data-i18n="coverage.card1_secondary">Area Luar Kota (Dengan Janji):</span>
             <div class="flex flex-wrap gap-1.5">
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 font-medium border border-slate-200/80">Uluwatu</span>
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 font-medium border border-slate-200/80">Gianyar</span>
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 font-medium border border-slate-200/80">Ubud</span>
-              <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 font-medium border border-slate-200/80">Tabanan</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-white/10 text-slate-200 font-medium border border-white/10">Uluwatu</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-white/10 text-slate-200 font-medium border border-white/10">Gianyar</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-white/10 text-slate-200 font-medium border border-white/10">Ubud</span>
+              <span class="text-xs px-2.5 py-1 rounded-lg bg-white/10 text-slate-200 font-medium border border-white/10">Tabanan</span>
             </div>
           </div>
         </div>
 
-        <div class="pt-4 border-t border-slate-100">
+        <div class="pt-4 border-t border-white/10">
           <a
             href={denpasarBadungWaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full inline-flex items-center justify-center gap-2 bg-navy-950 hover:bg-navy-900 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-full transition-all duration-200"
+            class="w-full inline-flex items-center justify-center gap-2 bg-iceblue-500 hover:bg-iceblue-400 text-slate-950 font-extrabold text-xs sm:text-sm py-3 px-4 rounded-full transition-all duration-200 shadow-sm"
           >
             <span data-i18n="coverage.card1_btn">Hubungi Posko Denpasar & Badung</span>
-            <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-3.5 h-3.5 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
             </svg>
@@ -137,11 +137,11 @@ const customAreaWaUrl = createWhatsAppLink({
       </article>
 
       <!-- CARD 2: Google Maps Terverifikasi Resmi -->
-      <article data-reveal-delay="80" class="glass-apple-card rounded-xl p-6 sm:p-7 flex flex-col justify-between group reveal-on-scroll">
+      <article data-reveal-delay="80" class="glass-apple-dark rounded-xl p-6 sm:p-7 flex flex-col justify-between group reveal-on-scroll">
         <div>
           <!-- Header with Rating -->
           <div class="flex items-center justify-between gap-3 mb-5">
-            <div class="w-12 h-12 rounded-xl bg-iceblue-50 text-iceblue-600 border border-iceblue-200 flex items-center justify-center shadow-2xs shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-iceblue-500/20 text-iceblue-300 border border-iceblue-300/30 flex items-center justify-center shadow-2xs shrink-0">
               <!-- Lucide MapPin -->
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
@@ -149,7 +149,7 @@ const customAreaWaUrl = createWhatsAppLink({
               </svg>
             </div>
             <!-- Star Rating Badge -->
-            <div class="flex items-center gap-1 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-full text-xs font-bold text-amber-800">
+            <div class="flex items-center gap-1 bg-amber-950/70 border border-amber-500/30 px-2.5 py-1 rounded-full text-xs font-bold text-amber-300">
               <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-500" viewBox="0 0 24 24">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
@@ -157,37 +157,37 @@ const customAreaWaUrl = createWhatsAppLink({
             </div>
           </div>
 
-          <h3 class="text-xl font-extrabold text-navy-950 mb-2" data-i18n="coverage.card2_title">
+          <h3 class="text-xl font-extrabold text-white mb-2" data-i18n="coverage.card2_title">
             Terdaftar Resmi Google Maps
           </h3>
-          <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed" data-i18n="coverage.card2_desc">
+          <p class="text-xs sm:text-sm text-slate-300 mb-5 leading-relaxed" data-i18n="coverage.card2_desc">
             Transparansi legalitas dan pangkalan bengkel fisik terverifikasi resmi pada Google Bisnis demi keamanan aset Anda.
           </p>
 
           <!-- Address Box -->
-          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200/80 mb-6 space-y-2">
-            <div class="flex items-start gap-2 text-xs text-navy-900 font-bold">
-              <svg class="w-4 h-4 text-iceblue-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="bg-white/5 rounded-xl p-4 border border-white/10 mb-6 space-y-2">
+            <div class="flex items-start gap-2 text-xs text-white font-bold">
+              <svg class="w-4 h-4 text-iceblue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
               <span>{siteConfig.address.full}</span>
             </div>
-            <p class="text-xs text-slate-500" data-i18n="coverage.card2_hours">
+            <p class="text-xs text-slate-400" data-i18n="coverage.card2_hours">
               Buka 24 Jam Non-Stop setiap hari (termasuk hari libur).
             </p>
           </div>
         </div>
 
-        <div class="pt-4 border-t border-slate-100">
+        <div class="pt-4 border-t border-white/10">
           <a
             href={siteConfig.mapsDirectUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-navy-950 font-bold text-xs sm:text-sm py-3 px-4 rounded-full border border-slate-200/90 transition-all duration-200"
+            class="w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-full border border-white/20 transition-all duration-200"
           >
             <!-- Lucide Navigation -->
-            <svg class="w-3.5 h-3.5 text-iceblue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-3.5 h-3.5 text-iceblue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
             </svg>
             <span data-i18n="coverage.card2_btn">Buka Navigasi Google Maps</span>
@@ -248,15 +248,15 @@ const customAreaWaUrl = createWhatsAppLink({
           </div>
         </div>
 
-        <div class="pt-4 border-t border-navy-800 relative z-10">
+        <div class="pt-4 border-t border-white/10 relative z-10">
           <a
             href={villaB2BWaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-full border border-white/20 transition-all duration-200"
+            class="w-full inline-flex items-center justify-center gap-2.5 btn-cta-whatsapp text-slate-950 font-bold text-xs sm:text-sm py-3 px-4 rounded-full shadow-md transition-all duration-200"
           >
             <span data-i18n="coverage.card3_btn">Hubungi Sales B2B & Villa</span>
-            <svg class="w-3.5 h-3.5 text-iceblue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-3.5 h-3.5 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
             </svg>
@@ -272,10 +272,10 @@ const customAreaWaUrl = createWhatsAppLink({
         href={customAreaWaUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-2 bg-slate-100 text-navy-950 font-semibold text-xs px-5 py-3 rounded-full border border-slate-200/90 w-full"
+        class="inline-flex items-center justify-center gap-2 bg-white/10 text-white font-semibold text-xs px-5 py-3 rounded-full border border-white/20 w-full"
       >
         <span data-i18n="coverage.btn_check">Cek Wilayah & Jadwal Khusus</span>
-        <svg class="w-3.5 h-3.5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="w-3.5 h-3.5 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
         </svg>
