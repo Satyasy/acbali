@@ -25,10 +25,9 @@ const businessSchema = {
   "description": siteConfig.description,
   "url": "https://jawarateknikac.com",
   "logo": "https://jawarateknikac.com/icon-512.png",
-  "image": "https://jawarateknikac.com/icon-512.png",
-  "hasMap": siteConfig.mapsDirectUrl,
+  "hasMap": siteConfig.mapsBranches,
   "sameAs": [
-    siteConfig.mapsDirectUrl,
+    ...siteConfig.mapsBranches,
     siteConfig.mapsSearchUrl
   ],
   "telephone": siteConfig.phone,

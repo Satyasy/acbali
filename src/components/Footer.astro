@@ -1,5 +1,5 @@
 ---
-import { siteConfig, createWhatsAppLink } from '../config/site';
+import { siteConfig, branchLocations, createWhatsAppLink } from '../config/site';
 
 const currentYear = new Date().getFullYear();
 const waFooterLink = createWhatsAppLink();
@@ -148,6 +148,27 @@ const waFooterLink = createWhatsAppLink();
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
           <span data-i18n="footer.coverage_text">Melayani panggilan cepat ke Denpasar, Canggu, Kuta, Seminyak, Sanur, Jimbaran, Ubud, dan sekitarnya.</span>
+        </div>
+
+        <!-- 3 Branch Posko Links -->
+        <div class="pt-2 border-t border-navy-800/80">
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">3 Titik Posko Resmi Google Maps:</div>
+          <div class="flex flex-wrap gap-1.5">
+            {branchLocations.map((b) => (
+              <a
+                href={b.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs px-2.5 py-1 rounded-lg bg-navy-900 text-slate-200 hover:text-white hover:bg-navy-800 border border-navy-700/60 inline-flex items-center gap-1.5 transition-colors"
+              >
+                <svg class="w-3 h-3 text-iceblue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>{b.shortName}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 

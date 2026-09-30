@@ -1,5 +1,5 @@
 ---
-import { siteConfig, coverageAreas, createWhatsAppLink } from '../config/site';
+import { siteConfig, coverageAreas, branchLocations, createWhatsAppLink } from '../config/site';
 
 const denpasarBadungWaUrl = createWhatsAppLink({
   service: "Layanan Teknisi Wilayah Denpasar & Badung",
@@ -136,7 +136,7 @@ const customAreaWaUrl = createWhatsAppLink({
         </div>
       </article>
 
-      <!-- CARD 2: Google Maps Terverifikasi Resmi -->
+      <!-- CARD 2: Google Maps Terverifikasi Resmi (3 Posko Cabang) -->
       <article data-reveal-delay="80" class="glass-apple-dark rounded-xl p-6 sm:p-7 flex flex-col justify-between group reveal-on-scroll">
         <div>
           <!-- Header with Rating -->
@@ -158,39 +158,56 @@ const customAreaWaUrl = createWhatsAppLink({
           </div>
 
           <h3 class="text-xl font-extrabold text-white mb-2" data-i18n="coverage.card2_title">
-            Terdaftar Resmi Google Maps
+            3 Posko Cabang Resmi Google Maps
           </h3>
-          <p class="text-xs sm:text-sm text-slate-300 mb-5 leading-relaxed" data-i18n="coverage.card2_desc">
-            Transparansi legalitas dan pangkalan bengkel fisik terverifikasi resmi pada Google Bisnis demi keamanan aset Anda.
+          <p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed" data-i18n="coverage.card2_desc">
+            Transparansi legalitas pangkalan bengkel fisik terverifikasi resmi pada Google Bisnis demi keamanan aset Anda.
           </p>
 
-          <!-- Address Box -->
-          <div class="bg-white/5 rounded-xl p-4 border border-white/10 mb-6 space-y-2">
-            <div class="flex items-start gap-2 text-xs text-white font-bold">
-              <svg class="w-4 h-4 text-iceblue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>{siteConfig.address.full}</span>
-            </div>
-            <p class="text-xs text-slate-400" data-i18n="coverage.card2_hours">
-              Buka 24 Jam Non-Stop setiap hari (termasuk hari libur).
-            </p>
+          <!-- 3 Branch Location Items -->
+          <div class="space-y-2 mb-4">
+            {branchLocations.map((branch) => (
+              <a
+                href={branch.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group/branch flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-iceblue-400/40 transition-all duration-200"
+              >
+                <div class="flex items-center gap-2.5 min-w-0 pr-2">
+                  <div class="w-6 h-6 rounded-md bg-iceblue-500/20 text-iceblue-300 flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="truncate">
+                    <div class="text-xs font-bold text-white group-hover/branch:text-iceblue-300 transition-colors truncate">{branch.shortName}</div>
+                    <div class="text-[11px] text-slate-400 truncate">{branch.area}</div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 text-[11px] font-bold text-iceblue-300 bg-iceblue-500/15 border border-iceblue-400/30 px-2 py-0.5 rounded-full shrink-0 group-hover/branch:bg-iceblue-500 group-hover/branch:text-slate-950 transition-colors">
+                  Maps
+                  <svg class="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                  </svg>
+                </span>
+              </a>
+            ))}
           </div>
         </div>
 
-        <div class="pt-4 border-t border-white/10">
+        <div class="pt-3 border-t border-white/10">
           <a
             href={siteConfig.mapsDirectUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-full border border-white/20 transition-all duration-200"
+            class="w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm py-2.5 px-4 rounded-full border border-white/20 transition-all duration-200"
           >
             <!-- Lucide Navigation -->
             <svg class="w-3.5 h-3.5 text-iceblue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
             </svg>
-            <span data-i18n="coverage.card2_btn">Buka Navigasi Google Maps</span>
+            <span data-i18n="coverage.card2_btn">Buka Maps Posko Utama (Pusat)</span>
           </a>
         </div>
       </article>

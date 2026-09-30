@@ -23,10 +23,43 @@ export interface SiteConfig {
   };
   mapsEmbedUrl: string;
   mapsDirectUrl: string;
+  mapsBranches: string[];
   mapsSearchUrl: string;
   googleKgmid: string;
   heroImage: string;
 }
+
+export interface BranchLocation {
+  id: string;
+  name: string;
+  shortName: string;
+  area: string;
+  url: string;
+}
+
+export const branchLocations: BranchLocation[] = [
+  {
+    id: "branch-1",
+    name: "Posko 1 (Denpasar Barat & Sekitarnya)",
+    shortName: "Posko Denpasar Barat",
+    area: "Teuku Umar, Dauh Puri, Gatsu Barat, Renon",
+    url: "https://share.google/OsnVtoOuBVrmwiDei",
+  },
+  {
+    id: "branch-2",
+    name: "Posko 2 (Badung, Kuta & Canggu)",
+    shortName: "Posko Badung / Kuta",
+    area: "Canggu, Seminyak, Kuta, Kerobokan, Dalung",
+    url: "https://share.google/TaUzg8FLm1EmpuMEP",
+  },
+  {
+    id: "branch-3",
+    name: "Posko 3 (Sanur, Densel & Sekitarnya)",
+    shortName: "Posko Sanur / Densel",
+    area: "Sanur, Sesetan, Sidakarya, Panjer, Renon",
+    url: "https://share.google/xdXbAp4CwGhVK9Vug",
+  },
+];
 
 export const siteConfig: SiteConfig = {
   name: "Jawara Teknik",
@@ -52,7 +85,12 @@ export const siteConfig: SiteConfig = {
       longitude: 115.2078,
     },
   },
-  mapsDirectUrl: "https://share.google/L5F6Ih7hVSmaAIBC9",
+  mapsDirectUrl: "https://share.google/OsnVtoOuBVrmwiDei",
+  mapsBranches: [
+    "https://share.google/OsnVtoOuBVrmwiDei",
+    "https://share.google/TaUzg8FLm1EmpuMEP",
+    "https://share.google/xdXbAp4CwGhVK9Vug",
+  ],
   mapsSearchUrl: "https://www.google.com/search?kgmid=/g/11zfhw7q03&q=Service+AC+panggilan+Jawara+Teknik",
   mapsEmbedUrl: "https://maps.google.com/maps?q=Service+AC+panggilan+Jawara+Teknik+Bali&t=&z=14&ie=UTF8&iwloc=&output=embed",
   googleKgmid: "/g/11zfhw7q03",

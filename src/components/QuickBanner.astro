@@ -40,8 +40,8 @@ import { siteConfig, orderingSteps } from '../config/site';
           >
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="w-12 h-12 rounded-xl bg-navy-950 text-white font-black text-xl flex items-center justify-center group-hover:bg-iceblue-600 transition-colors shadow-2xs">
-                  0{item.step}
+                <span class="text-3xl sm:text-4xl font-black text-navy-950 group-hover:text-iceblue-600 transition-colors tracking-tighter select-none font-sans">
+                  {item.step}
                 </span>
                 <span class="text-xs font-bold px-3 py-1 rounded-full bg-white text-navy-900 border border-slate-200/80 shadow-2xs" data-i18n={`order.step${index + 1}_badge`}>
                   {index === 0 && 'Langkah 1'}
