@@ -4,13 +4,13 @@ import { siteConfig, createWhatsAppLink } from '../config/site';
 const defaultWaUrl = createWhatsAppLink();
 ---
 
-<nav id="main-navbar" class="sticky top-0 z-40 transition-all duration-300 glass-navbar">
+<nav id="main-navbar" class="sticky top-0 z-40 transition-all duration-300 glass-navbar dark:border-navy-800/80 dark:bg-[#030D1A]/85">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-12 sm:h-14">
       
       <!-- Brand Logo (Symmetric Lucide Snowflake Emblem) -->
       <a href="/" class="flex items-center gap-2.5 group">
-        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-navy-800 text-iceblue-400 flex items-center justify-center shadow-xs group-hover:bg-navy-900 group-hover:text-iceblue-300 transition-colors">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-navy-800 dark:bg-navy-900 text-iceblue-400 dark:text-iceblue-300 border border-transparent dark:border-navy-700/80 flex items-center justify-center shadow-xs group-hover:bg-navy-900 group-hover:text-iceblue-300 transition-colors">
           <!-- Official Symmetrical Lucide Snowflake -->
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="2" x2="22" y1="12" y2="12"></line>
@@ -23,42 +23,67 @@ const defaultWaUrl = createWhatsAppLink();
         </div>
         <div>
           <div class="flex items-center gap-1 leading-none">
-            <span class="font-extrabold text-base sm:text-lg tracking-tight text-navy-950 font-sans">JAWARA</span>
-            <span class="font-bold text-base sm:text-lg tracking-tight text-iceblue-700 font-sans">TEKNIK</span>
+            <span class="font-extrabold text-base sm:text-lg tracking-tight text-navy-950 dark:text-white font-sans">JAWARA</span>
+            <span class="font-bold text-base sm:text-lg tracking-tight text-iceblue-700 dark:text-iceblue-400 font-sans">TEKNIK</span>
           </div>
-          <p class="text-xs text-slate-500 font-medium tracking-wide leading-none mt-0.5" data-i18n="nav.brand_sub">Servis AC Bali</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium tracking-wide leading-none mt-0.5" data-i18n="nav.brand_sub">Servis AC Bali</p>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links (Clean & Spacious 4-Item Menu) -->
-      <div class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700">
-        <a href="#tarif" class="hover:text-iceblue-700 transition-colors py-1" data-i18n="nav.rates">Layanan & Tarif</a>
-        <a href="#masalah" class="hover:text-iceblue-700 transition-colors py-1" data-i18n="nav.issues">Kendala AC</a>
-        <a href="#wilayah" class="hover:text-iceblue-700 transition-colors py-1" data-i18n="nav.areas">Area Bali & Villa</a>
-        <a href="#cara-order" class="hover:text-iceblue-700 transition-colors py-1" data-i18n="nav.order">Cara Pesan</a>
+      <!-- Desktop Navigation Links (Clean & Spacious 3-Item Menu without AC Issues) -->
+      <div class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700 dark:text-slate-300">
+        <a href="#tarif" class="hover:text-iceblue-700 dark:hover:text-iceblue-400 transition-colors py-1" data-i18n="nav.rates">Layanan & Tarif</a>
+        <a href="#wilayah" class="hover:text-iceblue-700 dark:hover:text-iceblue-400 transition-colors py-1" data-i18n="nav.areas">Area Bali & Villa</a>
+        <a href="#cara-order" class="hover:text-iceblue-700 dark:hover:text-iceblue-400 transition-colors py-1" data-i18n="nav.order">Cara Pesan</a>
       </div>
 
-      <!-- Action Buttons & Language Switcher -->
+      <!-- Action Buttons, Dark Mode Toggle & Language Switcher -->
       <div class="flex items-center gap-2 sm:gap-3">
         
+        <!-- Dark / Light Theme Toggle Button -->
+        <button
+          type="button"
+          id="theme-toggle-btn"
+          aria-label="Toggle Dark / Light Mode"
+          title="Toggle Tema Gelap / Terang"
+          class="relative inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-200/80 dark:bg-navy-900/80 border border-slate-300/70 dark:border-navy-700/70 text-slate-700 dark:text-amber-300 hover:text-navy-950 dark:hover:text-amber-200 transition-all duration-200 active:scale-90 shadow-2xs cursor-pointer"
+        >
+          <!-- Sun Icon (visible in dark mode) -->
+          <svg class="w-4 h-4 hidden dark:block transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <!-- Moon Icon (visible in light mode) -->
+          <svg class="w-4 h-4 block dark:hidden transition-transform duration-300 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+
         <!-- iOS Segmented Language Switcher [ ID | EN ] -->
         <div
           id="lang-switcher-track"
-          class="relative inline-flex items-center p-1 bg-slate-200/80 backdrop-blur-md rounded-full border border-slate-300/70 shadow-2xs text-xs select-none transition-transform duration-200 active:scale-95"
+          class="relative inline-flex items-center p-1 bg-slate-200/80 dark:bg-navy-900/80 backdrop-blur-md rounded-full border border-slate-300/70 dark:border-navy-700/70 shadow-2xs text-xs select-none transition-transform duration-200 active:scale-95"
           role="group"
           aria-label="Language Selector"
         >
           <!-- Sliding Frosted Glass Thumb with Spring & Zoom -->
           <span
             id="lang-glass-thumb"
-            class="absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-white shadow-xs border border-white/90 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] pointer-events-none left-1"
+            class="absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-white dark:bg-navy-800 shadow-xs border border-white/90 dark:border-navy-700 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] pointer-events-none left-1"
             aria-hidden="true"
           ></span>
 
           <button
             type="button"
             data-lang-btn="id"
-            class="lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-bold transition-colors duration-200 cursor-pointer text-navy-950"
+            class="lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-bold transition-colors duration-200 cursor-pointer text-navy-950 dark:text-white"
             aria-label="Bahasa Indonesia"
           >
             ID
@@ -66,7 +91,7 @@ const defaultWaUrl = createWhatsAppLink();
           <button
             type="button"
             data-lang-btn="en"
-            class="lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-bold transition-colors duration-200 cursor-pointer text-slate-700 hover:text-navy-950"
+            class="lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-bold transition-colors duration-200 cursor-pointer text-slate-700 dark:text-slate-400 hover:text-navy-950 dark:hover:text-white"
             aria-label="English"
           >
             EN
@@ -78,10 +103,10 @@ const defaultWaUrl = createWhatsAppLink();
           type="button"
           data-open-modal
           data-service="Konsultasi Servis AC Cepat"
-          class="hidden sm:inline-flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-navy-900 text-xs font-bold px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-slate-200/90 transition-colors cursor-pointer"
+          class="hidden sm:inline-flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-navy-900 dark:hover:bg-navy-800 text-navy-900 dark:text-white text-xs font-bold px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-slate-200/90 dark:border-navy-700/80 transition-colors cursor-pointer"
         >
           <!-- Lucide CalendarClock -->
-          <svg class="w-3.5 h-3.5 text-iceblue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-3.5 h-3.5 text-iceblue-700 dark:text-iceblue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"></path>
             <path d="M16 2v4"></path>
             <path d="M8 2v4"></path>
@@ -111,19 +136,31 @@ const defaultWaUrl = createWhatsAppLink();
   </div>
 </nav>
 
-<!-- iPhone Dynamic Frosted Glass Scroll Behavior -->
+<!-- iPhone Dynamic Frosted Glass Scroll & Theme Toggle Behavior -->
 <script is:inline>
   (function() {
     const nav = document.getElementById('main-navbar');
-    if (!nav) return;
-    function updateNavbarGlass() {
-      if (window.scrollY > 15) {
-        nav.classList.add('glass-navbar-scrolled');
-      } else {
-        nav.classList.remove('glass-navbar-scrolled');
+    if (nav) {
+      function updateNavbarGlass() {
+        if (window.scrollY > 15) {
+          nav.classList.add('glass-navbar-scrolled');
+        } else {
+          nav.classList.remove('glass-navbar-scrolled');
+        }
       }
+      window.addEventListener('scroll', updateNavbarGlass, { passive: true });
+      updateNavbarGlass();
     }
-    window.addEventListener('scroll', updateNavbarGlass, { passive: true });
-    updateNavbarGlass();
+
+    // Theme Toggle Handler
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        try {
+          localStorage.setItem('jawara_theme', isDark ? 'dark' : 'light');
+        } catch (e) {}
+      });
+    }
   })();
 </script>

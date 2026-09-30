@@ -165,6 +165,29 @@
     box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.9) !important;
   }
 
+  html.dark .glass-navbar {
+    background-color: rgba(3, 13, 26, 0.82) !important;
+    border-bottom: 1px solid rgba(15, 76, 129, 0.4) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  html.dark .glass-navbar-scrolled {
+    background-color: rgba(3, 13, 26, 0.92) !important;
+    border-bottom-color: rgba(56, 189, 248, 0.3) !important;
+    box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
+  }
+
+  html.dark .glass-apple-card {
+    background: rgba(7, 26, 48, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
+  }
+
+  html.dark .glass-apple-card:hover {
+    border-color: rgba(56, 189, 248, 0.5) !important;
+    box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.15) !important;
+  }
+
   /* Apple-Style Smooth Scroll Reveal & Stagger Animations */
   .reveal-on-scroll {
     opacity: 0;

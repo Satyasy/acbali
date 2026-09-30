@@ -45,10 +45,10 @@ const tickerItems = [
 ];
 ---
 
-<div class="relative overflow-hidden bg-white/95 border-y border-slate-200/90 backdrop-blur-md py-4 sm:py-5 z-20 select-none shadow-2xs">
-  <!-- Soft Gradient Edge Masks for Clean Fade on White Background -->
-  <div class="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-  <div class="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+<div class="relative overflow-hidden bg-white/95 dark:bg-[#071322]/95 border-y border-slate-200/90 dark:border-navy-800/80 backdrop-blur-md py-4 sm:py-5 z-20 select-none shadow-2xs">
+  <!-- Soft Gradient Edge Masks for Clean Fade on White & Dark Background -->
+  <div class="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white dark:from-[#071322] to-transparent z-10 pointer-events-none"></div>
+  <div class="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white dark:from-[#071322] to-transparent z-10 pointer-events-none"></div>
 
   <!-- Marquee Track (Double duplicate for seamless infinite loop) -->
   <div class="flex items-center w-max animate-marquee hover:[animation-play-state:paused]">
@@ -57,7 +57,7 @@ const tickerItems = [
       {tickerItems.map((item) => (
         <div class="flex items-center gap-3 whitespace-nowrap group/item">
           <!-- Sleek Rounded Squircle Badge for Lucide Icon -->
-          <div class="w-8 h-8 rounded-lg bg-iceblue-50 text-iceblue-700 border border-iceblue-200/80 flex items-center justify-center shrink-0 shadow-2xs group-hover/item:bg-iceblue-600 group-hover/item:text-white group-hover/item:border-iceblue-600 transition-all duration-200">
+          <div class="w-8 h-8 rounded-lg bg-iceblue-50 dark:bg-iceblue-500/15 text-iceblue-700 dark:text-iceblue-300 border border-iceblue-200/80 dark:border-iceblue-400/30 flex items-center justify-center shrink-0 shadow-2xs group-hover/item:bg-iceblue-600 group-hover/item:text-white group-hover/item:border-iceblue-600 transition-all duration-200">
             {item.iconName === 'zap' && (
               <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -115,10 +115,10 @@ const tickerItems = [
             )}
           </div>
 
-          <span class="text-sm sm:text-base font-extrabold text-navy-950 tracking-tight group-hover/item:text-iceblue-700 transition-colors" data-i18n={item.textId}>
+          <span class="text-sm sm:text-base font-extrabold text-navy-950 dark:text-white tracking-tight group-hover/item:text-iceblue-700 dark:group-hover/item:text-iceblue-300 transition-colors" data-i18n={item.textId}>
             {item.text}
           </span>
-          <span class="w-2 h-2 rounded-full bg-iceblue-400/60 shrink-0 ml-4"></span>
+          <span class="w-2 h-2 rounded-full bg-iceblue-400/60 dark:bg-iceblue-400/40 shrink-0 ml-4"></span>
         </div>
       ))}
     </div>
@@ -128,7 +128,7 @@ const tickerItems = [
       {tickerItems.map((item) => (
         <div class="flex items-center gap-3 whitespace-nowrap group/item">
           <!-- Sleek Rounded Squircle Badge for Lucide Icon -->
-          <div class="w-8 h-8 rounded-lg bg-iceblue-50 text-iceblue-700 border border-iceblue-200/80 flex items-center justify-center shrink-0 shadow-2xs group-hover/item:bg-iceblue-600 group-hover/item:text-white group-hover/item:border-iceblue-600 transition-all duration-200">
+          <div class="w-8 h-8 rounded-lg bg-iceblue-50 dark:bg-iceblue-500/15 text-iceblue-700 dark:text-iceblue-300 border border-iceblue-200/80 dark:border-iceblue-400/30 flex items-center justify-center shrink-0 shadow-2xs group-hover/item:bg-iceblue-600 group-hover/item:text-white group-hover/item:border-iceblue-600 transition-all duration-200">
             {item.iconName === 'zap' && (
               <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -186,10 +186,10 @@ const tickerItems = [
             )}
           </div>
 
-          <span class="text-sm sm:text-base font-extrabold text-navy-950 tracking-tight group-hover/item:text-iceblue-700 transition-colors" data-i18n={item.textId}>
+          <span class="text-sm sm:text-base font-extrabold text-navy-950 dark:text-white tracking-tight group-hover/item:text-iceblue-700 dark:group-hover/item:text-iceblue-300 transition-colors" data-i18n={item.textId}>
             {item.text}
           </span>
-          <span class="w-2 h-2 rounded-full bg-iceblue-400/60 shrink-0 ml-4"></span>
+          <span class="w-2 h-2 rounded-full bg-iceblue-400/60 dark:bg-iceblue-400/40 shrink-0 ml-4"></span>
         </div>
       ))}
     </div>

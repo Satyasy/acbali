@@ -2,31 +2,31 @@
 import { siteConfig, orderingSteps } from '../config/site';
 ---
 
-<section id="cara-order" class="relative py-14 sm:py-20 bg-slate-50 border-b border-slate-200/70 overflow-hidden section-content-visibility">
+<section id="cara-order" class="relative py-14 sm:py-20 bg-slate-50 dark:bg-[#040E1B] border-b border-slate-200/70 dark:border-navy-900 overflow-hidden section-content-visibility">
   <span id="form-booking" class="sr-only"></span>
   
   <!-- Subtle Blueprint Square Grid Background -->
   <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
-    <div class="w-full h-full bg-grid-blueprint [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
+    <div class="w-full h-full bg-grid-blueprint dark:bg-grid-blueprint-dark [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
   </div>
 
   <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Wide Gray/Tinted Rounded Banner -->
-    <div class="bg-white rounded-2xl p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-xs reveal-on-scroll">
+    <div class="bg-white dark:bg-[#071322]/90 rounded-2xl p-6 sm:p-10 lg:p-12 border border-slate-200/90 dark:border-navy-800/80 shadow-xs reveal-on-scroll">
       
       <!-- Top Pill & Headings -->
       <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-navy-950 mb-3 shadow-2xs">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 dark:bg-navy-900 border border-slate-200 dark:border-navy-700 text-xs font-semibold text-navy-950 dark:text-iceblue-300 mb-3 shadow-2xs">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           <span data-i18n="order.badge">Alur Pemesanan Cepat & Booking via WhatsApp</span>
         </div>
 
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-950 tracking-tight mb-2.5" data-i18n="order.title">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-950 dark:text-white tracking-tight mb-2.5" data-i18n="order.title">
           3 Langkah Praktis Memanggil Teknisi Jawara Teknik
         </h2>
 
-        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto" data-i18n="order.desc">
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto" data-i18n="order.desc">
           Tanpa perlu unduh aplikasi atau registrasi rumit. Pilih jadwal dan isi data di bawah ini untuk terhubung langsung dengan teknisi siaga kami via WhatsApp.
         </p>
       </div>
@@ -35,27 +35,27 @@ import { siteConfig, orderingSteps } from '../config/site';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mb-10 max-w-4xl mx-auto">
         {orderingSteps.map((item, index) => (
           <div
-            class="step-reveal-card bg-slate-50/80 hover:bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-2xs flex flex-col justify-between group hover:border-iceblue-400 hover:shadow-md transition-all duration-300"
+            class="step-reveal-card bg-slate-50/80 dark:bg-navy-950/70 hover:bg-white dark:hover:bg-navy-900/90 rounded-2xl p-6 sm:p-7 border border-slate-200/90 dark:border-navy-800/80 shadow-2xs flex flex-col justify-between group hover:border-iceblue-400 dark:hover:border-iceblue-400 hover:shadow-md transition-all duration-300"
             style={`transition-delay: ${index * 130}ms;`}
           >
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="text-3xl sm:text-4xl font-black text-navy-950 group-hover:text-iceblue-600 transition-colors tracking-tighter select-none font-sans">
+                <span class="text-3xl sm:text-4xl font-black text-navy-950 dark:text-white group-hover:text-iceblue-600 dark:group-hover:text-iceblue-400 transition-colors tracking-tighter select-none font-sans">
                   {item.step}
                 </span>
-                <span class="text-xs font-bold px-3 py-1 rounded-full bg-white text-navy-900 border border-slate-200/80 shadow-2xs" data-i18n={`order.step${index + 1}_badge`}>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-white dark:bg-navy-900 text-navy-900 dark:text-slate-200 border border-slate-200/80 dark:border-navy-700 shadow-2xs" data-i18n={`order.step${index + 1}_badge`}>
                   {index === 0 && 'Langkah 1'}
                   {index === 1 && 'Langkah 2'}
                   {index === 2 && 'Langkah 3'}
                 </span>
               </div>
-              <h3 class="font-extrabold text-base sm:text-lg text-navy-950 group-hover:text-iceblue-700 transition-colors leading-snug my-2" data-i18n={`order.step${index + 1}_title`}>
+              <h3 class="font-extrabold text-base sm:text-lg text-navy-950 dark:text-white group-hover:text-iceblue-700 dark:group-hover:text-iceblue-300 transition-colors leading-snug my-2" data-i18n={`order.step${index + 1}_title`}>
                 {item.title}
               </h3>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-200/70 flex items-center justify-between text-xs sm:text-sm text-iceblue-700 font-extrabold">
+            <div class="mt-4 pt-3 border-t border-slate-200/70 dark:border-navy-800 flex items-center justify-between text-xs sm:text-sm text-iceblue-700 dark:text-iceblue-400 font-extrabold">
               <span data-i18n={`order.step${index + 1}_action`}>{item.actionText}</span>
-              <svg class="w-4 h-4 text-iceblue-600 group-hover:translate-x-1.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-iceblue-600 dark:text-iceblue-400 group-hover:translate-x-1.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m9 18 6-6-6-6"></path>
               </svg>
             </div>
@@ -64,13 +64,13 @@ import { siteConfig, orderingSteps } from '../config/site';
       </div>
 
       <!-- 5-Field Quick Template WhatsApp Form Card -->
-      <div class="bg-white p-5 sm:p-7 rounded-xl border border-slate-200/90 shadow-sm max-w-3xl mx-auto">
+      <div class="bg-white dark:bg-navy-950/90 p-5 sm:p-7 rounded-xl border border-slate-200/90 dark:border-navy-800/80 shadow-sm max-w-3xl mx-auto">
         <form id="quick-wa-template-form" class="space-y-4">
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <!-- Field 1: Nama Pemesan -->
             <div>
-              <label for="quick-name" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_name">
+              <label for="quick-name" class="block text-xs font-bold text-navy-950 dark:text-slate-200 mb-1.5" data-i18n="form.label_name">
                 Nama Pemesan <span class="text-rose-500">*</span>
               </label>
               <input
@@ -79,19 +79,19 @@ import { siteConfig, orderingSteps } from '../config/site';
                 required
                 placeholder="Ketik nama Anda (contoh: Budi / Wayan)"
                 data-i18n-ph="form.ph_name"
-                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 rounded-lg focus:bg-white dark:focus:bg-navy-900 focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 dark:text-white font-medium transition-all"
               />
             </div>
 
             <!-- Field 2: Area / Lokasi di Bali -->
             <div>
-              <label for="quick-area" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_area">
+              <label for="quick-area" class="block text-xs font-bold text-navy-950 dark:text-slate-200 mb-1.5" data-i18n="form.label_area">
                 Area / Lokasi di Bali <span class="text-rose-500">*</span>
               </label>
               <select
                 id="quick-area"
                 required
-                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 rounded-lg focus:bg-white dark:focus:bg-navy-900 focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 dark:text-white font-medium transition-all"
               >
                 <option value="" disabled selected data-i18n="form.opt_area_default">Pilih Area di Bali</option>
                 <option value="Canggu (Badung)">Canggu (Badung)</option>
@@ -114,13 +114,13 @@ import { siteConfig, orderingSteps } from '../config/site';
 
           <!-- Field 3: Jenis Layanan AC -->
           <div>
-            <label for="quick-service" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_service">
+            <label for="quick-service" class="block text-xs font-bold text-navy-950 dark:text-slate-200 mb-1.5" data-i18n="form.label_service">
               Layanan yang Dibutuhkan <span class="text-rose-500">*</span>
             </label>
             <select
               id="quick-service"
               required
-              class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+              class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 rounded-lg focus:bg-white dark:focus:bg-navy-900 focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 dark:text-white font-medium transition-all"
             >
               <option value="Cuci AC Standar (0.5 – 1 PK)" data-i18n="form.opt_srv_cuci1">Cuci AC Standar (0.5 – 1 PK)</option>
               <option value="Cuci AC Standar (1.5 – 2 PK)" data-i18n="form.opt_srv_cuci2">Cuci AC Standar (1.5 – 2 PK)</option>
@@ -137,12 +137,12 @@ import { siteConfig, orderingSteps } from '../config/site';
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <!-- Field 4: Jumlah Unit -->
             <div>
-              <label for="quick-units" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_units">
+              <label for="quick-units" class="block text-xs font-bold text-navy-950 dark:text-slate-200 mb-1.5" data-i18n="form.label_units">
                 Jumlah Unit AC
               </label>
               <select
                 id="quick-units"
-                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 rounded-lg focus:bg-white dark:focus:bg-navy-900 focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 dark:text-white font-medium transition-all"
               >
                 <option value="1" data-i18n="form.opt_units_1">1 Unit</option>
                 <option value="2" data-i18n="form.opt_units_2">2 Unit</option>
@@ -154,12 +154,12 @@ import { siteConfig, orderingSteps } from '../config/site';
 
             <!-- Field 5: Waktu Kunjungan -->
             <div>
-              <label for="quick-time" class="block text-xs font-bold text-navy-950 mb-1.5" data-i18n="form.label_time">
+              <label for="quick-time" class="block text-xs font-bold text-navy-950 dark:text-slate-200 mb-1.5" data-i18n="form.label_time">
                 Pilihan Waktu Kunjungan
               </label>
               <select
                 id="quick-time"
-                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 font-medium transition-all"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 rounded-lg focus:bg-white dark:focus:bg-navy-900 focus:outline-hidden focus:ring-2 focus:ring-iceblue-500 text-navy-950 dark:text-white font-medium transition-all"
               >
                 <option value="Hari Ini (Secepatnya / Emergency)" data-i18n="form.opt_time_today">Hari Ini (Secepatnya / Emergency)</option>
                 <option value="Besok Pagi (08:00 – 12:00)" data-i18n="form.opt_time_morn">Besok Pagi (08:00 – 12:00)</option>
@@ -174,15 +174,15 @@ import { siteConfig, orderingSteps } from '../config/site';
           <div class="pt-2">
             <button
               type="submit"
-              class="w-full inline-flex items-center justify-center gap-2.5 bg-navy-950 hover:bg-navy-900 active:bg-black text-white font-bold text-xs sm:text-sm py-3.5 px-6 rounded-xl shadow-md transition-all duration-200 cursor-pointer group"
+              class="w-full inline-flex items-center justify-center gap-2.5 bg-navy-950 hover:bg-navy-900 dark:bg-iceblue-500 dark:hover:bg-iceblue-400 dark:text-navy-950 active:bg-black text-white font-bold text-xs sm:text-sm py-3.5 px-6 rounded-xl shadow-md transition-all duration-200 cursor-pointer group"
             >
               <!-- Lucide MessageCircle -->
-              <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-emerald-400 dark:text-navy-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
               </svg>
               <span data-i18n="form.btn_submit">Kirim Jadwal via WhatsApp</span>
               <!-- Lucide ArrowRight -->
-              <svg class="w-4 h-4 text-slate-300 group-hover:text-white group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-slate-300 dark:text-navy-900 group-hover:text-white dark:group-hover:text-navy-950 group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
@@ -193,7 +193,7 @@ import { siteConfig, orderingSteps } from '../config/site';
       </div>
 
       <!-- Trust Assurance Footnote -->
-      <div class="flex flex-wrap items-center justify-center gap-y-1 gap-x-4 text-xs text-slate-500 mt-6">
+      <div class="flex flex-wrap items-center justify-center gap-y-1 gap-x-4 text-xs text-slate-500 dark:text-slate-400 mt-6">
         <span data-i18n="form.trust1">✓ Garansi 30 Hari Penuh</span>
         <span>•</span>
         <span data-i18n="form.trust2">✓ Tiba Dalam 60 Menit</span>

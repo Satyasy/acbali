@@ -214,6 +214,21 @@ const faqSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="theme-color" content="#0F4C81" />
+
+    <!-- Dark Mode Immediate Theme Initializer (Prevents FOUC) -->
+    <script is:inline>
+      (function() {
+        try {
+          const stored = localStorage.getItem('jawara_theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     
     <!-- Google Site Verification (Google Search Console) -->
     <meta name="google-site-verification" content="uDrM6u-zFukD37FuPbfiypBUpLcVqeFmUYAAmAFFMlE" />
@@ -268,7 +283,7 @@ const faqSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(sitelinksSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </head>
-  <body class="bg-slatewhite text-slate-900 selection:bg-iceblue-600 selection:text-white min-h-screen flex flex-col font-sans">
+  <body class="bg-slatewhite dark:bg-[#030D1A] text-slate-900 dark:text-slate-100 selection:bg-iceblue-600 selection:text-white min-h-screen flex flex-col font-sans transition-colors duration-200">
     <slot />
 
     <!-- Client-side Lightweight i18n Engine (Zero Lag, 100 Lighthouse) -->
@@ -354,9 +369,9 @@ const faqSchema = {
           langBtns.forEach((btn) => {
             const btnLang = btn.getAttribute('data-lang-btn');
             if (btnLang === lang) {
-              btn.className = 'lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-black transition-colors duration-200 cursor-pointer text-navy-950';
+              btn.className = 'lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-black transition-colors duration-200 cursor-pointer text-navy-950 dark:text-white';
             } else {
-              btn.className = 'lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-bold transition-colors duration-200 cursor-pointer text-slate-700 hover:text-navy-950';
+              btn.className = 'lang-btn relative z-10 w-8 sm:w-9 text-center py-1 text-xs font-bold transition-colors duration-200 cursor-pointer text-slate-700 dark:text-slate-400 hover:text-navy-950 dark:hover:text-white';
             }
           });
 

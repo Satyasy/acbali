@@ -6,27 +6,27 @@ const faqWaUrl = createWhatsAppLink({
 });
 ---
 
-<section id="faq" class="relative py-16 sm:py-24 bg-white border-b border-slate-200/60 overflow-hidden section-content-visibility">
+<section id="faq" class="relative py-16 sm:py-24 bg-white dark:bg-[#030D1A] border-b border-slate-200/60 dark:border-navy-900 overflow-hidden section-content-visibility">
   <!-- Subtle Ambient Architectural Blueprint Square Grid Background -->
   <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
-    <div class="w-full h-full bg-grid-blueprint [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
+    <div class="w-full h-full bg-grid-blueprint dark:bg-grid-blueprint-dark [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
   </div>
 
 
   <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 reveal-on-scroll">
-      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 text-iceblue-700 text-xs font-semibold mb-3 border border-iceblue-200">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-50 dark:bg-navy-900 text-iceblue-700 dark:text-iceblue-300 text-xs font-semibold mb-3 border border-iceblue-200 dark:border-navy-700">
         <!-- Lucide HelpCircle -->
-        <svg class="w-3.5 h-3.5 text-iceblue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="w-3.5 h-3.5 text-iceblue-600 dark:text-iceblue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="10" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m.08 4h.01" />
         </svg>
         <span data-i18n="faq.badge">Informasi Lengkap & Transparan</span>
       </div>
-      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight" data-i18n="faq.title">
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 dark:text-white tracking-tight" data-i18n="faq.title">
         Pertanyaan yang Sering Diajukan (FAQ)
       </h2>
-      <p class="mt-3.5 text-base text-slate-600" data-i18n="faq.desc">
+      <p class="mt-3.5 text-base text-slate-600 dark:text-slate-300" data-i18n="faq.desc">
         Jawaban seputar garansi 30 hari, pencucian AC inverter, freon, dan respon teknisi di Bali.
       </p>
     </div>
@@ -34,18 +34,18 @@ const faqWaUrl = createWhatsAppLink({
     <!-- Accordion List -->
     <div class="space-y-4 reveal-on-scroll">
       {faqs.map((faq, index) => (
-        <details class="group bg-white rounded-xl border border-slate-200/90 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:border-iceblue-400 open:shadow-sm">
-          <summary class="flex items-center justify-between cursor-pointer font-bold text-base sm:text-lg text-navy-950 list-none gap-4">
-            <span class="group-hover:text-iceblue-700 transition-colors" data-i18n={`faq.q_${index}`}>
+        <details class="group bg-white dark:bg-navy-950/75 rounded-xl border border-slate-200/90 dark:border-navy-800/80 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:border-iceblue-400 dark:open:border-iceblue-500 open:shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer font-bold text-base sm:text-lg text-navy-950 dark:text-white list-none gap-4">
+            <span class="group-hover:text-iceblue-700 dark:group-hover:text-iceblue-300 transition-colors" data-i18n={`faq.q_${index}`}>
               {faq.question}
             </span>
-            <span class="w-8 h-8 rounded-full bg-slate-100 group-open:bg-navy-800 group-open:text-white flex items-center justify-center shrink-0 transition-all duration-200">
+            <span class="w-8 h-8 rounded-full bg-slate-100 dark:bg-navy-900 group-open:bg-navy-800 dark:group-open:bg-iceblue-600 group-open:text-white text-navy-800 dark:text-slate-200 flex items-center justify-center shrink-0 transition-all duration-200">
               <svg class="w-4 h-4 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-600 leading-relaxed" data-i18n={`faq.a_${index}`}>
+          <div class="mt-4 pt-4 border-t border-slate-100 dark:border-navy-800 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n={`faq.a_${index}`}>
             {faq.answer}
           </div>
         </details>
@@ -53,16 +53,16 @@ const faqWaUrl = createWhatsAppLink({
     </div>
 
     <!-- Extra Questions Card -->
-    <div class="mt-12 p-6 rounded-xl bg-white border border-slate-200/90 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+    <div class="mt-12 p-6 rounded-xl bg-white dark:bg-navy-950/80 border border-slate-200/90 dark:border-navy-800/80 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <div>
-        <h3 class="font-bold text-navy-950 text-base" data-i18n="faq.extra_title">Masih ada pertanyaan lain yang belum terjawab?</h3>
-        <p class="text-xs sm:text-sm text-slate-500" data-i18n="faq.extra_sub">Customer service kami siap membantu konsultasi teknis gratis.</p>
+        <h3 class="font-bold text-navy-950 dark:text-white text-base" data-i18n="faq.extra_title">Masih ada pertanyaan lain yang belum terjawab?</h3>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400" data-i18n="faq.extra_sub">Customer service kami siap membantu konsultasi teknis gratis.</p>
       </div>
       <a
         href={faqWaUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-navy-800 hover:bg-navy-900 text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-colors shrink-0"
+        class="inline-flex items-center gap-2 bg-navy-800 hover:bg-navy-900 dark:bg-iceblue-500 dark:hover:bg-iceblue-400 text-white dark:text-navy-950 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-colors shrink-0"
       >
         <span data-i18n="faq.extra_btn">Tanya Langsung via WA</span>
         <span>&rarr;</span>

@@ -10,11 +10,11 @@ const allIssuesWaUrl = createWhatsAppLink({
 });
 ---
 
-<section id="masalah" class="relative py-16 sm:py-24 bg-white border-b border-slate-200/70 overflow-hidden section-content-visibility">
+<section id="masalah" class="relative py-16 sm:py-24 bg-white dark:bg-[#030D1A] border-b border-slate-200/70 dark:border-navy-900 overflow-hidden section-content-visibility">
   
   <!-- Subtle Blueprint Square Grid Background -->
   <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
-    <div class="w-full h-full bg-grid-blueprint [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
+    <div class="w-full h-full bg-grid-blueprint dark:bg-grid-blueprint-dark [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_35%,transparent_100%)]"></div>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,17 +22,17 @@ const allIssuesWaUrl = createWhatsAppLink({
     <!-- Section Header (matching sample/layout.png 'Latest Stories' title + right pill button) -->
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-12 reveal-on-scroll">
       <div>
-        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-50 text-navy-900 text-xs font-semibold mb-3 border border-navy-200/70">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-50 dark:bg-navy-900/90 text-navy-900 dark:text-iceblue-300 text-xs font-semibold mb-3 border border-navy-200/70 dark:border-navy-700/80 shadow-2xs">
           <!-- Lucide Wrench -->
-          <svg class="w-3.5 h-3.5 text-navy-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-3.5 h-3.5 text-navy-800 dark:text-iceblue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
           </svg>
           <span data-i18n="painpoints.badge">Diagnosa Tuntas & Solusi Ahli</span>
         </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 tracking-tight" data-i18n="painpoints.title">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-950 dark:text-white tracking-tight" data-i18n="painpoints.title">
           Solusi Masalah AC Paling Sering di Bali
         </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-600" data-i18n="painpoints.desc">
+        <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300" data-i18n="painpoints.desc">
           Dokumentasi penanganan teknisi di lapangan untuk mengatasi berbagai kendala AC secara tepat tanpa coba-coba.
         </p>
       </div>
@@ -44,10 +44,10 @@ const allIssuesWaUrl = createWhatsAppLink({
         rel="noopener noreferrer"
         data-open-modal
         data-service="Konsultasi Kendala AC Khusus Lainnya"
-        class="hidden sm:inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-navy-950 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-slate-200/90 transition-all duration-200 shrink-0 cursor-pointer"
+        class="hidden sm:inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-navy-900 dark:hover:bg-navy-800 text-navy-950 dark:text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-slate-200/90 dark:border-navy-700/80 transition-all duration-200 shrink-0 cursor-pointer"
       >
         <span data-i18n="painpoints.view_all">Lihat Semua Penanganan</span>
-        <svg class="w-3.5 h-3.5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
         </svg>
@@ -61,7 +61,7 @@ const allIssuesWaUrl = createWhatsAppLink({
       <article class="lg:col-span-7 glass-apple-card rounded-xl p-5 sm:p-7 flex flex-col justify-between group reveal-on-scroll">
         <div>
           <!-- Large Rounded Photo Preview -->
-          <div class="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden bg-slate-100 mb-6">
+          <div class="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden bg-slate-100 dark:bg-navy-900 mb-6">
             <img
               src={featuredItem.image}
               alt={featuredItem.imageAlt}
@@ -78,29 +78,29 @@ const allIssuesWaUrl = createWhatsAppLink({
 
           <!-- Featured Content -->
           <div>
-            <div class="inline-flex items-center gap-2 text-xs font-bold text-iceblue-700 uppercase tracking-wider mb-2">
+            <div class="inline-flex items-center gap-2 text-xs font-bold text-iceblue-700 dark:text-iceblue-400 uppercase tracking-wider mb-2">
               <span>Pipa Drainase & Talang Air</span>
-              <span class="text-slate-300">•</span>
-              <span class="text-slate-500 font-normal">Respon Tiba 60 Menit</span>
+              <span class="text-slate-300 dark:text-slate-600">•</span>
+              <span class="text-slate-500 dark:text-slate-400 font-normal">Respon Tiba 60 Menit</span>
             </div>
             
-            <h3 class="text-xl sm:text-2xl font-black text-navy-950 mb-3 group-hover:text-iceblue-700 transition-colors" data-i18n="painpoints.item_0_title">
+            <h3 class="text-xl sm:text-2xl font-black text-navy-950 dark:text-white mb-3 group-hover:text-iceblue-700 dark:group-hover:text-iceblue-300 transition-colors" data-i18n="painpoints.item_0_title">
               {featuredItem.title}
             </h3>
             
-            <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6" data-i18n="painpoints.item_0_desc">
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6" data-i18n="painpoints.item_0_desc">
               {featuredItem.description}
             </p>
           </div>
         </div>
 
         <!-- Action Button -->
-        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+        <div class="pt-4 border-t border-slate-100 dark:border-navy-800 flex items-center justify-between">
           <a
             href={createWhatsAppLink({ service: featuredItem.title, notes: featuredItem.description })}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2.5 bg-navy-950 hover:bg-navy-900 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition-all duration-200"
+            class="inline-flex items-center justify-center gap-2.5 bg-navy-950 hover:bg-navy-900 dark:bg-iceblue-600 dark:hover:bg-iceblue-500 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition-all duration-200"
           >
             <!-- Lucide MessageCircle -->
             <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -108,7 +108,7 @@ const allIssuesWaUrl = createWhatsAppLink({
             </svg>
             <span data-i18n="painpoints.btn_fix">Solusi Penanganan Bocor Air</span>
           </a>
-          <span class="text-xs text-slate-500 font-medium hidden sm:inline" data-i18n="pricing.tech_warranty">Garansi 30 Hari</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium hidden sm:inline" data-i18n="pricing.tech_warranty">Garansi 30 Hari</span>
         </div>
       </article>
 
@@ -123,7 +123,7 @@ const allIssuesWaUrl = createWhatsAppLink({
           return (
             <article data-reveal-delay={idx * 90} class="glass-apple-card rounded-xl p-4 sm:p-5 flex gap-4 sm:gap-5 items-center group reveal-on-scroll">
               <!-- Square Rounded Thumbnail Preview (matching sample/layout.png) -->
-              <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-lg overflow-hidden bg-slate-100 shrink-0">
+              <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-lg overflow-hidden bg-slate-100 dark:bg-navy-900 shrink-0">
                 <img
                   src={item.image}
                   alt={item.imageAlt}
@@ -137,15 +137,15 @@ const allIssuesWaUrl = createWhatsAppLink({
 
               <!-- Content on Right of Thumbnail -->
               <div class="flex-1 min-w-0">
-                <div class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider mb-1.5" data-i18n={`painpoints.item_${idx + 1}_badge`}>
+                <div class="inline-block px-3 py-1 rounded-full bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-transparent dark:border-navy-700/60 text-xs font-bold uppercase tracking-wider mb-1.5" data-i18n={`painpoints.item_${idx + 1}_badge`}>
                   {item.badge}
                 </div>
                 
-                <h4 class="font-bold text-sm sm:text-base text-navy-950 group-hover:text-iceblue-700 transition-colors line-clamp-1 mb-1" data-i18n={`painpoints.item_${idx + 1}_title`}>
+                <h4 class="font-bold text-sm sm:text-base text-navy-950 dark:text-white group-hover:text-iceblue-700 dark:group-hover:text-iceblue-400 transition-colors line-clamp-1 mb-1" data-i18n={`painpoints.item_${idx + 1}_title`}>
                   {item.title}
                 </h4>
                 
-                <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-2.5" data-i18n={`painpoints.item_${idx + 1}_desc`}>
+                <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed mb-2.5" data-i18n={`painpoints.item_${idx + 1}_desc`}>
                   {item.description}
                 </p>
 
@@ -154,7 +154,7 @@ const allIssuesWaUrl = createWhatsAppLink({
                   href={itemWaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 text-xs font-bold text-navy-950 hover:text-emerald-600 transition-colors"
+                  class="inline-flex items-center gap-1.5 text-xs font-bold text-navy-950 dark:text-iceblue-300 hover:text-emerald-600 dark:hover:text-iceblue-200 transition-colors"
                 >
                   <span data-i18n="pricing.btn_book">Atasi Kendala Ini</span>
                   <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -176,10 +176,10 @@ const allIssuesWaUrl = createWhatsAppLink({
         href={allIssuesWaUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-2 bg-white text-navy-950 font-semibold text-xs px-5 py-3 rounded-full border border-slate-200/90 shadow-2xs w-full"
+        class="inline-flex items-center justify-center gap-2 bg-white dark:bg-navy-900 text-navy-950 dark:text-white font-semibold text-xs px-5 py-3 rounded-full border border-slate-200/90 dark:border-navy-700/80 shadow-2xs w-full"
       >
         <span>Konsultasi Kendala Lainnya</span>
-        <svg class="w-3.5 h-3.5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
         </svg>
