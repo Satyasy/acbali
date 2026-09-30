@@ -8,13 +8,22 @@ const defaultWaUrl = createWhatsAppLink();
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-12 sm:h-14">
       
-      <!-- Brand Logo Emblem -->
+      <!-- Brand Logo Emblem (Seamless 100% Transparent Blend with Navbar) -->
       <a href="/" class="flex items-center gap-2.5 group">
-        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white p-1 border border-slate-200/90 dark:border-navy-700/80 shadow-xs flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
+        <div class="relative w-8 h-8 sm:w-9 sm:h-9 shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
           <img
             src="/images/logo.png"
             alt="Jawara Teknik Bali Logo"
-            class="w-full h-full object-contain"
+            class="w-full h-full object-contain dark:hidden"
+            width="36"
+            height="36"
+            loading="eager"
+            decoding="async"
+          />
+          <img
+            src="/images/logo-white.png"
+            alt="Jawara Teknik Bali Logo"
+            class="w-full h-full object-contain hidden dark:block"
             width="36"
             height="36"
             loading="eager"
