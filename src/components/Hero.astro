@@ -14,7 +14,7 @@ const heroSlides = [
 ];
 ---
 
-<section id="hero" class="relative min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] flex items-center justify-center pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-22 lg:pb-20 overflow-hidden bg-slate-950">
+<section id="hero" class="relative min-h-[calc(100dvh-3rem)] sm:min-h-[640px] lg:min-h-[700px] flex flex-col justify-between pt-5 pb-4 sm:pt-20 sm:pb-16 lg:pt-22 lg:pb-20 overflow-hidden bg-slate-950">
   
   <!-- Hero Background Carousel with Smooth Cinematic Crossfade -->
   <div class="absolute inset-0 z-0 overflow-hidden" id="hero-carousel" aria-hidden="true">
@@ -47,11 +47,13 @@ const heroSlides = [
     </div>
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="max-w-4xl mx-auto text-center">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
+    
+    <!-- Top & Middle Focal Content (Badge, Headline, Subheadline, CTA) -->
+    <div class="max-w-4xl mx-auto text-center flex-1 flex flex-col justify-center my-auto pt-2 sm:pt-0">
       
       <!-- Top Pill Indicator (Apple Frosted Glass) with comfortable margin from sticky navbar -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-apple-pill text-slate-100 text-xs font-semibold mb-4 sm:mb-5 shadow-xs mt-2 sm:mt-0">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-apple-pill text-slate-100 text-xs font-semibold mb-3.5 sm:mb-5 shadow-xs mx-auto">
         <!-- Lucide MapPin -->
         <svg class="w-3.5 h-3.5 text-iceblue-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
@@ -63,17 +65,17 @@ const heroSlides = [
       </div>
 
       <!-- Main H1 Headline: Pulled down with generous breathing room -->
-      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.2] mb-4 sm:mb-5">
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.2] mb-3 sm:mb-5">
         <span data-i18n="hero.title_1">Servis & Cuci AC Panggilan Cepat</span> <span data-i18n="hero.in">di</span> <span class="text-iceblue-400">Denpasar, Badung</span>, <span data-i18n="hero.title_2">dan Sekitarnya</span>
       </h1>
 
       <!-- Sub-headline: Punchy on mobile, comprehensive on tablet/desktop -->
-      <p class="text-sm sm:text-base text-slate-100 font-normal leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto">
+      <p class="text-sm sm:text-base text-slate-100 font-normal leading-relaxed mb-5 sm:mb-8 max-w-2xl mx-auto">
         <span data-i18n="hero.desc_lead">Spesialis pendingin udara panggilan cepat di Bali.</span><span class="hidden sm:inline" data-i18n="hero.desc_detail"> Teknisi ahli berpengalaman siap menuju rumah, villa, kos, dan kantor Anda dengan tarif transparan dan garansi 30 hari penuh.</span>
       </p>
 
       <!-- Primary & Secondary CTA Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-7 sm:mb-9">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-9">
         <!-- Primary WhatsApp CTA Button -->
         <a
           href={primaryWaUrl}
@@ -105,7 +107,10 @@ const heroSlides = [
         </a>
       </div>
 
-      <!-- Trust Badges: Unified Single Horizontal Ultra-Translucent Frosted Glass Card on Mobile & Desktop -->
+    </div>
+
+    <!-- Bottom Anchor Bar (Unified Single Horizontal Ultra-Translucent Frosted Glass Card) -->
+    <div class="w-full mt-auto pt-2 sm:pt-6">
       <div class="bg-white/[0.07] backdrop-blur-md border border-white/15 shadow-sm rounded-2xl p-2 sm:p-3.5 max-w-4xl mx-auto">
         <div class="grid grid-cols-3 divide-x divide-white/10 items-center">
           
@@ -164,7 +169,6 @@ const heroSlides = [
 
         </div>
       </div>
-
     </div>
   </div>
 </section>
