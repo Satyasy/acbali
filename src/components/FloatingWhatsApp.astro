@@ -4,20 +4,25 @@ import { createWhatsAppLink } from '../config/site';
 const floatingWaUrl = createWhatsAppLink();
 ---
 
-<!-- Floating Action Button (Bottom Right for all screen sizes) -->
-<aside class="fixed bottom-5 right-5 z-50">
+<!-- Floating WhatsApp Button: Circular FAB with Official WhatsApp SVG & Pulsing Online Dot -->
+<aside class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50">
   <a
     href={floatingWaUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class="flex items-center gap-2 btn-cta-whatsapp text-slate-950 px-4 py-3 sm:px-5 sm:py-3.5 rounded-full shadow-xl transition-all duration-200"
-    title="Chat Teknisi Siaga di WhatsApp"
-    aria-label="Chat Teknisi Siaga di WhatsApp"
+    class="relative group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white hover:bg-[#20BD5A] shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+    title="Chat WhatsApp Teknisi AC Siaga 24 Jam"
+    aria-label="Chat WhatsApp Teknisi AC Siaga 24 Jam"
   >
-    <!-- Official Lucide MessageCircle -->
-    <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+    <!-- Official WhatsApp High-Fidelity Vector Emblem -->
+    <svg class="w-6 h-6 sm:w-7 sm:h-7 fill-current drop-shadow-xs" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.04 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.33C16.32 14.2 15.1 13.6 14.87 13.52C14.65 13.43 14.49 13.39 14.32 13.64C14.16 13.88 13.69 14.45 13.55 14.61C13.41 14.77 13.27 14.8 13.02 14.67C12.78 14.55 11.99 14.29 11.06 13.46C10.33 12.81 9.84 12.01 9.7 11.77C9.56 11.52 9.68 11.39 9.81 11.27C9.92 11.16 10.05 10.99 10.18 10.84C10.3 10.7 10.35 10.59 10.43 10.43C10.51 10.27 10.47 10.12 10.41 10C10.35 9.88 9.86 8.68 9.66 8.18C9.46 7.7 9.26 7.76 9.11 7.76C8.97 7.75 8.81 7.75 8.65 7.75C8.48 7.75 8.22 7.81 7.99 8.06C7.77 8.3 7.15 8.88 7.15 10.06C7.15 11.23 8.01 12.36 8.13 12.52C8.25 12.69 9.82 15.11 12.24 16.15C12.81 16.4 13.26 16.55 13.61 16.66C14.18 16.84 14.71 16.82 15.12 16.76C15.58 16.69 16.54 16.18 16.74 15.61C16.94 15.04 16.94 14.55 16.88 14.45C16.82 14.36 16.67 14.3 16.42 14.18L16.57 14.33Z"/>
     </svg>
-    <span class="text-xs sm:text-sm font-bold text-slate-950" data-i18n="nav.chat_wa">Chat WhatsApp</span>
+
+    <!-- 24h Active Status Indicator (Pulsing Emerald Green Ring on Top-Right Corner) -->
+    <span class="absolute top-0 right-0 flex h-3.5 w-3.5 sm:h-4 sm:w-4 -mt-0.5 -mr-0.5 pointer-events-none">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3.5 w-3.5 sm:h-4 sm:w-4 bg-emerald-400 border-2 border-white dark:border-navy-950 shadow-xs"></span>
+    </span>
   </a>
 </aside>

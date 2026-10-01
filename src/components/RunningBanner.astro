@@ -50,6 +50,15 @@ const tickerItems = [
   <div class="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white dark:from-[#071322] to-transparent z-10 pointer-events-none"></div>
   <div class="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white dark:from-[#071322] to-transparent z-10 pointer-events-none"></div>
 
+  <!-- Ambient Cool Breeze & Ice Crystal Vapor Effect Layer -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden z-[5]" aria-hidden="true">
+    <div class="ticker-breeze ticker-breeze-1"></div>
+    <div class="ticker-breeze ticker-breeze-2"></div>
+    <span class="ticker-snowflake ticker-flake-1">❄</span>
+    <span class="ticker-snowflake ticker-flake-2">❅</span>
+    <span class="ticker-snowflake ticker-flake-3">❆</span>
+  </div>
+
   <!-- Marquee Track (Double duplicate for seamless infinite loop) -->
   <div class="flex items-center w-max animate-marquee hover:[animation-play-state:paused]">
     <!-- Loop 1 -->
@@ -211,10 +220,105 @@ const tickerItems = [
     will-change: transform;
   }
 
+  /* Ambient Cool Breeze Streaks */
+  @keyframes tickerBreeze {
+    0% {
+      transform: translate3d(-100%, 0, 0);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.65;
+    }
+    80% {
+      opacity: 0.65;
+    }
+    100% {
+      transform: translate3d(200%, 0, 0);
+      opacity: 0;
+    }
+  }
+
+  .ticker-breeze {
+    position: absolute;
+    height: 1.5px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.6), rgba(186, 230, 253, 0.9), rgba(56, 189, 248, 0.6), transparent);
+    filter: blur(0.8px);
+    will-change: transform;
+    animation: tickerBreeze 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  .ticker-breeze-1 {
+    top: 22%;
+    width: 260px;
+    animation-delay: 0s;
+  }
+
+  .ticker-breeze-2 {
+    bottom: 22%;
+    width: 320px;
+    animation-duration: 11s;
+    animation-delay: 4.5s;
+  }
+
+  /* Floating Ice Snowflake Particles */
+  @keyframes tickerFlakeFloat {
+    0% {
+      transform: translate3d(-40px, 0, 0) rotate(0deg);
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.6;
+    }
+    85% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate3d(calc(100vw + 60px), 0, 0) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .ticker-snowflake {
+    position: absolute;
+    color: #38BDF8;
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+    will-change: transform;
+    animation: tickerFlakeFloat linear infinite;
+    pointer-events: none;
+    font-size: 13px;
+  }
+
+  .ticker-flake-1 {
+    top: 18%;
+    animation-duration: 15s;
+    animation-delay: 0.5s;
+  }
+
+  .ticker-flake-2 {
+    top: 58%;
+    animation-duration: 19s;
+    animation-delay: 6s;
+    font-size: 11px;
+    color: #7DD3FC;
+  }
+
+  .ticker-flake-3 {
+    top: 38%;
+    animation-duration: 13s;
+    animation-delay: 10s;
+    font-size: 15px;
+    color: #BAE6FD;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-marquee {
       animation: none;
       overflow-x: auto;
+    }
+    .ticker-breeze,
+    .ticker-snowflake {
+      display: none !important;
     }
   }
 </style>

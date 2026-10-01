@@ -12,9 +12,19 @@ const heroSlides = [
   { src: "/images/hero-3.webp", alt: "Perbaikan kompresor dan freon AC Bali" },
   { src: "/images/hero-4.webp", alt: "Pengecekan dan instalasi AC rumah villa kantor Bali" },
 ];
+
+const heroSnowflakes = [
+  { left: 8, duration: 11, delay: 0, size: 11, opacity: 0.35, char: "❄" },
+  { left: 22, duration: 14, delay: 3, size: 14, opacity: 0.4, char: "❅" },
+  { left: 36, duration: 9.5, delay: 1.5, size: 9, opacity: 0.3, char: "❄" },
+  { left: 52, duration: 13, delay: 4.5, size: 12, opacity: 0.45, char: "❆" },
+  { left: 66, duration: 10.5, delay: 2, size: 10, opacity: 0.32, char: "❄" },
+  { left: 80, duration: 15, delay: 5.5, size: 13, opacity: 0.38, char: "❅" },
+  { left: 92, duration: 12, delay: 1, size: 11, opacity: 0.35, char: "❄" },
+];
 ---
 
-<section id="hero" class="relative min-h-[calc(100dvh-3rem)] sm:min-h-[640px] lg:min-h-[700px] flex flex-col justify-between pt-5 pb-4 sm:pt-20 sm:pb-16 lg:pt-22 lg:pb-20 overflow-hidden bg-slate-950">
+<section id="hero" class="relative min-h-[calc(100vh-3rem)] min-h-[calc(100svh-3rem)] sm:min-h-[640px] lg:min-h-[700px] flex flex-col justify-between pt-5 pb-4 sm:pt-20 sm:pb-16 lg:pt-22 lg:pb-20 overflow-hidden bg-slate-950">
   
   <!-- Hero Background Carousel with Smooth Cinematic Crossfade -->
   <div class="absolute inset-0 z-0 overflow-hidden" id="hero-carousel" aria-hidden="true">
@@ -45,6 +55,21 @@ const heroSlides = [
         height="480"
       />
     </div>
+  </div>
+
+  <!-- Ambient Cold Breeze & Delicate Snowflakes Particle Atmosphere -->
+  <div class="absolute inset-0 z-[5] pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <div class="hero-breeze hero-breeze-1"></div>
+    <div class="hero-breeze hero-breeze-2"></div>
+    <div class="hero-breeze hero-breeze-3"></div>
+    {heroSnowflakes.map((flake) => (
+      <span
+        class="hero-snowflake"
+        style={`left: ${flake.left}%; animation-duration: ${flake.duration}s; animation-delay: ${flake.delay}s; font-size: ${flake.size}px; opacity: ${flake.opacity};`}
+      >
+        {flake.char}
+      </span>
+    ))}
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
@@ -203,3 +228,98 @@ const heroSlides = [
     initHeroCarousel();
   }
 </script>
+
+<style>
+  /* Lock GPU rendering and compositing layer to eliminate mobile scroll zoom-in/out */
+  #hero {
+    contain: paint;
+  }
+
+  .hero-slide {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Hardware-accelerated gentle snowflake drift */
+  @keyframes snowfallDrift {
+    0% {
+      transform: translate3d(0, -30px, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(20px, 45vh, 0) rotate(180deg);
+    }
+    100% {
+      transform: translate3d(-15px, 105vh, 0) rotate(360deg);
+    }
+  }
+
+  .hero-snowflake {
+    position: absolute;
+    top: -30px;
+    color: #BAE6FD;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
+    pointer-events: none;
+    animation-name: snowfallDrift;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+  }
+
+  /* Horizontal cool conditioned air breeze wisps */
+  @keyframes heroBreezeFlow {
+    0% {
+      transform: translate3d(-120%, 0, 0);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.45;
+    }
+    80% {
+      opacity: 0.45;
+    }
+    100% {
+      transform: translate3d(220%, 0, 0);
+      opacity: 0;
+    }
+  }
+
+  .hero-breeze {
+    position: absolute;
+    height: 1.5px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), rgba(255, 255, 255, 0.7), rgba(56, 189, 248, 0.4), transparent);
+    filter: blur(1px);
+    will-change: transform;
+    animation: heroBreezeFlow ease-in-out infinite;
+  }
+
+  .hero-breeze-1 {
+    top: 28%;
+    width: 260px;
+    animation-duration: 9s;
+    animation-delay: 0s;
+  }
+
+  .hero-breeze-2 {
+    top: 48%;
+    width: 320px;
+    animation-duration: 12s;
+    animation-delay: 3.5s;
+  }
+
+  .hero-breeze-3 {
+    top: 68%;
+    width: 220px;
+    animation-duration: 8.5s;
+    animation-delay: 6s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-snowflake,
+    .hero-breeze {
+      display: none !important;
+    }
+  }
+</style>
