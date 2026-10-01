@@ -14,7 +14,7 @@ const heroSlides = [
 ];
 ---
 
-<section id="hero" class="relative min-h-[560px] sm:min-h-[640px] lg:min-h-[700px] flex items-center justify-center pt-10 pb-12 sm:pt-14 sm:pb-16 lg:pt-16 lg:pb-18 overflow-hidden bg-slate-950">
+<section id="hero" class="relative min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] flex items-center justify-center pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-22 lg:pb-20 overflow-hidden bg-slate-950">
   
   <!-- Hero Background Carousel with Smooth Cinematic Crossfade -->
   <div class="absolute inset-0 z-0 overflow-hidden" id="hero-carousel" aria-hidden="true">
@@ -50,8 +50,8 @@ const heroSlides = [
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
     <div class="max-w-4xl mx-auto text-center">
       
-      <!-- Top Pill Indicator (Apple Frosted Glass) -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-apple-pill text-slate-100 text-xs font-semibold mb-3 sm:mb-4 shadow-xs">
+      <!-- Top Pill Indicator (Apple Frosted Glass) with comfortable margin from sticky navbar -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-apple-pill text-slate-100 text-xs font-semibold mb-4 sm:mb-5 shadow-xs mt-2 sm:mt-0">
         <!-- Lucide MapPin -->
         <svg class="w-3.5 h-3.5 text-iceblue-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
@@ -62,13 +62,13 @@ const heroSlides = [
         <span class="text-iceblue-200" data-i18n="topbar.badge2">Respon Tiba 60 Menit</span>
       </div>
 
-      <!-- Main H1 Headline -->
-      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-3 sm:mb-4">
+      <!-- Main H1 Headline: Pulled down with generous breathing room -->
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.2] mb-4 sm:mb-5">
         <span data-i18n="hero.title_1">Servis & Cuci AC Panggilan Cepat</span> <span data-i18n="hero.in">di</span> <span class="text-iceblue-400">Denpasar, Badung</span>, <span data-i18n="hero.title_2">dan Sekitarnya</span>
       </h1>
 
       <!-- Sub-headline: Punchy on mobile, comprehensive on tablet/desktop -->
-      <p class="text-sm sm:text-base text-slate-100 font-normal leading-relaxed mb-6 sm:mb-7 max-w-2xl mx-auto">
+      <p class="text-sm sm:text-base text-slate-100 font-normal leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto">
         <span data-i18n="hero.desc_lead">Spesialis pendingin udara panggilan cepat di Bali.</span><span class="hidden sm:inline" data-i18n="hero.desc_detail"> Teknisi ahli berpengalaman siap menuju rumah, villa, kos, dan kantor Anda dengan tarif transparan dan garansi 30 hari penuh.</span>
       </p>
 
@@ -105,53 +105,55 @@ const heroSlides = [
         </a>
       </div>
 
-      <!-- Trust Badges Grid (Apple Vibrant Frosted Glass) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4.5 max-w-4xl mx-auto text-left">
-        
-        <!-- Trust Badge 1: Garansi 30 Hari -->
-        <div class="glass-apple-dark p-3.5 sm:p-4 rounded-2xl flex items-center gap-3.5 transition-all">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-iceblue-500/20 text-iceblue-300 border border-iceblue-300/30 flex items-center justify-center shrink-0 shadow-inner">
-            <!-- Official Lucide ShieldCheck -->
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              <path d="m9 12 2 2 4-4"></path>
-            </svg>
+      <!-- Trust Badges: Unified Single Horizontal Glass Card on Mobile & Desktop -->
+      <div class="glass-apple-dark rounded-2xl p-2 sm:p-3.5 max-w-4xl mx-auto shadow-lg border border-white/10">
+        <div class="grid grid-cols-3 divide-x divide-white/10 items-center">
+          
+          <!-- Trust Badge 1: Garansi 30 Hari -->
+          <div class="px-2 sm:px-4 py-1.5 flex flex-col sm:flex-row items-center sm:items-start gap-1.5 sm:gap-3.5 text-center sm:text-left">
+            <div class="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-iceblue-500/20 text-iceblue-300 border border-iceblue-300/30 flex items-center justify-center shrink-0 shadow-inner">
+              <!-- Official Lucide ShieldCheck -->
+              <svg class="w-3.5 h-3.5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h2 class="font-bold text-white text-[11px] sm:text-sm leading-tight" data-i18n="hero.trust1_title">Garansi 30 Hari Penuh</h2>
+              <p class="hidden sm:block text-xs text-slate-200 mt-0.5" data-i18n="hero.trust1_desc">Klaim mudah jika kendala kembali muncul.</p>
+            </div>
           </div>
-          <div>
-            <h2 class="font-bold text-white text-xs sm:text-sm" data-i18n="hero.trust1_title">Garansi 30 Hari Penuh</h2>
-            <p class="hidden sm:block text-xs text-slate-200 mt-0.5" data-i18n="hero.trust1_desc">Klaim mudah jika kendala kembali muncul.</p>
-          </div>
-        </div>
 
-        <!-- Trust Badge 2: Multi-Merek -->
-        <div class="glass-apple-dark p-3.5 sm:p-4 rounded-2xl flex items-center gap-3.5 transition-all">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-navy-500/30 text-iceblue-300 border border-navy-300/30 flex items-center justify-center shrink-0 shadow-inner">
-            <!-- Official Lucide Wrench -->
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-            </svg>
+          <!-- Trust Badge 2: Multi-Merek -->
+          <div class="px-2 sm:px-4 py-1.5 flex flex-col sm:flex-row items-center sm:items-start gap-1.5 sm:gap-3.5 text-center sm:text-left">
+            <div class="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-navy-500/30 text-iceblue-300 border border-navy-300/30 flex items-center justify-center shrink-0 shadow-inner">
+              <!-- Official Lucide Wrench -->
+              <svg class="w-3.5 h-3.5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h2 class="font-bold text-white text-[11px] sm:text-sm leading-tight" data-i18n="hero.trust2_title">Teknisi Multi-Merek</h2>
+              <p class="hidden sm:block text-xs text-slate-200 mt-0.5" data-i18n="hero.trust2_desc">Daikin, Panasonic, Sharp, Gree, LG.</p>
+            </div>
           </div>
-          <div>
-            <h2 class="font-bold text-white text-xs sm:text-sm" data-i18n="hero.trust2_title">Teknisi Multi-Merek</h2>
-            <p class="hidden sm:block text-xs text-slate-200 mt-0.5" data-i18n="hero.trust2_desc">Daikin, Panasonic, Sharp, Gree, LG.</p>
-          </div>
-        </div>
 
-        <!-- Trust Badge 3: Tanpa Biaya Tersembunyi -->
-        <div class="glass-apple-dark p-3.5 sm:p-4 rounded-2xl flex items-center gap-3.5 transition-all">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/20 text-emerald-300 border border-emerald-300/30 flex items-center justify-center shrink-0 shadow-inner">
-            <!-- Official Lucide CheckCircle2 -->
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="m9 12 2 2 4-4"></path>
-            </svg>
+          <!-- Trust Badge 3: Tanpa Biaya Tersembunyi -->
+          <div class="px-2 sm:px-4 py-1.5 flex flex-col sm:flex-row items-center sm:items-start gap-1.5 sm:gap-3.5 text-center sm:text-left">
+            <div class="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-emerald-500/20 text-emerald-300 border border-emerald-300/30 flex items-center justify-center shrink-0 shadow-inner">
+              <!-- Official Lucide CheckCircle2 -->
+              <svg class="w-3.5 h-3.5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h2 class="font-bold text-white text-[11px] sm:text-sm leading-tight" data-i18n="hero.trust3_title">Tanpa Biaya Tersembunyi</h2>
+              <p class="hidden sm:block text-xs text-slate-200 mt-0.5" data-i18n="hero.trust3_desc">Tarif transparan disetujui di awal.</p>
+            </div>
           </div>
-          <div>
-            <h2 class="font-bold text-white text-xs sm:text-sm" data-i18n="hero.trust3_title">Tanpa Biaya Tersembunyi</h2>
-            <p class="hidden sm:block text-xs text-slate-200 mt-0.5" data-i18n="hero.trust3_desc">Tarif transparan disetujui di awal.</p>
-          </div>
-        </div>
 
+        </div>
       </div>
 
     </div>
