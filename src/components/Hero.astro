@@ -32,6 +32,19 @@ const heroSlides = [
     ))}
     <!-- Softened dark overlay for vivid, bright photos while maintaining crisp text contrast -->
     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-slate-950/20 z-[3]"></div>
+
+    <!-- Branded Logo Silhouette Watermark (Subtle Ambience & Identity) -->
+    <div class="absolute inset-0 z-[4] flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
+      <img
+        src="/images/logo-white.webp"
+        alt=""
+        class="w-[320px] h-[320px] sm:w-[460px] sm:h-[460px] lg:w-[580px] lg:h-[580px] object-contain opacity-15 mix-blend-screen transform -rotate-6 filter drop-shadow-2xl"
+        loading="eager"
+        decoding="async"
+        width="580"
+        height="580"
+      />
+    </div>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -54,9 +67,9 @@ const heroSlides = [
         <span data-i18n="hero.title_1">Servis & Cuci AC Panggilan Cepat</span> <span data-i18n="hero.in">di</span> <span class="text-iceblue-400">Denpasar, Badung</span>, <span data-i18n="hero.title_2">dan Sekitarnya</span>
       </h1>
 
-      <!-- Sub-headline -->
-      <p class="text-sm sm:text-base text-slate-100 font-normal leading-relaxed mb-6 sm:mb-7 max-w-2xl mx-auto" data-i18n="hero.desc">
-        Spesialis pendingin udara panggilan cepat di Bali. Teknisi ahli berpengalaman siap menuju rumah, villa, kos, dan kantor Anda. Pengerjaan rapi, tarif transparan di awal, dan garansi 30 hari penuh.
+      <!-- Sub-headline: Punchy on mobile, comprehensive on tablet/desktop -->
+      <p class="text-sm sm:text-base text-slate-100 font-normal leading-relaxed mb-6 sm:mb-7 max-w-2xl mx-auto">
+        <span data-i18n="hero.desc_lead">Spesialis pendingin udara panggilan cepat di Bali.</span><span class="hidden sm:inline" data-i18n="hero.desc_detail"> Teknisi ahli berpengalaman siap menuju rumah, villa, kos, dan kantor Anda dengan tarif transparan dan garansi 30 hari penuh.</span>
       </p>
 
       <!-- Primary & Secondary CTA Buttons -->
@@ -106,7 +119,7 @@ const heroSlides = [
           </div>
           <div>
             <h2 class="font-bold text-white text-xs sm:text-sm" data-i18n="hero.trust1_title">Garansi 30 Hari Penuh</h2>
-            <p class="text-xs text-slate-200" data-i18n="hero.trust1_desc">Klaim mudah jika kendala kembali muncul.</p>
+            <p class="hidden sm:block text-xs text-slate-200 mt-0.5" data-i18n="hero.trust1_desc">Klaim mudah jika kendala kembali muncul.</p>
           </div>
         </div>
 
@@ -120,7 +133,7 @@ const heroSlides = [
           </div>
           <div>
             <h2 class="font-bold text-white text-xs sm:text-sm" data-i18n="hero.trust2_title">Teknisi Multi-Merek</h2>
-            <p class="text-xs text-slate-200" data-i18n="hero.trust2_desc">Daikin, Panasonic, Sharp, Gree, LG.</p>
+            <p class="hidden sm:block text-xs text-slate-200 mt-0.5" data-i18n="hero.trust2_desc">Daikin, Panasonic, Sharp, Gree, LG.</p>
           </div>
         </div>
 
@@ -135,7 +148,7 @@ const heroSlides = [
           </div>
           <div>
             <h2 class="font-bold text-white text-xs sm:text-sm" data-i18n="hero.trust3_title">Tanpa Biaya Tersembunyi</h2>
-            <p class="text-xs text-slate-200" data-i18n="hero.trust3_desc">Tarif transparan disetujui di awal.</p>
+            <p class="hidden sm:block text-xs text-slate-200 mt-0.5" data-i18n="hero.trust3_desc">Tarif transparan disetujui di awal.</p>
           </div>
         </div>
 
