@@ -1,5 +1,5 @@
 ---
-import { pricingList, technicalPricingList, createWhatsAppLink } from '../config/site';
+import { pricingList, createWhatsAppLink } from '../config/site';
 
 // Map categories to pricing items for interactive filter
 const categories = [
@@ -28,7 +28,7 @@ const consultWaUrl = createWhatsAppLink({
 });
 ---
 
-<section id="tarif" class="relative py-16 sm:py-24 bg-sky-50/70 dark:bg-[#040E1B] border-b border-sky-100/80 dark:border-navy-900 overflow-hidden section-content-visibility">
+<section id="tarif" class="relative py-16 sm:py-24 lg:py-28 bg-sky-50/70 dark:bg-[#040E1B] border-b border-sky-100/80 dark:border-navy-900 overflow-hidden section-content-visibility">
   
   <!-- Subtle Blueprint Square Grid Background -->
   <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
@@ -38,7 +38,7 @@ const consultWaUrl = createWhatsAppLink({
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header (Title left-aligned matching sample/layout.png) -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 reveal-on-scroll">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12 reveal-on-scroll">
       <div>
         <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-iceblue-100 dark:bg-iceblue-500/20 text-iceblue-900 dark:text-iceblue-300 text-xs font-semibold mb-3 border border-iceblue-200 dark:border-iceblue-400/30 shadow-2xs">
           <!-- Lucide Wrench -->
@@ -74,7 +74,7 @@ const consultWaUrl = createWhatsAppLink({
     </div>
 
     <!-- Filter Category Pills (Matching sample/layout.png 'Popular, USA, Europe...') -->
-    <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar" id="pricing-filters">
+    <div class="flex items-center gap-2.5 overflow-x-auto pb-4 mb-8 sm:mb-10 no-scrollbar" id="pricing-filters">
       {categories.map((cat, idx) => (
         <button
           type="button"
@@ -91,8 +91,8 @@ const consultWaUrl = createWhatsAppLink({
       ))}
     </div>
 
-    <!-- 4-Card Horizontal Grid (Matching sample/layout.png Top Destinations) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="pricing-grid">
+    <!-- 4-Card Horizontal Grid with Spacious Mobile/Desktop Gap -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-7" id="pricing-grid">
       {itemsWithCategory.map((item, idx) => {
         const orderUrl = createWhatsAppLink({
           service: item.serviceQuery,
@@ -103,15 +103,15 @@ const consultWaUrl = createWhatsAppLink({
           <article
             data-cat={item.category}
             data-reveal-delay={(idx % 4) * 80}
-            class="pricing-item glass-apple-card rounded-xl p-3 sm:p-3.5 flex flex-col justify-between group reveal-on-scroll"
+            class="pricing-item glass-apple-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between group reveal-on-scroll"
           >
             <div>
-              <!-- Rounded-LG Image Preview -->
-              <div class="relative w-full h-48 sm:h-52 rounded-lg overflow-hidden bg-slate-100 dark:bg-navy-900 mb-4">
+              <!-- Rounded-XL Image Preview -->
+              <div class="relative w-full h-48 sm:h-52 rounded-xl overflow-hidden bg-slate-100 dark:bg-navy-900 mb-4">
                 <img
                   src={item.image}
                   alt={item.imageAlt}
-                  class="w-full h-full object-cover object-center"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                   decoding="async"
                   width="400"
@@ -122,12 +122,12 @@ const consultWaUrl = createWhatsAppLink({
                 </div>
               </div>
 
-              <!-- Content Below Image -->
-              <div class="px-1.5 pb-2">
-                <h3 class="font-bold text-base text-navy-950 dark:text-white group-hover:text-iceblue-700 dark:group-hover:text-iceblue-400 transition-colors line-clamp-1 mb-1.5" data-i18n={`pricing.item_${idx}_name`}>
+              <!-- Content Below Image with Clean Breathing Room -->
+              <div class="px-1 pb-2">
+                <h3 class="font-bold text-base sm:text-lg text-navy-950 dark:text-white group-hover:text-iceblue-700 dark:group-hover:text-iceblue-400 transition-colors line-clamp-1 mb-2" data-i18n={`pricing.item_${idx}_name`}>
                   {item.name}
                 </h3>
-                <div class="flex items-center gap-2 mb-2.5">
+                <div class="flex items-center gap-2 mb-3">
                   <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-iceblue-50 dark:bg-iceblue-500/15 border border-iceblue-200/80 dark:border-iceblue-400/30 text-iceblue-800 dark:text-iceblue-300 text-xs font-bold shadow-2xs">
                     <!-- Lucide MessageCircle -->
                     <svg class="w-3.5 h-3.5 text-iceblue-600 dark:text-iceblue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -137,14 +137,14 @@ const consultWaUrl = createWhatsAppLink({
                   </span>
                   <span class="text-xs text-slate-400 dark:text-slate-500 font-medium hidden sm:inline" data-i18n={`pricing.item_${idx}_unit`}>{item.unit}</span>
                 </div>
-                <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed mb-4" data-i18n={`pricing.item_${idx}_desc`}>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed mb-4" data-i18n={`pricing.item_${idx}_desc`}>
                   {item.description}
                 </p>
               </div>
             </div>
 
             <!-- Bottom Pill Order Button -->
-            <div class="px-1.5 pb-1">
+            <div class="pt-2 px-1 pb-1">
               <a
                 href={orderUrl}
                 target="_blank"
@@ -163,76 +163,6 @@ const consultWaUrl = createWhatsAppLink({
           </article>
         );
       })}
-    </div>
-
-    <!-- Technical & Sparepart Actions Table (Clean Minimalist Structured List) -->
-    <div class="mb-4 glass-apple-card rounded-xl p-5 sm:p-7 overflow-hidden border border-slate-200/90 dark:border-navy-800/80 shadow-xs reveal-on-scroll">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100 dark:border-navy-800">
-        <div>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-navy-50 dark:bg-navy-900/90 text-navy-900 dark:text-iceblue-300 text-xs font-semibold mb-2 border border-navy-200/70 dark:border-navy-700/80">
-            <!-- Lucide Wrench -->
-            <svg class="w-3.5 h-3.5 text-navy-800 dark:text-iceblue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-            </svg>
-            <span data-i18n="pricing.tech_badge">Tindakan Servis & Penanganan Khusus</span>
-          </div>
-          <h3 class="text-lg sm:text-xl font-extrabold text-navy-950 dark:text-white" data-i18n="pricing.tech_title">
-            Rincian Tindakan Servis Teknis Tambahan
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="pricing.tech_desc">
-            Pilih tindakan penanganan yang Anda perlukan dan konsultasikan langsung dengan tim teknisi kami.
-          </p>
-        </div>
-      </div>
-
-      <!-- Responsive Table / List -->
-      <div class="overflow-x-auto">
-        <table class="w-full text-left text-xs sm:text-sm border-collapse">
-          <thead>
-            <tr class="border-b border-slate-200/80 dark:border-navy-800 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider">
-              <th class="py-3 px-3" data-i18n="pricing.col_service">Jenis Tindakan / Layanan Utama</th>
-              <th class="py-3 px-3" data-i18n="pricing.col_cat">Kategori</th>
-              <th class="py-3 px-3 text-right" data-i18n="pricing.col_action">Konsultasi</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100 dark:divide-navy-800/80">
-            {technicalPricingList.map((tech, idx) => {
-              const techWaUrl = createWhatsAppLink({
-                service: `Konsultasi Teknis: ${tech.name}`,
-                notes: `Halo Jawara Teknik, saya ingin konsultasi mengenai layanan ${tech.name}.`,
-              });
-
-              return (
-                <tr class="hover:bg-slate-50/70 dark:hover:bg-navy-900/40 transition-colors group/row">
-                  <td class="py-3.5 px-3">
-                    <div class="font-bold text-navy-950 dark:text-white text-sm sm:text-base group-hover/row:text-iceblue-700 dark:group-hover/row:text-iceblue-300 transition-colors" data-i18n={`pricing.tech_${idx}_name`}>{tech.name}</div>
-                  </td>
-                  <td class="py-3.5 px-3 whitespace-nowrap">
-                    <span class="inline-block px-3 py-1 rounded-full bg-slate-100 dark:bg-navy-900 text-slate-700 dark:text-slate-300 border border-transparent dark:border-navy-700/60 text-xs font-semibold" data-i18n={`pricing.tech_${idx}_cat`}>
-                      {tech.category}
-                    </span>
-                  </td>
-                  <td class="py-3.5 px-3 text-right whitespace-nowrap">
-                    <a
-                      href={techWaUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-open-modal
-                      data-service={tech.name}
-                      class="inline-flex items-center gap-1.5 bg-slate-100 hover:bg-navy-950 hover:text-white dark:bg-navy-900 dark:hover:bg-iceblue-600 text-navy-900 dark:text-white font-bold text-xs px-4 py-2 rounded-full border border-slate-200 dark:border-navy-700/80 transition-all duration-200 cursor-pointer shadow-2xs"
-                    >
-                      <span data-i18n="pricing.btn_order_short">Chat Konsultasi</span>
-                      <svg class="w-3 h-3 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="m9 18 6-6-6-6"></path>
-                      </svg>
-                    </a>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
     </div>
   </div>
 </section>

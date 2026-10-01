@@ -2,7 +2,7 @@
 import { siteConfig, orderingSteps } from '../config/site';
 ---
 
-<section id="cara-order" class="relative py-14 sm:py-20 bg-slate-50 dark:bg-[#040E1B] border-b border-slate-200/70 dark:border-navy-900 overflow-hidden section-content-visibility">
+<section id="cara-order" class="relative py-16 sm:py-24 lg:py-28 bg-slate-50 dark:bg-[#040E1B] border-b border-slate-200/70 dark:border-navy-900 overflow-hidden section-content-visibility">
   <span id="form-booking" class="sr-only"></span>
   
   <!-- Subtle Blueprint Square Grid Background -->
@@ -13,10 +13,10 @@ import { siteConfig, orderingSteps } from '../config/site';
   <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Wide Gray/Tinted Rounded Banner -->
-    <div class="bg-white dark:bg-[#071322]/90 rounded-2xl p-6 sm:p-10 lg:p-12 border border-slate-200/90 dark:border-navy-800/80 shadow-xs reveal-on-scroll">
+    <div class="bg-white dark:bg-[#071322]/90 rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-200/90 dark:border-navy-800/80 shadow-xs reveal-on-scroll">
       
       <!-- Top Pill & Headings -->
-      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 dark:bg-navy-900 border border-slate-200 dark:border-navy-700 text-xs font-semibold text-navy-950 dark:text-iceblue-300 mb-3 shadow-2xs">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           <span data-i18n="order.badge">Alur Pemesanan Cepat & Booking via WhatsApp</span>
@@ -32,7 +32,7 @@ import { siteConfig, orderingSteps } from '../config/site';
       </div>
 
       <!-- Integrated 3-Step Practical Stepper with Enlarged Badges & Scroll Slide-Up -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mb-10 max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mb-10 sm:mb-12 max-w-4xl mx-auto">
         {orderingSteps.map((item, index) => (
           <div
             class="step-reveal-card bg-slate-50/80 dark:bg-navy-950/70 hover:bg-white dark:hover:bg-navy-900/90 rounded-2xl p-6 sm:p-7 border border-slate-200/90 dark:border-navy-800/80 shadow-2xs flex flex-col justify-between group hover:border-iceblue-400 dark:hover:border-iceblue-400 hover:shadow-md transition-all duration-300"
@@ -64,7 +64,7 @@ import { siteConfig, orderingSteps } from '../config/site';
       </div>
 
       <!-- 5-Field Quick Template WhatsApp Form Card -->
-      <div class="bg-white dark:bg-navy-950/90 p-5 sm:p-7 rounded-xl border border-slate-200/90 dark:border-navy-800/80 shadow-sm max-w-3xl mx-auto">
+      <div class="bg-white dark:bg-navy-950/90 p-6 sm:p-8 rounded-2xl border border-slate-200/90 dark:border-navy-800/80 shadow-sm max-w-3xl mx-auto">
         <form id="quick-wa-template-form" class="space-y-4">
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
