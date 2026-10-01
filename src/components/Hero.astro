@@ -33,16 +33,16 @@ const heroSlides = [
     <!-- Softened dark overlay for vivid, bright photos while maintaining crisp text contrast -->
     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-slate-950/20 z-[3]"></div>
 
-    <!-- Branded Logo Silhouette Watermark (Subtle Ambience & Identity) -->
-    <div class="absolute inset-0 z-[4] flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <!-- Branded Logo Silhouette Watermark (Bottom-Right Anchor for Clean Asymmetric Identity) -->
+    <div class="absolute -bottom-10 -right-10 sm:-bottom-16 sm:-right-16 lg:-bottom-20 lg:-right-20 z-[4] pointer-events-none select-none overflow-hidden" aria-hidden="true">
       <img
         src="/images/logo-white.webp"
         alt=""
-        class="w-[320px] h-[320px] sm:w-[460px] sm:h-[460px] lg:w-[580px] lg:h-[580px] object-contain opacity-15 mix-blend-screen transform -rotate-6 filter drop-shadow-2xl"
+        class="w-64 h-64 sm:w-80 sm:h-80 lg:w-[480px] lg:h-[480px] object-contain opacity-20 mix-blend-screen transform -rotate-12 filter drop-shadow-2xl"
         loading="eager"
         decoding="async"
-        width="580"
-        height="580"
+        width="480"
+        height="480"
       />
     </div>
   </div>
