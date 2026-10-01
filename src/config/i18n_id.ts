@@ -30,10 +30,13 @@ export const idTranslations: TranslationDictionary = {
     btn_order: "Pesan Teknisi Sekarang",
     btn_pricing: "Lihat Daftar Tarif",
     trust1_title: "Garansi Servis 30 Hari",
+    trust1_short: "Garansi 30 Hari",
     trust1_desc: "Jaminan bebas kendala berulang.",
     trust2_title: "Teknisi Multi-Brand Ahli",
+    trust2_short: "Multi-Brand Ahli",
     trust2_desc: "Daikin, Panasonic, Sharp, Gree, LG.",
     trust3_title: "Tanpa Biaya Tersembunyi",
+    trust3_short: "Tarif Transparan",
     trust3_desc: "Estimasi disepakati sebelum pengerjaan.",
   },
   pricing: {

@@ -30,10 +30,13 @@ export const enTranslations: TranslationDictionary = {
     btn_order: "Book Technician Now",
     btn_pricing: "View Rates & Tariffs",
     trust1_title: "Full 30-Day Warranty",
+    trust1_short: "30-Day Warranty",
     trust1_desc: "Hassle-free guarantee if the issue recurs.",
     trust2_title: "Multi-Brand Experts",
+    trust2_short: "Multi-Brand Tech",
     trust2_desc: "Daikin, Panasonic, Sharp, Gree, LG.",
     trust3_title: "Zero Hidden Fees",
+    trust3_short: "Transparent Rates",
     trust3_desc: "Transparent rates agreed before work begins.",
   },
   pricing: {
