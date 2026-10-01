@@ -1,7 +1,5 @@
 ---
-import { siteConfig, createWhatsAppLink } from '../config/site';
-
-const defaultWaUrl = createWhatsAppLink();
+// Main Navigation Bar
 ---
 
 <nav id="main-navbar" class="sticky top-0 z-40 transition-all duration-300 glass-navbar dark:border-navy-800/80 dark:bg-[#030D1A]/85">
@@ -126,20 +124,6 @@ const defaultWaUrl = createWhatsAppLink();
           <span data-i18n="nav.quick_book">Booking Cepat</span>
         </button>
 
-        <!-- Official Direct WhatsApp CTA Button -->
-        <a
-          href={defaultWaUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 sm:gap-2 btn-cta-whatsapp px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm"
-        >
-          <!-- Official Lucide MessageCircle (100% Symmetrical) -->
-          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-          </svg>
-          <span class="hidden md:inline" data-i18n="nav.chat_wa">Chat WhatsApp</span>
-          <span class="md:hidden">WA</span>
-        </a>
       </div>
     </div>
   </div>
